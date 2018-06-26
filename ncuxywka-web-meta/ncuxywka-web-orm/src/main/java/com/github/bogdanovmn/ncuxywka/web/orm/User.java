@@ -15,6 +15,16 @@ public class User extends BaseEntityWithUniqueName {
 	@Column(nullable = false)
 	private Date registerDate;
 
+	@Column(nullable = false)
+	private Date editDate;
+
+	private String about;
+	private String loves;
+	private String hates;
+	private String illness;
+	private String city;
+	private Integer ip;
+
 	@ManyToMany(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
 	@JoinTable(
 		name = "role2user",

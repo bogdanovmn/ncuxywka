@@ -2,6 +2,10 @@ package com.github.bogdanovmn.ncuxywka.web.orm;
 
 import javax.persistence.Entity;
 
-@Entity
-public class Room extends BaseEntity {
+public enum RoomType {
+	PROCEDURE,
+	PIG_PETR,
+	WISH,
+	FRENIZM,
+	SHIT
 }
