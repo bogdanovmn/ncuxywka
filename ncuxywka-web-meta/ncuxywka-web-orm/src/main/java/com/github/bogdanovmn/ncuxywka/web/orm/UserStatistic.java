@@ -1,9 +1,11 @@
 package com.github.bogdanovmn.ncuxywka.web.orm;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class UserStatistic extends BaseEntity {
+	@ManyToOne
 	private User user;
 	private Integer votesIn;
 	private Integer votesOut;
