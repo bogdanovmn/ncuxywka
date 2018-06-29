@@ -18,8 +18,8 @@
 					<a href='/add_creo/'>Лабораторная</a>
 					<br>
 					<span class=note>(Сдать анализы)</span>
-			</TMPL_UNLESS>
-		</TMPL_UNLESS>
+			{{/unless_close}}
+		{{/unless_close}}
 		<tr><td>
 			<a href='/gb/'>Палата #6</a>
 			{{#lgbc_post_date}}

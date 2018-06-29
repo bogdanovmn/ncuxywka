@@ -52,7 +52,7 @@
 	
 	<TMPL_UNLESS has_vote_power>
 		<p class=note>У вас еще слишком мало опыта чтобы голосовать!</p>
-	</TMPL_UNLESS>
+	{{/unless_close}}
 
 	{{#already_voted}}
 		<p class=note>Вы уже голосовали за этот анализ...</p>
@@ -96,12 +96,12 @@
 		<td>{{cv_date}}
 		<td>{{cv_delta}}
 
-	</TMPL_LOOP>
+	{{/loop_close}}
 	</table>
 {{/if_close}}
 <hr>
 
-</TMPL_UNLESS>
+{{/unless_close}}
 
 <TMPL_INCLUDE NAME="social_networks.tpl">
 
@@ -115,6 +115,6 @@
 	<div class=header>П<span class=letter>О</span>СТАВЬ Д<span class=letter>И</span>АГНО<span class=letter>Z</span>!</div>
 	
 	<TMPL_INCLUDE NAME="inc/comments_post_form.tpl">
-</TMPL_UNLESS>
+{{/unless_close}}
 
 </center>

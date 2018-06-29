@@ -31,7 +31,7 @@
             {{cm_post_date}}
 			<hr>
 	</table>
-</TMPL_LOOP>
+{{/loop_close}}
 
 <TMPL_INCLUDE NAME="../inc/pages.tpl">
 <div class=header>ТЫ <span class=letter>Z</span>НАЕШЬ ПРОДОЛЖЕНИЕ<span class=letter>?</span></div>

@@ -14,7 +14,7 @@
 			{{pp_alias}}
 		{{/if_close}}
 		</p>
-	</TMPL_LOOP>
+	{{/loop_close}}
 	
 </table>
 

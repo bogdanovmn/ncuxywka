@@ -11,7 +11,7 @@
 		<br><span class=subnote>{{vs_alias}}</span>
 		<!--span class=subnote> [Голосов: {{vs_cnt}}] </span-->
 		</p>
-	</TMPL_LOOP>
+	{{/loop_close}}
 	
 </table>
 

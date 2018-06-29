@@ -23,9 +23,9 @@
 		{{/if_close}}
 		<TMPL_UNLESS cl_self_vote>
 			<span class=subnote>?</span>
-		</TMPL_UNLESS>
+		{{/unless_close}}
 		</p>
-	</TMPL_LOOP>
+	{{/loop_close}}
 
 	{{#user_creo_list_more}}
 		<div class=more_creos>

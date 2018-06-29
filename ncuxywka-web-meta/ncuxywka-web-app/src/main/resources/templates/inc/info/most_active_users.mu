@@ -10,7 +10,7 @@
 		<span class=note>{{__counter__}}. </span>
 		<a href="/users/{{au_id}}.html"><b>{{au_name}}</b></a>
 		</p>
-	</TMPL_LOOP>
+	{{/loop_close}}
 	
 </table>
 

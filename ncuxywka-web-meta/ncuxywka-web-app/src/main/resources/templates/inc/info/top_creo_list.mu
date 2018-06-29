@@ -12,11 +12,11 @@
 			<b>{{tcl_title}}</b></a>
 		<TMPL_UNLESS tcl_self_vote>
 			<span class=subnote>?</span>
-		</TMPL_UNLESS>
+		{{/unless_close}}
 		<br>
 		<span class=subnote>{{tcl_alias}}</span>
 		</p>
-	</TMPL_LOOP>
+	{{/loop_close}}
 	
 </table>
 

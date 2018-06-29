@@ -38,7 +38,7 @@
 	<TMPL_ELSE>
 		<a href='/{{type}}/{{name}}/'>&nbsp;{{title}}&nbsp;</a>
 	{{/if_close}} 
-</TMPL_LOOP>
+{{/loop_close}}
 </p>
 
 <table class=creo_list>
@@ -55,17 +55,17 @@
 				<TMPL_ELSE>
 					{{cl_alias}}
 				{{/if_close}}
-		</TMPL_UNLESS>
+		{{/unless_close}}
 		<td class=title>
 			<a href="/creos/{{ESCAPE}}=URL NAME=cl_id>.html">{{cl_title}}</a>
 			<TMPL_UNLESS cl_self_vote>
 				<span class=subnote>?</span>
-			</TMPL_UNLESS>
+			{{/unless_close}}
 		<td class=comments>
 			{{cl_comments}}
 		<td class=resume>
 			{{cl_votes}}
-</TMPL_LOOP>
+{{/loop_close}}
 </table>
 
 {{#quarantine}}

@@ -10,7 +10,7 @@
 		<a href="/creos/{{cl_id}}.html"><b>{{cl_title}}</b></a>
 		<br><span class=link_note>{{cl_alias}}</span>
 		</p>
-	</TMPL_LOOP>
+	{{/loop_close}}
 	
 </table>
 

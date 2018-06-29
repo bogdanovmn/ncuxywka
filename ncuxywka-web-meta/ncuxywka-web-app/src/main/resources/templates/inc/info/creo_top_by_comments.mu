@@ -11,7 +11,7 @@
 		<a href="/creos/{{mccl_id}}.html"><b>{{mccl_title}}</b></a>
 		<br><span class=subnote>{{mccl_alias}}</span>
 		</p>
-	</TMPL_LOOP>
+	{{/loop_close}}
 </table>
 
 <table class=info>
@@ -25,7 +25,7 @@
 		<a href="/creos/{{mccl_id}}.html"><b>{{mccl_title}}</b></a>
 		<br><span class=subnote>{{mccl_alias}}</span>
 		</p>
-	</TMPL_LOOP>
+	{{/loop_close}}
 </table>
 
 {{/if_close}}

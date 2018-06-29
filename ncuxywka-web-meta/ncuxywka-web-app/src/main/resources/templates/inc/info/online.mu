@@ -14,7 +14,7 @@
 					</span>
 				{{/if_close}}
 			</p>
-		</TMPL_LOOP>
+		{{/loop_close}}
 </table>
 
 {{/if_close}}

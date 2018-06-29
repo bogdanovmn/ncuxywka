@@ -11,7 +11,7 @@
 		<a href="/users/{{ccu_id}}.html"><b>{{ccu_name}}</b></a>
 		<span class=subnote>[{{ccu_cnt}}]</span>
 		</p>
-	</TMPL_LOOP>
+	{{/loop_close}}
 	
 </table>
 

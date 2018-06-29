@@ -44,4 +44,4 @@
 		setInterval('update_left_time()', 1000);
 	//-->
 	</script> 
-</TMPL_UNLESS>
+{{/unless_close}}

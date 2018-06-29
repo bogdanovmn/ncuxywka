@@ -16,13 +16,13 @@
 
 	<TMPL_LOOP left>
 		<a href='{{p_uri}}page{{page}}.html'>{{page}}</a>
-	</TMPL_LOOP>
+	{{/loop_close}}
 
 	<b>{{current_page}}</b>
 
 	<TMPL_LOOP right>
 		<a href='{{p_uri}}page{{page}}.html'>{{page}}</a>
-	</TMPL_LOOP>
+	{{/loop_close}}
 
 	{{#last}}
 		<a href='{{uri}}page{{right_jump}}.html'>...</a>
@@ -33,13 +33,13 @@
 
 	<TMPL_LOOP left>
 		<a href='{{p_uri}}page{{page}}.html'>{{page}}</a>
-	</TMPL_LOOP>
+	{{/loop_close}}
 
 	<b>{{current_page}}</b>
 
 	<TMPL_LOOP right>
 		<a href='{{p_uri}}page{{page}}.html'>{{page}}</a>
-	</TMPL_LOOP>
+	{{/loop_close}}
 
 {{/if_close}}
 

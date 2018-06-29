@@ -10,7 +10,7 @@
 
 	<TMPL_LOOP skin_js_include>
 		<script type="text/javascript" src="/js/{{js_file}}">
-	</TMPL_LOOP>
+	{{/loop_close}}
 
 	<script type="text/javascript">
 	  var _gaq = _gaq || [];

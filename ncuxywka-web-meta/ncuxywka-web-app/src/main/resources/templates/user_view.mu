@@ -104,7 +104,7 @@
 			<br>
 			<TMPL_UNLESS can_delete>
 				[ <a href="/pm/dialog/{{u_id}}/">Отправить этому пациэнту личное сообщение</a> ]
-			</TMPL_UNLESS>
+			{{/unless_close}}
 		{{/if_close}}
 	</p>
 </div>
@@ -125,11 +125,11 @@
 				{{#cl_quarantine}}</s>{{/cl_quarantine}}
 				<TMPL_UNLESS cl_self_vote>
 					<span class=subnote>?</span>
-				</TMPL_UNLESS>
+				{{/unless_close}}
 			<td class=comments>
 				{{cl_comments_count}}
 			<td class=resume>{{cl_votes_count}}
-	</TMPL_LOOP>
+	{{/loop_close}}
 	</table>
 	</div>
 {{/if_close}}
@@ -164,7 +164,7 @@
 			{{#scl_can_delete}}
 				<td class=action><a href='/select/del/{{scl_id}}'>[X]</a>
 			{{/if_close}}
-	</TMPL_LOOP>
+	{{/loop_close}}
 	</table>
 	</div>
 {{/if_close}}
@@ -185,9 +185,9 @@
 					{{word}}
 				</span>
 				&nbsp;
-			</TMPL_LOOP>
+			{{/loop_close}}
 			</div>
-	</TMPL_LOOP>
+	{{/loop_close}}
 	</div>
 {{/if_close}}
 
@@ -201,7 +201,7 @@
 		<td class=gray>{{uv_date}}
 		<td>{{uv_delta}}
 
-	</TMPL_LOOP>
+	{{/loop_close}}
 	</table>
 {{/if_close}}
 

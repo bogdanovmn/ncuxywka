@@ -30,7 +30,7 @@
 			<br>
 			<span class=note>{{nu_reg_date}}</span>
 			</p>
-		</TMPL_LOOP>
+		{{/loop_close}}
 	</table>
 	
 	</center>
@@ -50,7 +50,7 @@
 			<br>
 			{{n_msg}}
 			</p>
-		</TMPL_LOOP>
+		{{/loop_close}}
 		<div class=more>
 			<a href="/news/">Архив новостей</a>
 		</div>
@@ -95,7 +95,7 @@
 						</a>
 						<i>&nbsp;({{lc_comments_count}} диаг.)</i>{{#__last__}},&nbsp;{{/__last__}}
 						<br>
-					</TMPL_LOOP>
+					{{/loop_close}}
 		{{/if_close}}
 	</table>
-</TMPL_LOOP>
+{{/loop_close}}

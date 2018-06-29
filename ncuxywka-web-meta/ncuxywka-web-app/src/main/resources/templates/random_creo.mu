@@ -13,7 +13,7 @@
 				<option value="{{user_id}}" {{#selected}}selected{{/selected}}>
 					{{user_name}}
 				</option>
-			</TMPL_LOOP>
+			{{/loop_close}}
 		</select>
 	<td>
 		Степень шизофрении
@@ -23,7 +23,7 @@
 				<option value="{{value}}" {{#selected}}selected{{/selected}}>
 					{{name}}
 				</option>
-			</TMPL_LOOP>
+			{{/loop_close}}
 		</select>
 	<tr>
 	<td>

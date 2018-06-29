@@ -31,11 +31,11 @@
 			<td>{{ref}}
 			<td>{{rows}}
 			<td>{{Extra}}
-		</TMPL_LOOP>
+		{{/loop_close}}
 		</table>
 		<br>
 		<br>
-	</TMPL_LOOP>
+	{{/loop_close}}
 	</div>
 
 <!-- Bottom -->

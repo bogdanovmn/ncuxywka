@@ -32,7 +32,7 @@
 		<tr>
 		<td class=empty>
 			&nbsp;
-	</TMPL_LOOP>
+	{{/loop_close}}
 	</table>
 	{{#multi_page}}
 		<TMPL_INCLUDE NAME="inc/pages.tpl">
@@ -68,7 +68,7 @@
 			{{ESCAPE}}="NONE" NAME=dm_msg>
 		<tr>
 		<td class=empty>&nbsp;
-	</TMPL_LOOP>
+	{{/loop_close}}
 	</table>
 	{{#multi_page}}
 		<TMPL_INCLUDE NAME="inc/pages.tpl">

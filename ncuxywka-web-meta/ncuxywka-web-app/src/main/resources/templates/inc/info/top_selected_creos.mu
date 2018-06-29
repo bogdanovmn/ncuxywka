@@ -13,7 +13,7 @@
 		<br>
 		<span class=subnote>{{sct_user_name}}</span>
 		</p>
-	</TMPL_LOOP>
+	{{/loop_close}}
 	
 </table>
 

@@ -28,7 +28,7 @@
 				{{/if_close}}
 				{{ESCAPE}}="NONE" NAME=cm_msg>
 	</table>
-</TMPL_LOOP>
+{{/loop_close}}
 
 {{#multi_page}}
 	<hr>

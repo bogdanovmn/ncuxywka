@@ -25,7 +25,7 @@
 	<TMPL_UNLESS can_public>
 		<div class=strict>Ваши предыдущие анализы показали нам что Вы достаточно здоровы!<br>Мы советуем Вам сдать следующий анализ<br>не ранее чем через {{time_to_public}}</div> 
 		<p>&nbsp;
-	</TMPL_UNLESS>
+	{{/unless_close}}
 	<table class=black_copy_menu>
 		<tr>
 		<td class=public>

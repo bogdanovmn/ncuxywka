@@ -30,7 +30,7 @@
 					<br><span class=note>--> Ампутировано <--</span>
 				{{/if_close}}
 	</table>
-</TMPL_LOOP>
+{{/loop_close}}
 
 {{#multi_page}}
 	<hr>

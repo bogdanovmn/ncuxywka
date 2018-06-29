@@ -5,7 +5,7 @@
 	<TMPL_UNLESS can_add>
 		<div class=strict>Ваши предыдущие анализы показали нам что Вы достаточно здоровы!<br>Мы советуем Вам сдать следующий анализ<br>не ранее чем через {{time_to_post}}</div> 
 		<p>&nbsp;
-	</TMPL_UNLESS>
+	{{/unless_close}}
 	<div class=strict>Перед тем как сдать анализы обязательно прочьтите <a href='/faq_room/'>FAQ</a>!</div>
 	<p>&nbsp;
 	<form onsubmit="return check_post_data();" name='add_history' method=post>
@@ -42,7 +42,7 @@
 		</table>
 		<input type=hidden name=action value='add'>
 	</form>
-</TMPL_UNLESS>
+{{/unless_close}}
 
 <SCRIPT language='javascript' type="text/javascript">
 <!--

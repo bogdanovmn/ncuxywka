@@ -35,7 +35,7 @@
 					<a href='/creo_edit/full/{{creo_id}}/'>Исправить анализ</a>
 				</p>
 			{{/if_close}}
-		</TMPL_UNLESS>
+		{{/unless_close}}
 
 		<TMPL_UNLESS deleted>
 			{{#ms_creo_delete}}
@@ -43,7 +43,7 @@
 					<a href='/creo_edit/delete/{{creo_id}}/'>Удалить!</a>
 				</p>
 			{{/if_close}}
-		</TMPL_UNLESS>
+		{{/unless_close}}
 
 		{{#ms_plagiarism}}
 			{{#plagiarist}}

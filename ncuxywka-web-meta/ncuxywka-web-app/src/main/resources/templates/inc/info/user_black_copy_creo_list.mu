@@ -11,7 +11,7 @@
 				{{bccl_title}}
 			</a>
 		</p>
-	</TMPL_LOOP>
+	{{/loop_close}}
 	
 </table>
 

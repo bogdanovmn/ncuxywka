@@ -16,7 +16,7 @@
 		<h2 class=user_rank>Легенды Психуюшки</h2>
 		<TMPL_LOOP rank_1>
 			<p><a href='/users/{{ru_id}}.html'>{{ru_name}}</a></p>
-		</TMPL_LOOP>
+		{{/loop_close}}
 	{{/if_close}}
 	</table>
 
@@ -27,21 +27,21 @@
 			<h2 class=user_rank>Шизофреники</h2>
 			<TMPL_LOOP rank_2>
 				<p><a href='/users/{{ru_id}}.html'>{{ru_name}}</a></p>
-			</TMPL_LOOP>
+			{{/loop_close}}
 		{{/if_close}}
 		<td>
 		{{#rank_3}}
 			<h2 class=user_rank>Пациэнты Фрейда</h2>
 			<TMPL_LOOP rank_3>
 				<p><a href='/users/{{ru_id}}.html'>{{ru_name}}</a></p>
-			</TMPL_LOOP>
+			{{/loop_close}}
 		{{/if_close}}
 		<td>
 		{{#rank_4}}
 			<h2 class=user_rank>Параноики</h2>
 			<TMPL_LOOP rank_4>
 				<p><a href='/users/{{ru_id}}.html'>{{ru_name}}</a></p>
-			</TMPL_LOOP>
+			{{/loop_close}}
 		{{/if_close}}
 	</table>
 
@@ -54,7 +54,7 @@
 			{{#ru_plagiarist}}<s>{{/ru_plagiarist}}
 			<p><a href='/users/{{ru_id}}.html'>{{ru_name}}</a></p>
 			{{#ru_plagiarist}}</s>{{/ru_plagiarist}}
-		</TMPL_LOOP>
+		{{/loop_close}}
 	{{/if_close}}
 	</table>
 	
@@ -65,14 +65,14 @@
 		<h2 class=user_rank>Диагноз пока не ясен</h2>
 		<TMPL_LOOP rank_0>
 			<p><a href='/users/{{ru_id}}.html'>{{ru_name}}</a></p>
-		</TMPL_LOOP>
+		{{/loop_close}}
 	{{/if_close}}
 	<td>
 	{{#rank_100}}
 		<h2 class=user_rank>Сидят в очереди на сдачу анализов</h2>
 		<TMPL_LOOP rank_100>
 			<p><a href='/users/{{ru_id}}.html'>{{ru_name}}</a></p>
-		</TMPL_LOOP>
+		{{/loop_close}}
 	{{/if_close}}
 	</table>
 
@@ -89,7 +89,7 @@
 					{{#u_plagiarist}}<s>{{/u_plagiarist}}
 					<a href='/users/{{u_id}}.html'>{{u_name}}</a>
 					{{#u_plagiarist}}</s>{{/u_plagiarist}}
-		</TMPL_LOOP>
+		{{/loop_close}}
 	</table>
 </div>
 
@@ -111,11 +111,11 @@
 								<a href='/users/{{u_id}}.html'>{{u_name}}</a>
 								{{#u_plagiarist}}</s>{{/u_plagiarist}}
 								<br>
-							</TMPL_LOOP>
-						</TMPL_LOOP>
-				</TMPL_LOOP>
+							{{/loop_close}}
+						{{/loop_close}}
+				{{/loop_close}}
 		</table>
-	</TMPL_LOOP>
+	{{/loop_close}}
 </div>
 
 <script type="text/javascript">

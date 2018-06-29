@@ -11,7 +11,7 @@
 		<a href="/users/{{tul_user_id}}.html"><b>{{tul_user_name}}</b></a>
 		<br><span class=subnote>[Голосов: {{tul_cnt}}]</span>
 		</p>
-	</TMPL_LOOP>
+	{{/loop_close}}
 	
 </table>
 

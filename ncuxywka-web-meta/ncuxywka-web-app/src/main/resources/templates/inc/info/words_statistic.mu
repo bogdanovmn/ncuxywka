@@ -19,9 +19,9 @@
 			<span class=note>[{{freq}}, {{percent}}%] </span>
 			'{{word}}'
 			</p>
-		</TMPL_LOOP>
+		{{/loop_close}}
 		
 	</table>
-</TMPL_LOOP>
+{{/loop_close}}
 
 {{/if_close}}

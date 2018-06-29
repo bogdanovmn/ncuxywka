@@ -35,5 +35,5 @@
 	<tr>
 	<td class=text colspan=2>
 		{{n_msg}}
-</TMPL_LOOP>
+{{/loop_close}}
 </table>

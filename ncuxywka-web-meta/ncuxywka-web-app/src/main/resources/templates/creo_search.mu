@@ -32,8 +32,8 @@
 				{{#cl_quarantine}}</s>{{/cl_quarantine}}
 				<TMPL_UNLESS cl_self_vote>
 					<span class=subnote>?</span>
-				</TMPL_UNLESS>
-	</TMPL_LOOP>
+				{{/unless_close}}
+	{{/loop_close}}
 	</table>
 <TMPL_ELSE>
 	<center><div class=strict>Ничего не найдено</div></center>
