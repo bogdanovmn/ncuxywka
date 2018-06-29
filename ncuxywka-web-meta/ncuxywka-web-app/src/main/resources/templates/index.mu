@@ -78,12 +78,12 @@
 							<center><img alt='{{lc_alias}}' src='/{{lc_avatar}}_thumb'></center>
 						<TMPL_ELSE>
 							&nbsp;
-						</TMPL_IF>
+						{{/if_close}}
 					<td class=text>
 						{{ESCAPE}}="NONE" NAME=lc_body>
 						{{#lc_cuted}}
 							<br><span class=note>--> Ампутировано <--</span>
-						</TMPL_IF>
+						{{/if_close}}
 				</table>
 		{{#lc_more}}
 			<tr class=more_creos>
@@ -96,6 +96,6 @@
 						<i>&nbsp;({{lc_comments_count}} диаг.)</i>{{#__last__}},&nbsp;{{/__last__}}
 						<br>
 					</TMPL_LOOP>
-		</TMPL_IF>
+		{{/if_close}}
 	</table>
 </TMPL_LOOP>

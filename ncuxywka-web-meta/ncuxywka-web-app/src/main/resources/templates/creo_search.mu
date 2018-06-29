@@ -25,7 +25,7 @@
 					<a href='/users/{{cl_user_id}}.html'>{{cl_alias}}</a>
 				<TMPL_ELSE>
 					{{cl_alias}}
-				</TMPL_IF>
+				{{/if_close}}
 			<td class=title>
 				{{#cl_quarantine}}<s>{{/cl_quarantine}}
 				<a href="/creos/{{ESCAPE}}=URL NAME='cl_id'>.html">{{cl_title}}</a>
@@ -37,4 +37,4 @@
 	</table>
 <TMPL_ELSE>
 	<center><div class=strict>Ничего не найдено</div></center>
-</TMPL_IF>
+{{/if_close}}

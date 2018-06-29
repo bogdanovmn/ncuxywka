@@ -22,4 +22,4 @@
 		</p>
 </table>
 
-</TMPL_IF>
+{{/if_close}}

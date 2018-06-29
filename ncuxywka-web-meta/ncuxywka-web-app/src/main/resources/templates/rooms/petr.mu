@@ -27,7 +27,7 @@
 				<a class=user href='/users/{{cm_user_id}}.html'><span class=user_name>{{cm_user_name}}</span></a>,
 			<TMPL_ELSE>
 				<span class=anonim>{{cm_alias}},</span>
-			</TMPL_IF>
+			{{/if_close}}
             {{cm_post_date}}
 			<hr>
 	</table>

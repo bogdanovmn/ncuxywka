@@ -7,7 +7,7 @@
 	<td>
 	{{#avatar}}
 		<center><p><img alt='{{cl_alias}}' src='/{{avatar}}_thumb'></center>
-	</TMPL_IF>
+	{{/if_close}}
 	<tr>
 	<td>
 	<TMPL_LOOP user_creo_list>
@@ -20,7 +20,7 @@
 			<a title="Диагнозов: {{cl_comments_count}}" href="/creos/{{cl_id}}.html">
 				{{#cl_quarantine}}<s>{{/cl_quarantine}}
 				{{cl_title}}{{#cl_quarantine}}</s>{{/cl_quarantine}}</a>
-		</TMPL_IF>
+		{{/if_close}}
 		<TMPL_UNLESS cl_self_vote>
 			<span class=subnote>?</span>
 		</TMPL_UNLESS>
@@ -31,8 +31,8 @@
 		<div class=more_creos>
 					<a href="/users/{{c_user_id}}.html#creos">... читать ещё {{user_creo_list_more}} ...</a>
 		</div>
-	</TMPL_IF>
+	{{/if_close}}
 	
 </table>
 
-</TMPL_IF>
+{{/if_close}}

@@ -14,15 +14,15 @@
 				<a href="/procedure/user/{{u_id}}">Назначить процедуры</a>
 				<br>
 				<span class=note>Продолжительность: 6 часов</span>
-			</TMPL_IF>
+			{{/if_close}}
 			</p>
-		</TMPL_IF>
+		{{/if_close}}
 		
 		{{#god}}
 			<p class=submenu>&#149;&nbsp;
 				<a target=_blank href="http://ip-whois.net/ip_geo.php?ip={{u_ip}}">География</a>
 			</p>
-		</TMPL_IF>
+		{{/if_close}}
 </table>
 
-</TMPL_IF>
+{{/if_close}}

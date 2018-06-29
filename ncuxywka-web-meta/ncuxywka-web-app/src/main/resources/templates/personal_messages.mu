@@ -10,18 +10,18 @@
 		<TMPL_ELSE>
 			<a href='/pm/in/'>Полученные</a> :: 
 			Отправленные
-		</TMPL_IF>
+		{{/if_close}}
 	<TMPL_LOOP messages>
 		{{#lm_new}}
 			<tr><td class=new_message>Новое!
-		</TMPL_IF>
+		{{/if_close}}
 		<tr>
 		<td class=info>
 			{{#lm_is_in_message}}
 				От <a class=user href='/users/{{lm_user_id}}.html'><span class=user_name>{{lm_user_name}}</span></a>
 			<TMPL_ELSE>
 				Для <a class=user href='/users/{{lm_to_user_id}}.html'><span class=user_name>{{lm_to_user_name}}</span></a>
-			</TMPL_IF>
+			{{/if_close}}
 			<span class=date>
 				{{#lm_is_in_message}}<a href='/pm/dialog/{{lm_user_id}}/'>Ответить</a>&nbsp;&nbsp;{{/lm_is_in_message}}
 				{{lm_date}}
@@ -36,8 +36,8 @@
 	</table>
 	{{#multi_page}}
 		<TMPL_INCLUDE NAME="inc/pages.tpl">
-	</TMPL_IF>
-</TMPL_IF>
+	{{/if_close}}
+{{/if_close}}
 
 {{#is_dialog}}
 	<center>
@@ -56,7 +56,7 @@
 	<h1>В<span class=letter>А</span>Ш<span class=letter>А</span> ПЕРЕПИСК<span class=letter>А</span> С ЭТИ<span class=letter>М</span> П<span class=letter>А</span>ЦИЭНТО<span class=letter>М</span><span class=letter></span>:</h1>
 	{{#multi_page}}
 		<TMPL_INCLUDE NAME="inc/pages.tpl">
-	</TMPL_IF>
+	{{/if_close}}
 	<table class=personal_messages>
 	<TMPL_LOOP messages>
 		<tr>
@@ -72,5 +72,5 @@
 	</table>
 	{{#multi_page}}
 		<TMPL_INCLUDE NAME="inc/pages.tpl">
-	</TMPL_IF>
-</TMPL_IF>
+	{{/if_close}}
+{{/if_close}}

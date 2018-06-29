@@ -33,17 +33,17 @@
 		<script type="text/javascript">
 		  VK.init({apiId: 3699507, onlyWidgets: true});
 		</script>
-	</TMPL_IF>
+	{{/if_close}}
 
 	{{#jquery_required}}
   		<script language="javascript" type="text/javascript" src="/js/flot/jquery.min.js"></script>
-	</TMPL_IF>
+	{{/if_close}}
 
 	{{#jquery_flot_required}}
 	  <!--[if IE]><script language="javascript" type="text/javascript" src="/js/flot/excanvas.min.js"></script><![endif]-->
 	  <script language="javascript" type="text/javascript" src="/js/flot/jquery.flot.min.js"></script>
 	  <script language="javascript" type="text/javascript" src="/js/flot/jquery.flot.time.js"></script>
-	</TMPL_IF>	
+	{{/if_close}}	
 </head>
 
 <body onload="new SnowFall().run()">

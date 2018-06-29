@@ -32,13 +32,13 @@
 			<form method=post onsubmit="return check_public_data();" action='/black_copy/publish'>
 				{{#can_public}}
 					<input type=submit value="Сдать этот анализ">
-				</TMPL_IF>
+				{{/if_close}}
 				<input type=hidden name="id" value="{{creo_id}}">
 				<input type=hidden name="action" value="public">
 				{{#can_public}}
 					<br>
 					<input id=faq_read type=checkbox name='faq'> C <a href='/faq_room/'>FAQ'ом</a> ознакомлен и согласен!
-				</TMPL_IF>
+				{{/if_close}}
 			</form>
 		<td class=edit>
 			<a href="/black_copy/edit/{{creo_id}}.html">
@@ -49,7 +49,7 @@
 	<span class=creo_title>{{c_title}}</span>
 	<br><br>
 	<div class=creo_body>{{ESCAPE}}="NONE" NAME=c_body></div>
-</TMPL_IF>
+{{/if_close}}
 
 <SCRIPT language='javascript' type="text/javascript">
 <!--

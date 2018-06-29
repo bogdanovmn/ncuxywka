@@ -16,7 +16,7 @@
 				<br>
 				<span class=value>{{selections_total}}</span>
 			</p>
-		</TMPL_IF>
+		{{/if_close}}
 </table>
 
-</TMPL_IF>
+{{/if_close}}

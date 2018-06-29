@@ -51,7 +51,7 @@
 		</table>
 		<input type=hidden name=action value='add'>
 	</form>
-</TMPL_IF>
+{{/if_close}}
 
 <SCRIPT language='javascript' type="text/javascript">
 <!--

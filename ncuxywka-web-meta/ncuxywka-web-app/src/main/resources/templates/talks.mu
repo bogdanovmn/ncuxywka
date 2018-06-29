@@ -2,7 +2,7 @@
 
 {{#multi_page}}
 	<TMPL_INCLUDE NAME="inc/pages.tpl">
-</TMPL_IF>
+{{/if_close}}
 
 <TMPL_LOOP last_comments>
 	<table class='{{#lc_major}}major_{{/lc_major}}{{#lc_group_name}}group_{{lc_group_type}}_{{/lc_group_name}}comment talks_comment'>
@@ -10,12 +10,12 @@
 			<td class=who>
 				{{#lc_group_name}}
 					<span class=group>{{lc_group_name}}</span>
-				</TMPL_IF>
+				{{/if_close}}
 				{{#lc_user_id}}
 					<a class=user href='/users/{{lc_user_id}}.html'><span class=user_name>{{lc_user_name}}</span></a>
 				<TMPL_ELSE>
 					<span class=anonim>{{lc_alias}}</span> 
-				</TMPL_IF>
+				{{/if_close}}
 				<span class=array>&rarr;</span> {{#lc_quarantine}}<s>{{/lc_quarantine}}<a href="/creos/{{ESCAPE}}=URL NAME=lc_creo_id>.html">{{lc_creo_alias}}: {{lc_creo_title}}{{#lc_quarantine}}</s>{{/lc_quarantine}}
 				</a>
 			<td class="stamp">
@@ -24,15 +24,15 @@
 			<td class=msg colspan=3>
 				{{#lc_comment_phrase}}
 					<span class=group>{{lc_comment_phrase}}</span><br><br>
-				</TMPL_IF>
+				{{/if_close}}
 				{{ESCAPE}}="NONE" NAME=lc_msg>
 				{{#lc_cuted}}
 					<br><span class=note>--> Ампутировано <--</span>
-				</TMPL_IF>
+				{{/if_close}}
 	</table>
 </TMPL_LOOP>
 
 {{#multi_page}}
 	<hr>
 	<TMPL_INCLUDE NAME="inc/pages.tpl">
-</TMPL_IF>
+{{/if_close}}

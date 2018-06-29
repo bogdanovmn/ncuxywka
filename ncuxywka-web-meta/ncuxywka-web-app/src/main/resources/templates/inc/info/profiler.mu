@@ -14,7 +14,7 @@
 				DB connect time:
 				<b>{{profiler_db_connect_time}}</b>
 			</p>
-		</TMPL_IF>
+		{{/if_close}}
 		<p>
 			Время SQL:
 			<b>{{profiler_sql_time}}</b> (<a href='/doctor/sql_details/'>{{profiler_sql_count}} q</a>)
@@ -31,4 +31,4 @@
 
 </table>
 
-</TMPL_IF>
+{{/if_close}}

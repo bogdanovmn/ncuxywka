@@ -9,9 +9,9 @@
 			<div class=header><span class=letter>NEO</span>ФУТУРИ<span class=letter>Z</span>М:</div>
 		<TMPL_ELSE>
 			<div class=header>АНАЛИ<span class=letter>Z</span>:</div>
-		</TMPL_IF>
-	</TMPL_IF>
-</TMPL_IF>
+		{{/if_close}}
+	{{/if_close}}
+{{/if_close}}
 <p>
 <a href='/users/{{c_user_id}}.html'>
 	<span class=creo_author>{{c_alias}}</span></a>, 
@@ -28,11 +28,11 @@
 			Анализ отправлен в регистратуру для поиска хозяина
 		<TMPL_ELSE>
 			Уборщица шваброй махнула и случайно удалила этот анализ...
-		</TMPL_IF>
+		{{/if_close}}
 	</p>
 <TMPL_ELSE>
 	<div class=creo_body>{{ESCAPE}}="NONE" NAME=c_body></div>
-</TMPL_IF>
+{{/if_close}}
 <br><br>
 <hr>
 
@@ -44,7 +44,7 @@
 <form method=post action='/select/add/{{creo_id}}'>
 	<input type=submit value='Добавить этот анализ в мое избранное!'><br><br>
 </form>
-</TMPL_IF>
+{{/if_close}}
 <table class=creo_vote_result>
 <tr>
 <td>
@@ -61,8 +61,8 @@
 		{{#votes_rank}}
 			<td>
 			<img alt="{{votes_rank_title}}" src="/img/stamps/{{votes_rank}}.jpg">
-		</TMPL_IF>
-	</TMPL_IF>
+		{{/if_close}}
+	{{/if_close}}
 </table>
 {{#can_vote}}
 	<div class=header><span class=letter>О</span>ЦЕНИ:</div>
@@ -84,7 +84,7 @@
 		</table>
 		<input type=hidden name=creo_id value="{{creo_id}}">
 	</form>
-</TMPL_IF>
+{{/if_close}}
 
 {{#ad_votes}}
 	<table class=creo_votes>
@@ -98,7 +98,7 @@
 
 	</TMPL_LOOP>
 	</table>
-</TMPL_IF>
+{{/if_close}}
 <hr>
 
 </TMPL_UNLESS>
@@ -107,7 +107,7 @@
 
 {{#comments}}
 	<div class=header>ДИАГНО<span class=letter>Z</span>Ы:</div>
-</TMPL_IF>
+{{/if_close}}
 
 <TMPL_INCLUDE NAME="inc/comments.tpl">
 

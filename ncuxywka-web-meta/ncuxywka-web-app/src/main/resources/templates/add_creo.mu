@@ -35,7 +35,7 @@
 							<td class=first>
 								{{#can_add}}
 									<input type=submit name='white_copy' value='Сдать анализы'>
-								</TMPL_IF>
+								{{/if_close}}
 							<td class=second>
 								<input type=submit name='black_copy' value='Оставить в черновиках'>
 					</table>

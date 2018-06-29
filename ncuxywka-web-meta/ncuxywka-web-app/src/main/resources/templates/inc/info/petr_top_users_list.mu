@@ -12,10 +12,10 @@
 			<a href="/users/{{pp_user_id}}.html"><b>{{pp_alias}}</b></a>
 		<TMPL_ELSE>
 			{{pp_alias}}
-		</TMPL_IF>
+		{{/if_close}}
 		</p>
 	</TMPL_LOOP>
 	
 </table>
 
-</TMPL_IF>
+{{/if_close}}

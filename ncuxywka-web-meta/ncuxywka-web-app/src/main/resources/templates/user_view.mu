@@ -7,22 +7,22 @@
 	<td id="m_b_actions" onclick="select_block('b_actions');">Активность
 	{{#creo_list}}
 		<td id="m_b_creos" onclick="select_block('b_creos');">Анализы
-	</TMPL_IF>
+	{{/if_close}}
 
 	{{#selected_creo_list}} 
 		<td id="m_b_favorite" onclick="select_block('b_favorite');">Избранное
-	</TMPL_IF>
+	{{/if_close}}
 
 	{{#creo_list}}
 		<td id="m_b_lexicon" onclick="select_block('b_lexicon');">Лексикон
-	</TMPL_IF>
+	{{/if_close}}
 </table>
 
 
 <div class="user_list_open" id="b_info">
 	{{#avatar}}
 		<p><img src='/{{avatar}}_thumb' alt='Фото'><br><br>
-	</TMPL_IF>
+	{{/if_close}}
 
 	<p>
 		<b>Имя:</b>
@@ -36,7 +36,7 @@
 			{{u_city}}
 			<br>
 			<br>
-		</TMPL_IF>
+		{{/if_close}}
 
 		{{#u_hates}}
 			<b>Жалуется:</b>
@@ -44,7 +44,7 @@
 			{{ESCAPE}}="NONE" NAME=u_hates>
 			<br>
 			<br>
-		</TMPL_IF>
+		{{/if_close}}
 
 		{{#u_loves}}
 			<b>Отношение к лекарствам:</b>
@@ -52,7 +52,7 @@
 			{{ESCAPE}}="NONE" NAME=u_loves>
 			<br>
 			<br>
-		</TMPL_IF>
+		{{/if_close}}
 
 		{{#u_about}}
 			<b>О себе:</b>
@@ -60,7 +60,7 @@
 			{{ESCAPE}}="NONE" NAME=u_about>
 			<br>
 			<br>
-		</TMPL_IF>
+		{{/if_close}}
 
 		<b>Дата регистрации:</b>
 		<br>
@@ -86,13 +86,13 @@
 			<a href='/talks/from/{{u_id}}'>Отправленные пациэнтом ({{u_from_comments_count}})</a>
 		<TMPL_ELSE>
 			Отправленные пациэнтом (0)
-		</TMPL_IF>
+		{{/if_close}}
 		<br>
 		{{#u_for_comments_count}}
 			<a href='/talks/for/{{u_id}}'>Полученные пациэнтом ({{u_for_comments_count}})</a>
 		<TMPL_ELSE>
 			Полученные пациэнтом (0)
-		</TMPL_IF>
+		{{/if_close}}
 		<br>
 		<br>
 		<b>Отношение к окружающим пациэнтам:</b>
@@ -105,7 +105,7 @@
 			<TMPL_UNLESS can_delete>
 				[ <a href="/pm/dialog/{{u_id}}/">Отправить этому пациэнту личное сообщение</a> ]
 			</TMPL_UNLESS>
-		</TMPL_IF>
+		{{/if_close}}
 	</p>
 </div>
 
@@ -132,7 +132,7 @@
 	</TMPL_LOOP>
 	</table>
 	</div>
-</TMPL_IF>
+{{/if_close}}
 
 {{#selected_creo_list}}
 	<div class="user_list" id="b_favorite">
@@ -153,7 +153,7 @@
 					<a href="/users/{{scl_user_id}}.html">{{scl_alias}}</a>
 				<TMPL_ELSE>
 					{{scl_alias}}
-				</TMPL_IF>
+				{{/if_close}}
 			<td class=title>
 				{{#scl_quarantine}}<s>{{/scl_quarantine}}
 				<a href="/creos/{{ESCAPE}}=URL NAME=scl_id>.html">{{scl_title}}</a>
@@ -163,11 +163,11 @@
 			<td class=resume>{{scl_votes_count}}
 			{{#scl_can_delete}}
 				<td class=action><a href='/select/del/{{scl_id}}'>[X]</a>
-			</TMPL_IF>
+			{{/if_close}}
 	</TMPL_LOOP>
 	</table>
 	</div>
-</TMPL_IF>
+{{/if_close}}
 
 {{#words_cloud}}
 	<div class="user_list" id="b_lexicon">
@@ -189,7 +189,7 @@
 			</div>
 	</TMPL_LOOP>
 	</div>
-</TMPL_IF>
+{{/if_close}}
 
 {{#ad_votes}}
 	<table class=creo_votes>
@@ -203,7 +203,7 @@
 
 	</TMPL_LOOP>
 	</table>
-</TMPL_IF>
+{{/if_close}}
 
 
 

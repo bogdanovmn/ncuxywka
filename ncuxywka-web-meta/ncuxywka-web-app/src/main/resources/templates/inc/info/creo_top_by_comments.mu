@@ -28,4 +28,4 @@
 	</TMPL_LOOP>
 </table>
 
-</TMPL_IF>
+{{/if_close}}

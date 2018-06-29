@@ -24,4 +24,4 @@
 	</table>
 </TMPL_LOOP>
 
-</TMPL_IF>
+{{/if_close}}

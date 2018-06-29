@@ -1,6 +1,6 @@
 {{#multi_page}}
 	<TMPL_INCLUDE NAME="pages.tpl">
-</TMPL_IF>
+{{/if_close}}
 
 {{#comments}}
 <TMPL_LOOP comments>
@@ -9,12 +9,12 @@
 			<td class=who>
 				{{#cm_group_name}}
 						<span class=group>{{cm_group_name}}</span>
-					</TMPL_IF>
+					{{/if_close}}
 				{{#cm_user_id}}
 					<a class=user href='/users/{{cm_user_id}}.html'><span class=user_name>{{cm_user_name}}</span></a>
 				<TMPL_ELSE>
 					<span class=anonim>{{cm_alias}}</span>
-				</TMPL_IF>
+				{{/if_close}}
 			<td class=stamp>
 				{{#cm_reply}}<a href='#' onclick="reply_to('{{ESCAPE}}=JS NAME=cm_alias> {{ESCAPE}}=JS NAME=cm_inner_id>')">Ответить</a>&nbsp;&nbsp;&nbsp;{{/cm_reply}}<i>{{cm_inner_id}}</i>
 				&nbsp;	
@@ -24,8 +24,8 @@
 				{{#cm_for_creo}}
 					{{#cm_comment_phrase}}
 						<span class=group>{{cm_comment_phrase}}</span><br><br>
-					</TMPL_IF>
-				</TMPL_IF>
+					{{/if_close}}
+				{{/if_close}}
 				{{ESCAPE}}="NONE" NAME=cm_msg>
 	</table>
 </TMPL_LOOP>
@@ -33,9 +33,9 @@
 {{#multi_page}}
 	<hr>
 	<TMPL_INCLUDE NAME="pages.tpl">
-</TMPL_IF>
+{{/if_close}}
 
-</TMPL_IF>
+{{/if_close}}
 
 <SCRIPT language='javascript' type="text/javascript">
 <!--

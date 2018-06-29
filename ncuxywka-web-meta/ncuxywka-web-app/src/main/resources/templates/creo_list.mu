@@ -10,25 +10,25 @@
 		<h1>К<span class=letter>А</span>Р<span class=letter>A</span>НТИН</h1>
 		<p class=note>Здесь находятся все анализы, которые по мнению Главврача, являются ужасными и опасными для пациэнтов Психуюшки.</p>
 		<p>&nbsp;</p>
-	</TMPL_IF>
+	{{/if_close}}
 
 	{{#deleted}}
 		<h1>МУС<span class=letter>О</span>РНЫЙ К<span class=letter>О</span>НТЕЙНЕР</h1>
 		<p class=note>Здесь находятся все забракованные анализы</p>
 		<p>&nbsp;</p>
-	</TMPL_IF>
+	{{/if_close}}
 
 	{{#regular_creo_list}}
 		<h1>АНАЛИ<span class=letter>Z</span>Ы</h1>
 		<p class=note>Здесь находятся все анализы. Если вы хотите сдать свои анализы - жмите <a href='/add_creo/'>сюда</a></p>
 		<p>&nbsp;</p>
-	</TMPL_IF>
+	{{/if_close}}
 	
 	{{#neofuturism}}
 		<h1><span class=letter>NEO</span>ФУТУРИ<span class=letter>Z</span>М</h1>
 		<p class=note>Здесь находятся все неофутуризмы. Подробнее читайте <a href='/neo_faq_room/'>тут</a></p>
 		<p>&nbsp;</p>
-	</TMPL_IF>
+	{{/if_close}}
 </center>
 
 <p class=jump>
@@ -37,7 +37,7 @@
 		<span>&nbsp;{{title}}&nbsp;</span>
 	<TMPL_ELSE>
 		<a href='/{{type}}/{{name}}/'>&nbsp;{{title}}&nbsp;</a>
-	</TMPL_IF> 
+	{{/if_close}} 
 </TMPL_LOOP>
 </p>
 
@@ -54,7 +54,7 @@
 					<a href='/users/{{cl_user_id}}.html'>{{cl_alias}}</a>
 				<TMPL_ELSE>
 					{{cl_alias}}
-				</TMPL_IF>
+				{{/if_close}}
 		</TMPL_UNLESS>
 		<td class=title>
 			<a href="/creos/{{ESCAPE}}=URL NAME=cl_id>.html">{{cl_title}}</a>
@@ -72,4 +72,4 @@
 	<div class=deleted_creos_link>
 		<a href="/deleted/">Мусорный контейнер</a>
 	</div>
-</TMPL_IF>
+{{/if_close}}

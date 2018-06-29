@@ -12,9 +12,9 @@
 					<span class=note>
 						{{o_action_time}}{{#o_path_descr}}, {{o_path_descr}}{{/o_path_descr}}
 					</span>
-				</TMPL_IF>
+				{{/if_close}}
 			</p>
 		</TMPL_LOOP>
 </table>
 
-</TMPL_IF>
+{{/if_close}}

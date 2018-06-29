@@ -4,6 +4,6 @@
 	<pre>
 		{{debug}}
 	</pre>
-</TMPL_IF>
+{{/if_close}}
 </div>
 

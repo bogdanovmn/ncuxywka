@@ -8,7 +8,7 @@
 				<input type=hidden name=alias value='{{alias}}'>
 			<TMPL_ELSE>
 				<input type=text maxlength=50 name=alias value='{{alias}}'>
-			</TMPL_IF>
+			{{/if_close}}
 		<tr>
 			<td><span class=note>Диагноз:</span>
 			<td>
@@ -20,9 +20,9 @@
 	</table>
 	{{#creo_id}}
 		<input type=hidden name=id value='{{creo_id}}'>
-	</TMPL_IF>
+	{{/if_close}}
 	{{#room_name}}
 		<input type=hidden name=room value='{{room_name}}'>
-	</TMPL_IF>
+	{{/if_close}}
 	<input type=hidden id=action name=action value='add'>
 </form>

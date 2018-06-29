@@ -24,7 +24,7 @@
 			<a href='/gb/'>Палата #6</a>
 			{{#lgbc_post_date}}
 				<br><span class=subnote>Последнее: {{lgbc_post_date}} от {{lgbc_alias}}</span>
-			</TMPL_IF>
+			{{/if_close}}
 		</table>
 </table>
 
@@ -44,7 +44,7 @@
 			<a href='/talks/'>Диагнозы</a>
 			{{#lcm_post_date}}
 				<br><span class=subnote>Последнее: {{lcm_post_date}} от {{lcm_alias}}</span>
-			</TMPL_IF>
+			{{/if_close}}
 		</table>
 </table>
 
@@ -65,12 +65,12 @@
 			<span class=subnote>Новые: {{new_messages}}</span>
 		<TMPL_ELSE>
 			<a href='/pm/in/'>Личные сообщения</a>
-		</TMPL_IF>
+		{{/if_close}}
 	<p class=submenu>&#149;&nbsp;<a href="/talks/from/{{user_id}}">Мои диагнозы</a>
 	<p class=submenu>&#149;&nbsp;<a href="/talks/for/{{user_id}}">Диагнозы к моим анализам</a>
 	{{#lcfm_post_date}}
 		<br><span class=subnote>{{lcfm_post_date}} от {{lcfm_alias}}</span>
-	</TMPL_IF>
+	{{/if_close}}
 	<p class=submenu>&#149;&nbsp;<a href="/auth/out">Выйти</a>
 <TMPL_ELSE>
 	<td class=title>Вход 
@@ -89,7 +89,7 @@
 
 	</table>
 	</form>
-</TMPL_IF>
+{{/if_close}}
 </table>
 
 <!-- Spec rooms -->
@@ -102,31 +102,31 @@
 		<a href='/wish_room/'>Книга Желаний</a>
 		{{#srlc_wish_post_date}}
 			<br><span class=subnote>{{srlc_wish_post_date}} от {{srlc_wish_alias}}</span>
-		</TMPL_IF>
+		{{/if_close}}
 	</p>
 	<p class=spec_submenu>&#149;&nbsp;
 		<a href='/petr_room/'>Похождения Поросенка Петра</a>
 		{{#srlc_petr_post_date}}
 			<br><span class=subnote>{{srlc_petr_post_date}} от {{srlc_petr_alias}}</span>
-		</TMPL_IF>
+		{{/if_close}}
 	</p>
 	<p class=spec_submenu>&#149;&nbsp;
 		<a href='/frenizm_room/'>Олигофренизмы</a>
 		{{#srlc_frenizm_post_date}}
 			<br><span class=subnote>{{srlc_frenizm_post_date}} от {{srlc_frenizm_alias}}</span>
-		</TMPL_IF>
+		{{/if_close}}
 	</p>
 	<p class=spec_submenu>&#149;&nbsp;
 		<a href='/mainshit_room/'>Главсрач</a>
 		{{#srlc_mainshit_post_date}}
 			<br><span class=subnote>{{srlc_mainshit_post_date}} от {{srlc_mainshit_alias}}</span>
-		</TMPL_IF>
+		{{/if_close}}
 	</p>
 	<p class=spec_submenu>&#149;&nbsp;
 		<a href='/proc_room/'>Процедурная</a>
 		{{#srlc_proc_post_date}}
 			<br><span class=subnote>{{srlc_proc_post_date}} от {{srlc_proc_alias}}</span>
-		</TMPL_IF>
+		{{/if_close}}
 	</p>
 	<p class=spec_submenu>&#149;&nbsp;
 		<a href='/neofuturism/'>Неофутуризм</a>
@@ -135,7 +135,7 @@
 		<p class=spec_submenu>&#149;&nbsp;
 			<a href='/maindoctor/'>Кабинет Главврача</a>
 		</p>
-	</TMPL_IF>
+	{{/if_close}}
 </table>
 
 {{#counter}}
@@ -154,4 +154,4 @@
 </table>
 
 
-</TMPL_IF>
+{{/if_close}}

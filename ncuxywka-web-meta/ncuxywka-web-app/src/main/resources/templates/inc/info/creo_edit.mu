@@ -14,8 +14,8 @@
 				<p class=submenu>&#149;&nbsp;
 					<a href='/creo_edit/to_neofuturism/{{creo_id}}/'>Это неофутуризм!</a>
 				</p>
-			</TMPL_IF>
-		</TMPL_IF>
+			{{/if_close}}
+		{{/if_close}}
 
 		{{#ms_quarantine}}
 			{{#quarantine}}
@@ -26,15 +26,15 @@
 				<p class=submenu>&#149;&nbsp;
 					<a href='/creo_edit/to_quarantine/{{creo_id}}/'>В карантин!</a>
 				</p>
-			</TMPL_IF>
-		</TMPL_IF>
+			{{/if_close}}
+		{{/if_close}}
 		
 		<TMPL_UNLESS deleted>
 			{{#ms_creo_edit}}
 				<p class=submenu>&#149;&nbsp;
 					<a href='/creo_edit/full/{{creo_id}}/'>Исправить анализ</a>
 				</p>
-			</TMPL_IF>
+			{{/if_close}}
 		</TMPL_UNLESS>
 
 		<TMPL_UNLESS deleted>
@@ -42,7 +42,7 @@
 				<p class=submenu>&#149;&nbsp;
 					<a href='/creo_edit/delete/{{creo_id}}/'>Удалить!</a>
 				</p>
-			</TMPL_IF>
+			{{/if_close}}
 		</TMPL_UNLESS>
 
 		{{#ms_plagiarism}}
@@ -54,8 +54,8 @@
 				<p class=submenu>&#149;&nbsp;
 					<a href='/creo_edit/to_plagiarism/{{creo_id}}/'>Плагиат!!</a>
 				</p>
-			</TMPL_IF>
-		</TMPL_IF>
+			{{/if_close}}
+		{{/if_close}}
 </table>
 
-</TMPL_IF>
+{{/if_close}}

@@ -16,7 +16,7 @@
 		<input type=hidden id=action name=action value='add'>
 	</form>
 	</center>
-</TMPL_IF>
+{{/if_close}}
 
 <center>
 	<h1>АР<span class=letter>Х</span>ИВ <span class=letter>ПСИ</span> - НОВОС<span class=letter>Т</span>ЕЙ</h1>
@@ -31,7 +31,7 @@
 	<td class=menu>
 		{{#god}}
 			<a href="/news/hide/{{n_id}}">Удалить</a>
-		</TMPL_IF>
+		{{/if_close}}
 	<tr>
 	<td class=text colspan=2>
 		{{n_msg}}
