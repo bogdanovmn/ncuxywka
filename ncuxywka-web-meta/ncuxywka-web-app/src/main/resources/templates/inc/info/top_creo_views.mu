@@ -5,7 +5,7 @@
 	<td class=title>Топ просмотров
 	<tr>
 	<td>
-	<TMPL_LOOP top_creo_views>
+	{{#top_creo_views}}
 		<p class=user_creo_list>
 		<span class=note>[{{cvt_cnt}}] </span>
 		<a href="/creos/{{cvt_creo_id}}.html">

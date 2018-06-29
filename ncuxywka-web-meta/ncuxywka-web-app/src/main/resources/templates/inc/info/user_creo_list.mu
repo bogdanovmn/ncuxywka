@@ -10,7 +10,7 @@
 	{{/if_close}}
 	<tr>
 	<td>
-	<TMPL_LOOP user_creo_list>
+	{{#user_creo_list}}
 		<p class=user_creo_list>
 		{{#cl_selected}}
 			{{#cl_quarantine}}<s>{{/cl_quarantine}}

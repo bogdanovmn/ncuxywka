@@ -32,7 +32,7 @@
 </center>
 
 <p class=jump>
-<TMPL_LOOP jump_links>
+{{#jump_links}}
 	{{#selected}}
 		<span>&nbsp;{{title}}&nbsp;</span>
 	<TMPL_ELSE>
@@ -44,7 +44,7 @@
 <table class=creo_list>
 	<tr>
 	<th class=date>Дата{{#alex_jile}}<th class=user>Пациэнт{{/alex_jile}}<th class=title>Название<th class=comments>Диаг<th class=resume>Голосов
-<TMPL_LOOP creo_list>
+{{#creo_list}}
 	<tr>
 		<td class=date>
 			{{cl_post_date}}

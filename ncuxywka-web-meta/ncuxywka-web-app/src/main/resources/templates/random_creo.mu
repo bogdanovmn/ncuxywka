@@ -9,7 +9,7 @@
 		Пациэнт
 		<br>
 		<select name=user_id_1>
-			<TMPL_LOOP users_1>
+			{{#users_1}}
 				<option value="{{user_id}}" {{#selected}}selected{{/selected}}>
 					{{user_name}}
 				</option>
@@ -19,7 +19,7 @@
 		Степень шизофрении
 		<br>
 		<select name=depth>
-			<TMPL_LOOP depth>
+			{{#depth}}
 				<option value="{{value}}" {{#selected}}selected{{/selected}}>
 					{{name}}
 				</option>

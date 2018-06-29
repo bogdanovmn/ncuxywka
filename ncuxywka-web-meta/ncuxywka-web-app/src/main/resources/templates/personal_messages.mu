@@ -11,7 +11,7 @@
 			<a href='/pm/in/'>Полученные</a> :: 
 			Отправленные
 		{{/if_close}}
-	<TMPL_LOOP messages>
+	{{#messages}}
 		{{#lm_new}}
 			<tr><td class=new_message>Новое!
 		{{/if_close}}
@@ -58,7 +58,7 @@
 		<TMPL_INCLUDE NAME="inc/pages.tpl">
 	{{/if_close}}
 	<table class=personal_messages>
-	<TMPL_LOOP messages>
+	{{#messages}}
 		<tr>
 		<td class=info>
 			<a class=user href='/users/{{dm_user_id}}.html'><span class=user_name>{{dm_user_name}}</span></a>

@@ -3,7 +3,7 @@
 {{/if_close}}
 
 {{#comments}}
-<TMPL_LOOP comments>
+{{#comments}}
 	<table class={{#cm_major}}major_{{/cm_major}}{{#cm_group_name}}group_{{cm_group_type}}_{{/cm_group_name}}comment>
 		<tr>
 			<td class=who>

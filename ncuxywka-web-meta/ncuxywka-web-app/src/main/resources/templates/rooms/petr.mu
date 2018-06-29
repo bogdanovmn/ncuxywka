@@ -16,7 +16,7 @@
 
 <h2>Последние страницы истории:</h2>
 
-<TMPL_LOOP comments>
+{{#comments}}
 	<table class=infinity>
 	<tr>
 		<td class=msg>

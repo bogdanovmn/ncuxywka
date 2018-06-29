@@ -115,7 +115,7 @@
 	<table class=user_creo_list>
 		<tr>
 		<th class=date>Дата<th class=title>Название<th class=comments>Диаг<th class=resume>Голоса
-	<TMPL_LOOP creo_list>
+	{{#creo_list}}
 		<tr>
 			<td class=date>
 				{{cl_post_date}}
@@ -144,7 +144,7 @@
 			<th class=comments>Диаг
 			<th class=resume>Голоса
 			{{#can_delete}}<th class=action>...{{/can_delete}}
-	<TMPL_LOOP selected_creo_list>
+	{{#selected_creo_list}}
 		<tr>
 			<td class=date>
 				{{scl_post_date}}
@@ -171,7 +171,7 @@
 
 {{#words_cloud}}
 	<div class="user_list" id="b_lexicon">
-	<TMPL_LOOP words_cloud>
+	{{#words_cloud}}
 			<div class=words_cloud_title>
 				<span class=title>{{wc_title}}</span>
 				<span class=note>
@@ -180,7 +180,7 @@
 				</span>
 			</div>
 			<div class=words_cloud_{{wc_size}}>
-			<TMPL_LOOP wc_data>
+			{{#wc_data}}
 				<span style='font-size: {{font_size}}px; {{#font_size_sub_minimum}}color: gray;{{/font_size_sub_minimum}}'>
 					{{word}}
 				</span>
@@ -193,7 +193,7 @@
 
 {{#ad_votes}}
 	<table class=creo_votes>
-	<TMPL_LOOP ad_votes>
+	{{#ad_votes}}
 			<tr>
 			<td class=creo_title><a href="/creosa/{{uv_creo_id}}.html">{{uv_user_name}} - {{uv_creo_title}}</a>
 		<td class=gray>{{uv_ip}}

@@ -4,7 +4,7 @@
 	<TMPL_INCLUDE NAME="inc/pages.tpl">
 {{/if_close}}
 
-<TMPL_LOOP last_comments>
+{{#last_comments}}
 	<table class='{{#lc_major}}major_{{/lc_major}}{{#lc_group_name}}group_{{lc_group_type}}_{{/lc_group_name}}comment talks_comment'>
 		<tr>
 			<td class=who>

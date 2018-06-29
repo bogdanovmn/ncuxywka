@@ -14,13 +14,13 @@
 		<a href='{{uri}}page{{left_jump}}.html'>...</a>
 	{{/if_close}}
 
-	<TMPL_LOOP left>
+	{{#left}}
 		<a href='{{p_uri}}page{{page}}.html'>{{page}}</a>
 	{{/loop_close}}
 
 	<b>{{current_page}}</b>
 
-	<TMPL_LOOP right>
+	{{#right}}
 		<a href='{{p_uri}}page{{page}}.html'>{{page}}</a>
 	{{/loop_close}}
 
@@ -31,13 +31,13 @@
 
 <TMPL_ELSE>
 
-	<TMPL_LOOP left>
+	{{#left}}
 		<a href='{{p_uri}}page{{page}}.html'>{{page}}</a>
 	{{/loop_close}}
 
 	<b>{{current_page}}</b>
 
-	<TMPL_LOOP right>
+	{{#right}}
 		<a href='{{p_uri}}page{{page}}.html'>{{page}}</a>
 	{{/loop_close}}
 

@@ -14,7 +14,7 @@
 	<td>
 	{{#rank_1}}
 		<h2 class=user_rank>Легенды Психуюшки</h2>
-		<TMPL_LOOP rank_1>
+		{{#rank_1}}
 			<p><a href='/users/{{ru_id}}.html'>{{ru_name}}</a></p>
 		{{/loop_close}}
 	{{/if_close}}
@@ -25,21 +25,21 @@
 	<td>
 		{{#rank_2}}
 			<h2 class=user_rank>Шизофреники</h2>
-			<TMPL_LOOP rank_2>
+			{{#rank_2}}
 				<p><a href='/users/{{ru_id}}.html'>{{ru_name}}</a></p>
 			{{/loop_close}}
 		{{/if_close}}
 		<td>
 		{{#rank_3}}
 			<h2 class=user_rank>Пациэнты Фрейда</h2>
-			<TMPL_LOOP rank_3>
+			{{#rank_3}}
 				<p><a href='/users/{{ru_id}}.html'>{{ru_name}}</a></p>
 			{{/loop_close}}
 		{{/if_close}}
 		<td>
 		{{#rank_4}}
 			<h2 class=user_rank>Параноики</h2>
-			<TMPL_LOOP rank_4>
+			{{#rank_4}}
 				<p><a href='/users/{{ru_id}}.html'>{{ru_name}}</a></p>
 			{{/loop_close}}
 		{{/if_close}}
@@ -50,7 +50,7 @@
 	<td>
 	{{#rank_5}}
 		<h2 class=user_rank>Тяжелый случай (нуждаются в срочной лоботомии)</h2>
-		<TMPL_LOOP rank_5>
+		{{#rank_5}}
 			{{#ru_plagiarist}}<s>{{/ru_plagiarist}}
 			<p><a href='/users/{{ru_id}}.html'>{{ru_name}}</a></p>
 			{{#ru_plagiarist}}</s>{{/ru_plagiarist}}
@@ -63,14 +63,14 @@
 	<td>
 	{{#rank_0}}
 		<h2 class=user_rank>Диагноз пока не ясен</h2>
-		<TMPL_LOOP rank_0>
+		{{#rank_0}}
 			<p><a href='/users/{{ru_id}}.html'>{{ru_name}}</a></p>
 		{{/loop_close}}
 	{{/if_close}}
 	<td>
 	{{#rank_100}}
 		<h2 class=user_rank>Сидят в очереди на сдачу анализов</h2>
-		<TMPL_LOOP rank_100>
+		{{#rank_100}}
 			<p><a href='/users/{{ru_id}}.html'>{{ru_name}}</a></p>
 		{{/loop_close}}
 	{{/if_close}}
@@ -82,7 +82,7 @@
 
 <div class=user_list id="date">
 	<table class=user_list_by_reg_date>
-		<TMPL_LOOP users_by_reg_date>
+		{{#users_by_reg_date}}
 			<tr {{#u_group}}class=group{{/u_group}}>
 				<td class=date>{{#u_show_date}}{{u_reg_date}}{{/u_show_date}}
 				<td class=name>
@@ -96,17 +96,17 @@
 <!-- by letter -->
 
 <div class=user_list id="letter">
-	<TMPL_LOOP user_list_by_letter_groups>
+	{{#user_list_by_letter_groups}}
 		<h2>{{title}}</h2>
 		<table class=user_list_by_letter>
 			<tr>
-				<TMPL_LOOP data>
+				{{#data}}
 					<td>
-						<TMPL_LOOP ul_letters>
+						{{#ul_letters}}
 							<br>
 							<span class=user_letter>{{ull_letter}}</span>
 							<br><br>
-							<TMPL_LOOP ull_users>
+							{{#ull_users}}
 								{{#u_plagiarist}}<s>{{/u_plagiarist}}
 								<a href='/users/{{u_id}}.html'>{{u_name}}</a>
 								{{#u_plagiarist}}</s>{{/u_plagiarist}}

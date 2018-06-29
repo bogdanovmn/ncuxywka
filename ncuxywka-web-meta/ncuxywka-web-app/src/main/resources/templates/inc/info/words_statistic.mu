@@ -1,6 +1,6 @@
 {{#wc_data_debug}}
 
-<TMPL_LOOP wc_data_debug>
+{{#wc_data_debug}}
 	<table class=info_gray>
 		<tr>
 		<td class=title>Словарь "{{wc_title}}"
@@ -14,7 +14,7 @@
 		<br>
 		<br>
 		</p>
-		<TMPL_LOOP wc_data>
+		{{#wc_data}}
 			<p class=user_creo_list>
 			<span class=note>[{{freq}}, {{percent}}%] </span>
 			'{{word}}'

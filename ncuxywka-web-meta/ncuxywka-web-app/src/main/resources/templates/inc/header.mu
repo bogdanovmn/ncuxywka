@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="/css/{{skin_css_main}}" type="text/css">
 	<link rel="icon" type="image/png" href="/img/favicon.ico">
 
-	<TMPL_LOOP skin_js_include>
+	{{#skin_js_include}}
 		<script type="text/javascript" src="/js/{{js_file}}">
 	{{/loop_close}}
 

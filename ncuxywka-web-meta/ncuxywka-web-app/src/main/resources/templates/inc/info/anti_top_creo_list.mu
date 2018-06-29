@@ -5,7 +5,7 @@
 	<td class=title>Параноидальный бред
 	<tr>
 	<td>
-	<TMPL_LOOP anti_top_creo_list>
+	{{#anti_top_creo_list}}
 		<p class=user_creo_list>
 		<span class=note>{{__counter__}}. </span>
 		<a href="/creos/{{tcl_id}}.html" title="Голосов: {{tcl_cnt}}">

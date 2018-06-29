@@ -5,7 +5,7 @@
 	<td class=title>Мало диагнозов
 	<tr>
 	<td>
-	<TMPL_LOOP most_commented_creo_list_revert>
+	{{#most_commented_creo_list_revert}}
 		<p class=user_creo_list>
 		<span class=note>[{{mccl_cnt}}] </span>
 		<a href="/creos/{{mccl_id}}.html"><b>{{mccl_title}}</b></a>
@@ -19,7 +19,7 @@
 	<td class=title>Самое обсуждаемое
 	<tr>
 	<td>
-	<TMPL_LOOP most_commented_creo_list>
+	{{#most_commented_creo_list}}
 		<p class=user_creo_list>
 		<span class=note>[{{mccl_cnt}}] </span>
 		<a href="/creos/{{mccl_id}}.html"><b>{{mccl_title}}</b></a>

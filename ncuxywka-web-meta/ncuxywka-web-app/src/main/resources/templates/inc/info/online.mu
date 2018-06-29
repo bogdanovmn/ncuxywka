@@ -4,7 +4,7 @@
 	<td class=title>На проводе
 	<tr>
 	<td>
-		<TMPL_LOOP online>
+		{{#online}}
 			<p class=user_creo_list>
 				{{#o_user_id}}
 					<a class=user_online href='/users/{{o_user_id}}.html'>{{o_user_name}}</a>

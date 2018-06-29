@@ -24,7 +24,7 @@
 	<td class=title>Новички
 	<tr>
 	<td>
-		<TMPL_LOOP new_users>
+		{{#new_users}}
 			<p>
 			<a href="/users/{{nu_id}}.html">{{nu_name}}</a>
 			<br>
@@ -43,7 +43,7 @@
 	<td class=title>Пси-Новости
 <tr>
 	<td class=info>
-		<TMPL_LOOP news>
+		{{#news}}
 			<p>
 			<b>{{n_post_date}}</b>
 			от <a class=author href="/users/{{n_user_id}}.html">{{n_user_name}}</a>
@@ -57,7 +57,7 @@
 </table>
 
 <div class=last_creos_title>Последние <a href='/creos/'>анализы</a>:</div>
-<TMPL_LOOP last_creos>
+{{#last_creos}}
 	<table class=creo_preview>
 		<tr class=info>
 			<td>
@@ -88,7 +88,7 @@
 		{{#lc_more}}
 			<tr class=more_creos>
 				<td colspan=2>
-					<TMPL_LOOP lc_more>
+					{{#lc_more}}
 						<i>{{lc_post_date}}</i>
 						<a href="/creos/{{ESCAPE}}=URL NAME=lc_id>.html">
 							{{lc_title}}

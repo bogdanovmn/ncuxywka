@@ -16,7 +16,7 @@
 		<th class=user>Пациэнт
 		<th class=title>Название
 	
-	<TMPL_LOOP creo_list>
+	{{#creo_list}}
 		<tr>
 			<td class=date>
 				{{cl_post_date}}

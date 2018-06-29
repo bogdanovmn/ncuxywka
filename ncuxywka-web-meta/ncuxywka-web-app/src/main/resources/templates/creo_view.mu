@@ -88,7 +88,7 @@
 
 {{#ad_votes}}
 	<table class=creo_votes>
-	<TMPL_LOOP ad_votes>
+	{{#ad_votes}}
 		<tr>
 		<td><a href="/usersa/{{cv_user_id}}.html">{{cv_user_name}}</a>
 		<td>{{cv_ip}}

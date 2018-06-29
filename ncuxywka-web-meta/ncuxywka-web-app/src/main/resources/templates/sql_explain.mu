@@ -3,7 +3,7 @@
 <td class=content>
 	<div class=error>
 	<center><p class=error_title>{{msg}}</p></center>
-	<TMPL_LOOP explains>
+	{{#explains}}
 		<p>Caller: <b>{{caller}}</b>
 		<br>Предполагается обработать ~<b>{{nice_total_rows}}</b> строк
 		</p>
@@ -19,7 +19,7 @@
 			<td>ref
 			<td  class=rows>rows
 			<td>Extra
-		<TMPL_LOOP details>
+		{{#details}}
 			<tr>
 			<td>{{id}}
 			<td>{{select_type}}

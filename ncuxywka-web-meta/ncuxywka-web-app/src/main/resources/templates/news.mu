@@ -23,7 +23,7 @@
 </center>
 
 <table class=news_archive>
-<TMPL_LOOP news>
+{{#news}}
 	<tr>
 	<td class=info>
 		<b>{{n_post_date}}</b> 
