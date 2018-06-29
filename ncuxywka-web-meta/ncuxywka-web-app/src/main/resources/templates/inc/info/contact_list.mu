@@ -7,8 +7,8 @@
 	<td>
 	<TMPL_LOOP contact_list>
 		<p class=user_creo_list>
-		<a href="/pm/dialog/<TMPL_VAR cl_user_id>/"><b><TMPL_VAR cl_user_name></b></a>
-		<br><span class=subnote>Сообщений: <TMPL_VAR cl_cnt></span>
+		<a href="/pm/dialog/{{cl_user_id}}>/"><b>{{cl_user_name}}></b></a>
+		<br><span class=subnote>Сообщений: {{cl_cnt}}></span>
 		</p>
 	</TMPL_LOOP>
 	

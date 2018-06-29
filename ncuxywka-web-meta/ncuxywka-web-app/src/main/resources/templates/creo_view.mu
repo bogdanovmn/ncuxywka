@@ -13,13 +13,13 @@
 	</TMPL_IF>
 </TMPL_IF>
 <p>
-<a href='/users/<TMPL_VAR c_user_id>.html'>
-	<span class=creo_author><TMPL_VAR c_alias></span></a>, 
-	<span class=creo_date><TMPL_VAR c_post_date></span>
-	&nbsp;&nbsp;<a href='/print/<TMPL_VAR c_id>.html'><img alt='Для печати' src='/img/printer.gif'></a>
+<a href='/users/{{c_user_id}}>.html'>
+	<span class=creo_author>{{c_alias}}></span></a>, 
+	<span class=creo_date>{{c_post_date}}></span>
+	&nbsp;&nbsp;<a href='/print/{{c_id}}>.html'><img alt='Для печати' src='/img/printer.gif'></a>
 </p>
 
-<h1 class=creo_title><TMPL_VAR c_title></h1>
+<h1 class=creo_title>{{c_title}}></h1>
 </center>
 
 <TMPL_IF deleted>
@@ -31,7 +31,7 @@
 		</TMPL_IF>
 	</p>
 <TMPL_ELSE>
-	<div class=creo_body><TMPL_VAR ESCAPE="NONE" NAME=c_body></div>
+	<div class=creo_body>{{ESCAPE}}="NONE" NAME=c_body></div>
 </TMPL_IF>
 <br><br>
 <hr>
@@ -41,14 +41,14 @@
 <TMPL_UNLESS deleted>
 
 <TMPL_IF can_select>
-<form method=post action='/select/add/<TMPL_VAR creo_id>'>
+<form method=post action='/select/add/{{creo_id}}>'>
 	<input type=submit value='Добавить этот анализ в мое избранное!'><br><br>
 </form>
 </TMPL_IF>
 <table class=creo_vote_result>
 <tr>
 <td>
-	<p class=note>Уже проголосовало <TMPL_VAR votes> пациэнтов</p>
+	<p class=note>Уже проголосовало {{votes}}> пациэнтов</p>
 	
 	<TMPL_UNLESS has_vote_power>
 		<p class=note>У вас еще слишком мало опыта чтобы голосовать!</p>
@@ -60,7 +60,7 @@
 	
 		<TMPL_IF votes_rank>
 			<td>
-			<img alt="<TMPL_VAR votes_rank_title>" src="/img/stamps/<TMPL_VAR votes_rank>.jpg">
+			<img alt="{{votes_rank_title}}>" src="/img/stamps/{{votes_rank}}>.jpg">
 		</TMPL_IF>
 	</TMPL_IF>
 </table>
@@ -82,7 +82,7 @@
 		<tr>
 		<td colspan=2><br><input type=submit value='Оценить'>
 		</table>
-		<input type=hidden name=creo_id value="<TMPL_VAR creo_id>">
+		<input type=hidden name=creo_id value="{{creo_id}}>">
 	</form>
 </TMPL_IF>
 
@@ -90,11 +90,11 @@
 	<table class=creo_votes>
 	<TMPL_LOOP ad_votes>
 		<tr>
-		<td><a href="/usersa/<TMPL_VAR cv_user_id>.html"><TMPL_VAR cv_user_name></a>
-		<td><TMPL_VAR cv_ip>
-		<td><TMPL_VAR cv_vote>
-		<td><TMPL_VAR cv_date>
-		<td><TMPL_VAR cv_delta>
+		<td><a href="/usersa/{{cv_user_id}}>.html">{{cv_user_name}}></a>
+		<td>{{cv_ip}}>
+		<td>{{cv_vote}}>
+		<td>{{cv_date}}>
+		<td>{{cv_delta}}>
 
 	</TMPL_LOOP>
 	</table>

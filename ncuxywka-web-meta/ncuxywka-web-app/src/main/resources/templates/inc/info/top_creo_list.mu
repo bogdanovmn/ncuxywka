@@ -7,14 +7,14 @@
 	<td>
 	<TMPL_LOOP top_creo_list>
 		<p class=user_creo_list>
-		<span class=note><TMPL_VAR __counter__>. </span>
-		<a href="/creos/<TMPL_VAR tcl_id>.html" title="Голосов: <TMPL_VAR tcl_cnt>">
-			<b><TMPL_VAR tcl_title></b></a>
+		<span class=note>{{__counter__}}>. </span>
+		<a href="/creos/{{tcl_id}}>.html" title="Голосов: {{tcl_cnt}}>">
+			<b>{{tcl_title}}></b></a>
 		<TMPL_UNLESS tcl_self_vote>
 			<span class=subnote>?</span>
 		</TMPL_UNLESS>
 		<br>
-		<span class=subnote><TMPL_VAR tcl_alias></span>
+		<span class=subnote>{{tcl_alias}}></span>
 		</p>
 	</TMPL_LOOP>
 	

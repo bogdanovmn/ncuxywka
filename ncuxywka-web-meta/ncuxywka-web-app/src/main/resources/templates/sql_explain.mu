@@ -2,10 +2,10 @@
 
 <td class=content>
 	<div class=error>
-	<center><p class=error_title><TMPL_VAR msg></p></center>
+	<center><p class=error_title>{{msg}}></p></center>
 	<TMPL_LOOP explains>
-		<p>Caller: <b><TMPL_VAR caller></b>
-		<br>Предполагается обработать ~<b><TMPL_VAR nice_total_rows></b> строк
+		<p>Caller: <b>{{caller}}></b>
+		<br>Предполагается обработать ~<b>{{nice_total_rows}}></b> строк
 		</p>
 		<table class=sql_explain>
 			<tr>
@@ -21,16 +21,16 @@
 			<td>Extra
 		<TMPL_LOOP details>
 			<tr>
-			<td><TMPL_VAR id>
-			<td><TMPL_VAR select_type>
-			<td><TMPL_VAR table>
-			<td><TMPL_VAR type>
-			<td><TMPL_VAR possible_keys>
-			<td><TMPL_VAR key>
-			<td><TMPL_VAR key_len>
-			<td><TMPL_VAR ref>
-			<td><TMPL_VAR rows>
-			<td><TMPL_VAR Extra>
+			<td>{{id}}>
+			<td>{{select_type}}>
+			<td>{{table}}>
+			<td>{{type}}>
+			<td>{{possible_keys}}>
+			<td>{{key}}>
+			<td>{{key_len}}>
+			<td>{{ref}}>
+			<td>{{rows}}>
+			<td>{{Extra}}>
 		</TMPL_LOOP>
 		</table>
 		<br>

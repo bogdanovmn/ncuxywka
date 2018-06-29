@@ -3,7 +3,7 @@
 	<div class=strict>Чтобы сдать свои анализы вам необходимо <a href='/register/'>зерегистрироваться</a> <br>и войти на Психуюшку под своим именем.</div>
 <TMPL_ELSE>
 	<TMPL_UNLESS can_add>
-		<div class=strict>Ваши предыдущие анализы показали нам что Вы достаточно здоровы!<br>Мы советуем Вам сдать следующий анализ<br>не ранее чем через <TMPL_VAR time_to_post></div> 
+		<div class=strict>Ваши предыдущие анализы показали нам что Вы достаточно здоровы!<br>Мы советуем Вам сдать следующий анализ<br>не ранее чем через {{time_to_post}}></div> 
 		<p>&nbsp;
 	</TMPL_UNLESS>
 	<div class=strict>Перед тем как сдать анализы обязательно прочьтите <a href='/faq_room/'>FAQ</a>!</div>
@@ -13,8 +13,8 @@
 			<tr>	
 				<td><span class=note>Пациэнт:</span>
 				<td>
-					<span class=user_name><TMPL_VAR alias></span>
-					<input type=hidden maxlength=50 name=alias value="<TMPL_VAR alias>">
+					<span class=user_name>{{alias}}></span>
+					<input type=hidden maxlength=50 name=alias value="{{alias}}>">
 			<tr>
 				<td><span class=note>Название:</span>
 				<td>

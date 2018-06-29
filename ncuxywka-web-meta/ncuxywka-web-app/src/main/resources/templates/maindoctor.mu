@@ -30,10 +30,10 @@ var plot_conf_total = {
 $.plot(
 	$("#plot_total"), 
 	[
-		{ data: <TMPL_VAR NAME="chart_new_users" ESCAPE="JS">, yaxis: 1, label: "Пациэнты" },
-		{ data: <TMPL_VAR NAME="chart_creos" ESCAPE="JS">, yaxis: 1, label: "Анализы" },
-		{ data: <TMPL_VAR NAME="chart_comments" ESCAPE="JS">, yaxis: 2, label: "Диагнозы" },
-		{ data: <TMPL_VAR NAME="chart_votes" ESCAPE="JS">, yaxis: 2, label: "Голоса" },
+		{ data: {{NAME}}="chart_new_users" ESCAPE="JS">, yaxis: 1, label: "Пациэнты" },
+		{ data: {{NAME}}="chart_creos" ESCAPE="JS">, yaxis: 1, label: "Анализы" },
+		{ data: {{NAME}}="chart_comments" ESCAPE="JS">, yaxis: 2, label: "Диагнозы" },
+		{ data: {{NAME}}="chart_votes" ESCAPE="JS">, yaxis: 2, label: "Голоса" },
 	], 
 	plot_conf_total
 );

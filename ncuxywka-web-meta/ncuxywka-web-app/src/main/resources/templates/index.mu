@@ -26,16 +26,16 @@
 	<td>
 		<TMPL_LOOP new_users>
 			<p>
-			<a href="/users/<TMPL_VAR nu_id>.html"><TMPL_VAR nu_name></a>
+			<a href="/users/{{nu_id}}>.html">{{nu_name}}></a>
 			<br>
-			<span class=note><TMPL_VAR nu_reg_date></span>
+			<span class=note>{{nu_reg_date}}></span>
 			</p>
 		</TMPL_LOOP>
 	</table>
 	
 	</center>
 <td>
-	<center><img width=465px alt='ПСИХУЮШКА.COM' src='/img/<TMPL_VAR skin_pic_main>'></center>
+	<center><img width=465px alt='ПСИХУЮШКА.COM' src='/img/{{skin_pic_main}}>'></center>
 </table>		
 
 <table class=news>
@@ -45,10 +45,10 @@
 	<td class=info>
 		<TMPL_LOOP news>
 			<p>
-			<b><TMPL_VAR n_post_date></b>
-			от <a class=author href="/users/<TMPL_VAR n_user_id>.html"><TMPL_VAR n_user_name></a>
+			<b>{{n_post_date}}></b>
+			от <a class=author href="/users/{{n_user_id}}>.html">{{n_user_name}}></a>
 			<br>
-			<TMPL_VAR n_msg>
+			{{n_msg}}>
 			</p>
 		</TMPL_LOOP>
 		<div class=more>
@@ -61,26 +61,26 @@
 	<table class=creo_preview>
 		<tr class=info>
 			<td>
-				<a href="/creos/<TMPL_VAR ESCAPE=URL NAME=lc_id>.html">
-					<b><TMPL_VAR lc_alias></b> : <TMPL_VAR lc_title>
+				<a href="/creos/{{ESCAPE}}=URL NAME=lc_id>.html">
+					<b>{{lc_alias}}></b> : {{lc_title}}>
 				</a>
 			<td class=date>
-				<b><TMPL_VAR lc_post_date></b>
+				<b>{{lc_post_date}}></b>
 		<tr class=info>
 			<td colspan=2 class=diag>
-				Диагнозов: <TMPL_VAR lc_comments_count>
+				Диагнозов: {{lc_comments_count}}>
 		<tr class=text>
 			<td colspan=2>
 				<table class=creo_preview_text>
 				<tr>
 					<td class=avatar>
 						<TMPL_IF lc_avatar>
-							<center><img alt='<TMPL_VAR lc_alias>' src='/<TMPL_VAR lc_avatar>_thumb'></center>
+							<center><img alt='{{lc_alias}}>' src='/{{lc_avatar}}>_thumb'></center>
 						<TMPL_ELSE>
 							&nbsp;
 						</TMPL_IF>
 					<td class=text>
-						<TMPL_VAR ESCAPE="NONE" NAME=lc_body>
+						{{ESCAPE}}="NONE" NAME=lc_body>
 						<TMPL_IF lc_cuted>
 							<br><span class=note>--> Ампутировано <--</span>
 						</TMPL_IF>
@@ -89,11 +89,11 @@
 			<tr class=more_creos>
 				<td colspan=2>
 					<TMPL_LOOP lc_more>
-						<i><TMPL_VAR lc_post_date></i>
-						<a href="/creos/<TMPL_VAR ESCAPE=URL NAME=lc_id>.html">
-							<TMPL_VAR lc_title>
+						<i>{{lc_post_date}}></i>
+						<a href="/creos/{{ESCAPE}}=URL NAME=lc_id>.html">
+							{{lc_title}}>
 						</a>
-						<i>&nbsp;(<TMPL_VAR lc_comments_count> диаг.)</i><TMPL_UNLESS __last__>,&nbsp;</TMPL_UNLESS>
+						<i>&nbsp;({{lc_comments_count}}> диаг.)</i><TMPL_UNLESS __last__>,&nbsp;</TMPL_UNLESS>
 						<br>
 					</TMPL_LOOP>
 		</TMPL_IF>

@@ -7,9 +7,9 @@
 	<td>
 	<TMPL_LOOP most_commented_creo_list_revert>
 		<p class=user_creo_list>
-		<span class=note>[<TMPL_VAR mccl_cnt>] </span>
-		<a href="/creos/<TMPL_VAR mccl_id>.html"><b><TMPL_VAR mccl_title></b></a>
-		<br><span class=subnote><TMPL_VAR mccl_alias></span>
+		<span class=note>[{{mccl_cnt}}>] </span>
+		<a href="/creos/{{mccl_id}}>.html"><b>{{mccl_title}}></b></a>
+		<br><span class=subnote>{{mccl_alias}}></span>
 		</p>
 	</TMPL_LOOP>
 </table>
@@ -21,9 +21,9 @@
 	<td>
 	<TMPL_LOOP most_commented_creo_list>
 		<p class=user_creo_list>
-		<span class=note>[<TMPL_VAR mccl_cnt>] </span>
-		<a href="/creos/<TMPL_VAR mccl_id>.html"><b><TMPL_VAR mccl_title></b></a>
-		<br><span class=subnote><TMPL_VAR mccl_alias></span>
+		<span class=note>[{{mccl_cnt}}>] </span>
+		<a href="/creos/{{mccl_id}}>.html"><b>{{mccl_title}}></b></a>
+		<br><span class=subnote>{{mccl_alias}}></span>
 		</p>
 	</TMPL_LOOP>
 </table>

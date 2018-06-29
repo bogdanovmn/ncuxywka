@@ -7,11 +7,11 @@
 	<td>
 	<TMPL_LOOP top_creo_views>
 		<p class=user_creo_list>
-		<span class=note>[<TMPL_VAR cvt_cnt>] </span>
-		<a href="/creos/<TMPL_VAR cvt_creo_id>.html">
-			<b><TMPL_VAR cvt_title></b></a>
+		<span class=note>[{{cvt_cnt}}>] </span>
+		<a href="/creos/{{cvt_creo_id}}>.html">
+			<b>{{cvt_title}}></b></a>
 		<br>
-		<span class=subnote><TMPL_VAR cvt_user_name></span>
+		<span class=subnote>{{cvt_user_name}}></span>
 		</p>
 	</TMPL_LOOP>
 	

@@ -23,7 +23,7 @@
 		<tr><td>
 			<a href='/gb/'>Палата #6</a>
 			<TMPL_IF lgbc_post_date>
-				<br><span class=subnote>Последнее: <TMPL_VAR lgbc_post_date> от <TMPL_VAR lgbc_alias></span>
+				<br><span class=subnote>Последнее: {{lgbc_post_date}}> от {{lgbc_alias}}></span>
 			</TMPL_IF>
 		</table>
 </table>
@@ -43,7 +43,7 @@
 			<tr><td>
 			<a href='/talks/'>Диагнозы</a>
 			<TMPL_IF lcm_post_date>
-				<br><span class=subnote>Последнее: <TMPL_VAR lcm_post_date> от <TMPL_VAR lcm_alias></span>
+				<br><span class=subnote>Последнее: {{lcm_post_date}}> от {{lcm_alias}}></span>
 			</TMPL_IF>
 		</table>
 </table>
@@ -56,20 +56,20 @@
 	<td class=title>Бюллетень 
 	<tr>
 	<td>
-	<p class=hello>Хайц, <a href="/users/<TMPL_VAR user_id>.html"><span class=user_name><TMPL_VAR alias></span></a>!<br><br>
+	<p class=hello>Хайц, <a href="/users/{{user_id}}>.html"><span class=user_name>{{alias}}></span></a>!<br><br>
 	<p class=submenu>&#149;&nbsp;<a href="/user_edit/">Настройки</a>
 	<p class=submenu>&#149;
 		<TMPL_IF new_messages>
 			<a href='/pm/in/'><span class=new_messages>Личные сообщения</span></a>
 			<br>
-			<span class=subnote>Новые: <TMPL_VAR new_messages></span>
+			<span class=subnote>Новые: {{new_messages}}></span>
 		<TMPL_ELSE>
 			<a href='/pm/in/'>Личные сообщения</a>
 		</TMPL_IF>
-	<p class=submenu>&#149;&nbsp;<a href="/talks/from/<TMPL_VAR user_id>">Мои диагнозы</a>
-	<p class=submenu>&#149;&nbsp;<a href="/talks/for/<TMPL_VAR user_id>">Диагнозы к моим анализам</a>
+	<p class=submenu>&#149;&nbsp;<a href="/talks/from/{{user_id}}>">Мои диагнозы</a>
+	<p class=submenu>&#149;&nbsp;<a href="/talks/for/{{user_id}}>">Диагнозы к моим анализам</a>
 	<TMPL_IF lcfm_post_date>
-		<br><span class=subnote><TMPL_VAR lcfm_post_date> от <TMPL_VAR lcfm_alias></span>
+		<br><span class=subnote>{{lcfm_post_date}}> от {{lcfm_alias}}></span>
 	</TMPL_IF>
 	<p class=submenu>&#149;&nbsp;<a href="/auth/out">Выйти</a>
 <TMPL_ELSE>
@@ -101,31 +101,31 @@
 	<p class=spec_submenu>&#149;&nbsp;
 		<a href='/wish_room/'>Книга Желаний</a>
 		<TMPL_IF srlc_wish_post_date>
-			<br><span class=subnote><TMPL_VAR srlc_wish_post_date> от <TMPL_VAR srlc_wish_alias></span>
+			<br><span class=subnote>{{srlc_wish_post_date}}> от {{srlc_wish_alias}}></span>
 		</TMPL_IF>
 	</p>
 	<p class=spec_submenu>&#149;&nbsp;
 		<a href='/petr_room/'>Похождения Поросенка Петра</a>
 		<TMPL_IF srlc_petr_post_date>
-			<br><span class=subnote><TMPL_VAR srlc_petr_post_date> от <TMPL_VAR srlc_petr_alias></span>
+			<br><span class=subnote>{{srlc_petr_post_date}}> от {{srlc_petr_alias}}></span>
 		</TMPL_IF>
 	</p>
 	<p class=spec_submenu>&#149;&nbsp;
 		<a href='/frenizm_room/'>Олигофренизмы</a>
 		<TMPL_IF srlc_frenizm_post_date>
-			<br><span class=subnote><TMPL_VAR srlc_frenizm_post_date> от <TMPL_VAR srlc_frenizm_alias></span>
+			<br><span class=subnote>{{srlc_frenizm_post_date}}> от {{srlc_frenizm_alias}}></span>
 		</TMPL_IF>
 	</p>
 	<p class=spec_submenu>&#149;&nbsp;
 		<a href='/mainshit_room/'>Главсрач</a>
 		<TMPL_IF srlc_mainshit_post_date>
-			<br><span class=subnote><TMPL_VAR srlc_mainshit_post_date> от <TMPL_VAR srlc_mainshit_alias></span>
+			<br><span class=subnote>{{srlc_mainshit_post_date}}> от {{srlc_mainshit_alias}}></span>
 		</TMPL_IF>
 	</p>
 	<p class=spec_submenu>&#149;&nbsp;
 		<a href='/proc_room/'>Процедурная</a>
 		<TMPL_IF srlc_proc_post_date>
-			<br><span class=subnote><TMPL_VAR srlc_proc_post_date> от <TMPL_VAR srlc_proc_alias></span>
+			<br><span class=subnote>{{srlc_proc_post_date}}> от {{srlc_proc_alias}}></span>
 		</TMPL_IF>
 	</p>
 	<p class=spec_submenu>&#149;&nbsp;

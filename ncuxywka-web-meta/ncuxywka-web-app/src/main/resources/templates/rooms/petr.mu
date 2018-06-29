@@ -20,15 +20,15 @@
 	<table class=infinity>
 	<tr>
 		<td class=msg>
-			<TMPL_VAR ESCAPE="NONE" NAME="cm_msg">
+			{{ESCAPE}}="NONE" NAME="cm_msg">
 	<tr>
 		<td class=copyright>
 			<TMPL_IF cm_user_id>
-				<a class=user href='/users/<TMPL_VAR cm_user_id>.html'><span class=user_name><TMPL_VAR cm_user_name></span></a>,
+				<a class=user href='/users/{{cm_user_id}}>.html'><span class=user_name>{{cm_user_name}}></span></a>,
 			<TMPL_ELSE>
-				<span class=anonim><TMPL_VAR cm_alias>,</span>
+				<span class=anonim>{{cm_alias}}>,</span>
 			</TMPL_IF>
-            <TMPL_VAR cm_post_date>
+            {{cm_post_date}}>
 			<hr>
 	</table>
 </TMPL_LOOP>

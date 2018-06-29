@@ -8,17 +8,17 @@
 		<p>
 			Кол-во элементов: 
 			<br>
-			<span class=value><TMPL_VAR cache_elements_count></span>
+			<span class=value>{{cache_elements_count}}></span>
 		</p>
 		<p>
 			Общий объем:
 			<br>
-			<span class=value><TMPL_VAR cache_total_size></span>
+			<span class=value>{{cache_total_size}}></span>
 		</p>
 		<p>
 			Uptime:
 			<br>
-			<span class=value><TMPL_VAR cache_uptime></span>
+			<span class=value>{{cache_uptime}}></span>
 		</p>
 </table>
 
