@@ -43,7 +43,7 @@
 
 <table class=creo_list>
 	<tr>
-	<th class=date>Дата<TMPL_UNLESS alex_jile><th class=user>Пациэнт</TMPL_UNLESS><th class=title>Название<th class=comments>Диаг<th class=resume>Голосов
+	<th class=date>Дата{{#alex_jile}}<th class=user>Пациэнт{{/alex_jile}}<th class=title>Название<th class=comments>Диаг<th class=resume>Голосов
 <TMPL_LOOP creo_list>
 	<tr>
 		<td class=date>

@@ -93,7 +93,7 @@
 						<a href="/creos/{{ESCAPE}}=URL NAME=lc_id>.html">
 							{{lc_title}}
 						</a>
-						<i>&nbsp;({{lc_comments_count}} диаг.)</i><TMPL_UNLESS __last__>,&nbsp;</TMPL_UNLESS>
+						<i>&nbsp;({{lc_comments_count}} диаг.)</i>{{#__last__}},&nbsp;{{/__last__}}
 						<br>
 					</TMPL_LOOP>
 		</TMPL_IF>
