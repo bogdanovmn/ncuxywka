@@ -38,7 +38,7 @@
 
 <center>
 
-<TMPL_UNLESS deleted>
+{{^deleted}}
 
 {{#can_select}}
 <form method=post action='/select/add/{{creo_id}}'>
@@ -50,7 +50,7 @@
 <td>
 	<p class=note>Уже проголосовало {{votes}} пациэнтов</p>
 	
-	<TMPL_UNLESS has_vote_power>
+	{{^has_vote_power}}
 		<p class=note>У вас еще слишком мало опыта чтобы голосовать!</p>
 	{{/unless_close}}
 
@@ -111,7 +111,7 @@
 
 <TMPL_INCLUDE NAME="inc/comments.tpl">
 
-<TMPL_UNLESS deleted>
+{{^deleted}}
 	<div class=header>П<span class=letter>О</span>СТАВЬ Д<span class=letter>И</span>АГНО<span class=letter>Z</span>!</div>
 	
 	<TMPL_INCLUDE NAME="inc/comments_post_form.tpl">

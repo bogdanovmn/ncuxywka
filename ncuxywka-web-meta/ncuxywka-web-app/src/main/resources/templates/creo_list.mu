@@ -48,7 +48,7 @@
 	<tr>
 		<td class=date>
 			{{cl_post_date}}
-		<TMPL_UNLESS alex_jile>
+		{{^alex_jile}}
 			<td class=user>
 				{{#cl_user_id}}
 					<a href='/users/{{cl_user_id}}.html'>{{cl_alias}}</a>
@@ -58,7 +58,7 @@
 		{{/unless_close}}
 		<td class=title>
 			<a href="/creos/{{ESCAPE}}=URL NAME=cl_id>.html">{{cl_title}}</a>
-			<TMPL_UNLESS cl_self_vote>
+			{{^cl_self_vote}}
 				<span class=subnote>?</span>
 			{{/unless_close}}
 		<td class=comments>

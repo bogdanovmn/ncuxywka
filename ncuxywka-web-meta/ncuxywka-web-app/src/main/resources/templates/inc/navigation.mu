@@ -9,11 +9,11 @@
 		<tr><td>
 			<a href='/faq_room/'>Справочная</a>
 			<span class=note>(FAQ)</span>
-		<TMPL_UNLESS user_auth>
+		{{^user_auth}}
 			<tr><td>
 				<a href='/register/'>Регистратура</a>
 		<TMPL_ELSE>
-			<TMPL_UNLESS is_plagiarist>
+			{{^is_plagiarist}}
 				<tr><td>
 					<a href='/add_creo/'>Лабораторная</a>
 					<br>

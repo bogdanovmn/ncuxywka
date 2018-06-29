@@ -1,8 +1,8 @@
 <h1>СДА<span class=letter>Й</span> АНАЛИ<span class=letter>Z</span>Ы:</h1>
-<TMPL_UNLESS user_auth>
+{{^user_auth}}
 	<div class=strict>Чтобы сдать свои анализы вам необходимо <a href='/register/'>зерегистрироваться</a> <br>и войти на Психуюшку под своим именем.</div>
 <TMPL_ELSE>
-	<TMPL_UNLESS can_add>
+	{{^can_add}}
 		<div class=strict>Ваши предыдущие анализы показали нам что Вы достаточно здоровы!<br>Мы советуем Вам сдать следующий анализ<br>не ранее чем через {{time_to_post}}</div> 
 		<p>&nbsp;
 	{{/unless_close}}

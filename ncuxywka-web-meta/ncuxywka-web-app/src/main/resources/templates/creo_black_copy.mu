@@ -22,7 +22,7 @@
 		<input type=hidden name=id value='{{creo_id}}'>
 	</form>
 <TMPL_ELSE>
-	<TMPL_UNLESS can_public>
+	{{^can_public}}
 		<div class=strict>Ваши предыдущие анализы показали нам что Вы достаточно здоровы!<br>Мы советуем Вам сдать следующий анализ<br>не ранее чем через {{time_to_public}}</div> 
 		<p>&nbsp;
 	{{/unless_close}}

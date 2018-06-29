@@ -29,7 +29,7 @@
 			{{/if_close}}
 		{{/if_close}}
 		
-		<TMPL_UNLESS deleted>
+		{{^deleted}}
 			{{#ms_creo_edit}}
 				<p class=submenu>&#149;&nbsp;
 					<a href='/creo_edit/full/{{creo_id}}/'>Исправить анализ</a>
@@ -37,7 +37,7 @@
 			{{/if_close}}
 		{{/unless_close}}
 
-		<TMPL_UNLESS deleted>
+		{{^deleted}}
 			{{#ms_creo_delete}}
 				<p class=submenu>&#149;&nbsp;
 					<a href='/creo_edit/delete/{{creo_id}}/'>Удалить!</a>

@@ -21,7 +21,7 @@
 				{{#cl_quarantine}}<s>{{/cl_quarantine}}
 				{{cl_title}}{{#cl_quarantine}}</s>{{/cl_quarantine}}</a>
 		{{/if_close}}
-		<TMPL_UNLESS cl_self_vote>
+		{{^cl_self_vote}}
 			<span class=subnote>?</span>
 		{{/unless_close}}
 		</p>

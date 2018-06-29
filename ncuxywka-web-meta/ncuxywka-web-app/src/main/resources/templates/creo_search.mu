@@ -30,7 +30,7 @@
 				{{#cl_quarantine}}<s>{{/cl_quarantine}}
 				<a href="/creos/{{ESCAPE}}=URL NAME='cl_id'>.html">{{cl_title}}</a>
 				{{#cl_quarantine}}</s>{{/cl_quarantine}}
-				<TMPL_UNLESS cl_self_vote>
+				{{^cl_self_vote}}
 					<span class=subnote>?</span>
 				{{/unless_close}}
 	{{/loop_close}}

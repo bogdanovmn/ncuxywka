@@ -10,7 +10,7 @@
 		<span class=note>{{__counter__}}. </span>
 		<a href="/creos/{{tcl_id}}.html" title="Голосов: {{tcl_cnt}}">
 			<b>{{tcl_title}}</b></a>
-		<TMPL_UNLESS tcl_self_vote>
+		{{^tcl_self_vote}}
 			<span class=subnote>?</span>
 		{{/unless_close}}
 		<br>
