@@ -1,13 +1,13 @@
-<TMPL_IF user_edit_menu>
+{{#user_edit_menu}}
 
 <table class=info_red>
 	<tr>
 	<td class=title>Особые процедуры
 	<tr>
 	<td>
-		<TMPL_IF ms_user_ban>
+		{{#ms_user_ban}}
 			<p class=submenu>&#149;&nbsp;
-			<TMPL_IF user_ban_left_time>
+			{{#user_ban_left_time}}
 				До окончания процедур осталось
 				<span class=note>{{user_ban_left_time}}</span>
 			<TMPL_ELSE>
@@ -18,7 +18,7 @@
 			</p>
 		</TMPL_IF>
 		
-		<TMPL_IF god>
+		{{#god}}
 			<p class=submenu>&#149;&nbsp;
 				<a target=_blank href="http://ip-whois.net/ip_geo.php?ip={{u_ip}}">География</a>
 			</p>

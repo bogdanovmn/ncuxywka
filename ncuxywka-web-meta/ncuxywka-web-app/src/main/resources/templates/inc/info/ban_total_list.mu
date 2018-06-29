@@ -1,4 +1,4 @@
-<TMPL_IF ban_total_list>
+{{#ban_total_list}}
 
 <table class=info>
 	<tr>

@@ -1,4 +1,4 @@
-<TMPL_IF anti_top_votes>
+{{#anti_top_votes}}
 
 <table class=info>
 	<tr>

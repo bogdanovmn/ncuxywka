@@ -1,4 +1,4 @@
-<TMPL_IF random_creo_list>
+{{#random_creo_list}}
 
 <table class=info>
 	<tr>

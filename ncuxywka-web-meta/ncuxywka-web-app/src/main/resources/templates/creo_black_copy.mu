@@ -1,4 +1,4 @@
-<TMPL_IF black_copy_edit>
+{{#black_copy_edit}}
 	<h1>ЧЕРН<span class=letter>О</span>ВИ<span class=letter>К</span></h1>
 
 	<TMPL_INCLUDE NAME='inc/error_msg.tpl'>
@@ -30,12 +30,12 @@
 		<tr>
 		<td class=public>
 			<form method=post onsubmit="return check_public_data();" action='/black_copy/publish'>
-				<TMPL_IF can_public>
+				{{#can_public}}
 					<input type=submit value="Сдать этот анализ">
 				</TMPL_IF>
 				<input type=hidden name="id" value="{{creo_id}}">
 				<input type=hidden name="action" value="public">
-				<TMPL_IF can_public>
+				{{#can_public}}
 					<br>
 					<input id=faq_read type=checkbox name='faq'> C <a href='/faq_room/'>FAQ'ом</a> ознакомлен и согласен!
 				</TMPL_IF>

@@ -1,4 +1,4 @@
-<TMPL_IF top_users_by_votes>
+{{#top_users_by_votes}}
 
 <table class=info>
 	<tr>

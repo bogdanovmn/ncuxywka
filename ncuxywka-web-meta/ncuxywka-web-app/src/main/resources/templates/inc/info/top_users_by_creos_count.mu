@@ -1,4 +1,4 @@
-<TMPL_IF top_users_by_creos_count>
+{{#top_users_by_creos_count}}
 
 <table class=info>
 	<tr>

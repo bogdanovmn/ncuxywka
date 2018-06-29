@@ -12,7 +12,7 @@
 	<table class=users>
 	<tr>
 	<td>
-	<TMPL_IF rank_1>
+	{{#rank_1}}
 		<h2 class=user_rank>Легенды Психуюшки</h2>
 		<TMPL_LOOP rank_1>
 			<p><a href='/users/{{ru_id}}.html'>{{ru_name}}</a></p>
@@ -23,21 +23,21 @@
 	<table class=users>
 	<tr>
 	<td>
-		<TMPL_IF rank_2>
+		{{#rank_2}}
 			<h2 class=user_rank>Шизофреники</h2>
 			<TMPL_LOOP rank_2>
 				<p><a href='/users/{{ru_id}}.html'>{{ru_name}}</a></p>
 			</TMPL_LOOP>
 		</TMPL_IF>
 		<td>
-		<TMPL_IF rank_3>
+		{{#rank_3}}
 			<h2 class=user_rank>Пациэнты Фрейда</h2>
 			<TMPL_LOOP rank_3>
 				<p><a href='/users/{{ru_id}}.html'>{{ru_name}}</a></p>
 			</TMPL_LOOP>
 		</TMPL_IF>
 		<td>
-		<TMPL_IF rank_4>
+		{{#rank_4}}
 			<h2 class=user_rank>Параноики</h2>
 			<TMPL_LOOP rank_4>
 				<p><a href='/users/{{ru_id}}.html'>{{ru_name}}</a></p>
@@ -48,7 +48,7 @@
 	<table class=users>
 	<tr>
 	<td>
-	<TMPL_IF rank_5>
+	{{#rank_5}}
 		<h2 class=user_rank>Тяжелый случай (нуждаются в срочной лоботомии)</h2>
 		<TMPL_LOOP rank_5>
 			{{#ru_plagiarist}}<s>{{/ru_plagiarist}}
@@ -61,14 +61,14 @@
 	<table class=users>
 	<tr>
 	<td>
-	<TMPL_IF rank_0>
+	{{#rank_0}}
 		<h2 class=user_rank>Диагноз пока не ясен</h2>
 		<TMPL_LOOP rank_0>
 			<p><a href='/users/{{ru_id}}.html'>{{ru_name}}</a></p>
 		</TMPL_LOOP>
 	</TMPL_IF>
 	<td>
-	<TMPL_IF rank_100>
+	{{#rank_100}}
 		<h2 class=user_rank>Сидят в очереди на сдачу анализов</h2>
 		<TMPL_LOOP rank_100>
 			<p><a href='/users/{{ru_id}}.html'>{{ru_name}}</a></p>

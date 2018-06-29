@@ -1,4 +1,4 @@
-<TMPL_IF ms_profiler>
+{{#ms_profiler}}
 
 <table class="info_gray">
 	<tr>
@@ -9,7 +9,7 @@
 			DB connections:
 			<b>{{profiler_db_connections}}</b>
 		</p>
-		<TMPL_IF profiler_db_connect_time>
+		{{#profiler_db_connect_time}}
 			<p>
 				DB connect time:
 				<b>{{profiler_db_connect_time}}</b>

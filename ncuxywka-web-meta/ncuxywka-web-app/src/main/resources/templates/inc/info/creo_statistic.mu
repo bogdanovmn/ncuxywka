@@ -1,4 +1,4 @@
-<TMPL_IF creo_statistic>
+{{#creo_statistic}}
 
 <table class="info creo_statistic">
 	<tr>
@@ -10,7 +10,7 @@
 			<br>
 			<span class=value>{{views_total}}</span>
 		</p>
-		<TMPL_IF selections_total>
+		{{#selections_total}}
 			<p title="<TMPL_LOOP selections_info>{{si_user_name}}&#10;&#13;</TMPL_LOOP>">
 				Добавили в избранное:
 				<br>

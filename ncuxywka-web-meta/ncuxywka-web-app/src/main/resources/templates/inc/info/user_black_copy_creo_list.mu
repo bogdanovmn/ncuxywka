@@ -1,4 +1,4 @@
-<TMPL_IF user_black_copy_creo_list>
+{{#user_black_copy_creo_list}}
 
 <table class=info>
 	<tr>

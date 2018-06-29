@@ -74,18 +74,18 @@
 				<table class=creo_preview_text>
 				<tr>
 					<td class=avatar>
-						<TMPL_IF lc_avatar>
+						{{#lc_avatar}}
 							<center><img alt='{{lc_alias}}' src='/{{lc_avatar}}_thumb'></center>
 						<TMPL_ELSE>
 							&nbsp;
 						</TMPL_IF>
 					<td class=text>
 						{{ESCAPE}}="NONE" NAME=lc_body>
-						<TMPL_IF lc_cuted>
+						{{#lc_cuted}}
 							<br><span class=note>--> Ампутировано <--</span>
 						</TMPL_IF>
 				</table>
-		<TMPL_IF lc_more>
+		{{#lc_more}}
 			<tr class=more_creos>
 				<td colspan=2>
 					<TMPL_LOOP lc_more>

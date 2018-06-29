@@ -1,4 +1,4 @@
-<TMPL_IF vova_last_creos>
+{{#vova_last_creos}}
 
 <table class=vova_last_info>
 	<tr>

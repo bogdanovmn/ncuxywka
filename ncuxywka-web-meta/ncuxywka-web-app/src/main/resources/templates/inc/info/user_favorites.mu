@@ -1,4 +1,4 @@
-<TMPL_IF user_favorites>
+{{#user_favorites}}
 
 <table class=info>
 	<tr>

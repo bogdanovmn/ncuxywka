@@ -1,4 +1,4 @@
-<TMPL_IF most_commented_creo_list>
+{{#most_commented_creo_list}}
 
 <table class=info>
 	<tr>

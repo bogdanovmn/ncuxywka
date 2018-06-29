@@ -27,7 +27,7 @@
 	</script>
 
 	
-	<TMPL_IF creo_view>
+	{{#creo_view}}
 		<!-- VK -->
 		<script type="text/javascript" src="//vk.com/js/api/openapi.js?96"></script>
 		<script type="text/javascript">
@@ -35,11 +35,11 @@
 		</script>
 	</TMPL_IF>
 
-	<TMPL_IF jquery_required>
+	{{#jquery_required}}
   		<script language="javascript" type="text/javascript" src="/js/flot/jquery.min.js"></script>
 	</TMPL_IF>
 
-	<TMPL_IF jquery_flot_required>
+	{{#jquery_flot_required}}
 	  <!--[if IE]><script language="javascript" type="text/javascript" src="/js/flot/excanvas.min.js"></script><![endif]-->
 	  <script language="javascript" type="text/javascript" src="/js/flot/jquery.flot.min.js"></script>
 	  <script language="javascript" type="text/javascript" src="/js/flot/jquery.flot.time.js"></script>

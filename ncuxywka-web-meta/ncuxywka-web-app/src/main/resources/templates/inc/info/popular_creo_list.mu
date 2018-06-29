@@ -1,4 +1,4 @@
-<TMPL_IF popular_creo_list>
+{{#popular_creo_list}}
 
 <table class=info>
 	<tr>

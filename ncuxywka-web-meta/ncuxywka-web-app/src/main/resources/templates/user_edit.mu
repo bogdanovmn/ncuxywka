@@ -30,7 +30,7 @@
 		<table class=form>
 		<tr>
 			<td>
-				<TMPL_IF avatar>
+				{{#avatar}}
 					<p><img src='/{{avatar}}_thumb'>
 					<br><input type=checkbox name=delete_avatar> Удалить аватар
 				</TMPL_IF>

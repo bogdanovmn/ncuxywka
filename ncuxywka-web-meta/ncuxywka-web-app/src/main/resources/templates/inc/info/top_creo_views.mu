@@ -1,4 +1,4 @@
-<TMPL_IF top_creo_views>
+{{#top_creo_views}}
 
 <table class=info>
 	<tr>

@@ -1,11 +1,11 @@
 <center>
-<TMPL_IF quarantine>
+{{#quarantine}}
 	<div class=header>ЛЕТ<span class=letter>А</span>ЛЬНЫЙ ИС<span class=letter>X</span>OД:</div>
 <TMPL_ELSE>
-	<TMPL_IF deleted>
+	{{#deleted}}
 		<div class=header>МУС<span class=letter>О</span>РНЫЙ К<span class=letter>О</span>НТЕЙНЕР</div>
 	<TMPL_ELSE>
-		<TMPL_IF neofuturism>
+		{{#neofuturism}}
 			<div class=header><span class=letter>NEO</span>ФУТУРИ<span class=letter>Z</span>М:</div>
 		<TMPL_ELSE>
 			<div class=header>АНАЛИ<span class=letter>Z</span>:</div>
@@ -22,9 +22,9 @@
 <h1 class=creo_title>{{c_title}}</h1>
 </center>
 
-<TMPL_IF deleted>
+{{#deleted}}
 	<p class='deleted_msg'>
-		<TMPL_IF plagiarist>
+		{{#plagiarist}}
 			Анализ отправлен в регистратуру для поиска хозяина
 		<TMPL_ELSE>
 			Уборщица шваброй махнула и случайно удалила этот анализ...
@@ -40,7 +40,7 @@
 
 <TMPL_UNLESS deleted>
 
-<TMPL_IF can_select>
+{{#can_select}}
 <form method=post action='/select/add/{{creo_id}}'>
 	<input type=submit value='Добавить этот анализ в мое избранное!'><br><br>
 </form>
@@ -54,17 +54,17 @@
 		<p class=note>У вас еще слишком мало опыта чтобы голосовать!</p>
 	</TMPL_UNLESS>
 
-	<TMPL_IF already_voted>
+	{{#already_voted}}
 		<p class=note>Вы уже голосовали за этот анализ...</p>
 
 	
-		<TMPL_IF votes_rank>
+		{{#votes_rank}}
 			<td>
 			<img alt="{{votes_rank_title}}" src="/img/stamps/{{votes_rank}}.jpg">
 		</TMPL_IF>
 	</TMPL_IF>
 </table>
-<TMPL_IF can_vote>
+{{#can_vote}}
 	<div class=header><span class=letter>О</span>ЦЕНИ:</div>
 	<p>
 	<form method=post action='/vote'>
@@ -86,7 +86,7 @@
 	</form>
 </TMPL_IF>
 
-<TMPL_IF ad_votes>
+{{#ad_votes}}
 	<table class=creo_votes>
 	<TMPL_LOOP ad_votes>
 		<tr>
@@ -105,7 +105,7 @@
 
 <TMPL_INCLUDE NAME="social_networks.tpl">
 
-<TMPL_IF comments>
+{{#comments}}
 	<div class=header>ДИАГНО<span class=letter>Z</span>Ы:</div>
 </TMPL_IF>
 

@@ -1,4 +1,4 @@
-<TMPL_IF god>
+{{#god}}
 	<center>
 	<h1>НОВОС<span class=letter>T</span>Ь</h1>
 	
@@ -29,7 +29,7 @@
 		<b>{{n_post_date}}</b> 
 		от <a href="/users/{{n_user_id}}.html">{{n_user_name}}</a>
 	<td class=menu>
-		<TMPL_IF god>
+		{{#god}}
 			<a href="/news/hide/{{n_id}}">Удалить</a>
 		</TMPL_IF>
 	<tr>

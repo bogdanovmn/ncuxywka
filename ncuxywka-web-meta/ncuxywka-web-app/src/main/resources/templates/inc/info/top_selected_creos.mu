@@ -1,4 +1,4 @@
-<TMPL_IF top_selected_creos>
+{{#top_selected_creos}}
 
 <table class=info>
 	<tr>

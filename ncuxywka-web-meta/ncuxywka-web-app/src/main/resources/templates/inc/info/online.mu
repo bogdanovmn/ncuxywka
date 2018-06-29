@@ -1,4 +1,4 @@
-<TMPL_IF online>
+{{#online}}
 <table class=info>
 	<tr>
 	<td class=title>На проводе
@@ -6,7 +6,7 @@
 	<td>
 		<TMPL_LOOP online>
 			<p class=user_creo_list>
-				<TMPL_IF o_user_id>
+				{{#o_user_id}}
 					<a class=user_online href='/users/{{o_user_id}}.html'>{{o_user_name}}</a>
 					<br>
 					<span class=note>

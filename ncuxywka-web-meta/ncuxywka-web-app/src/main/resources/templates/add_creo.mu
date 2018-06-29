@@ -33,7 +33,7 @@
 					<table class="add_creo_buttons">
 						<tr>
 							<td class=first>
-								<TMPL_IF can_add>
+								{{#can_add}}
 									<input type=submit name='white_copy' value='Сдать анализы'>
 								</TMPL_IF>
 							<td class=second>

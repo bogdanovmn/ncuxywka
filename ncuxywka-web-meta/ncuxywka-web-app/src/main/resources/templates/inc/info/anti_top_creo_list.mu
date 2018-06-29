@@ -1,4 +1,4 @@
-<TMPL_IF anti_top_creo_list>
+{{#anti_top_creo_list}}
 
 <table class="info_gray">
 	<tr>

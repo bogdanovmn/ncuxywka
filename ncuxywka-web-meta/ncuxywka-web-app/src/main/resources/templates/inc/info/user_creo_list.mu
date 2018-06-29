@@ -1,18 +1,18 @@
-<TMPL_IF user_creo_list>
+{{#user_creo_list}}
 
 <table class=info>
 	<tr>
 	<td class=title>Анализы пациэнта
 	<tr>
 	<td>
-	<TMPL_IF avatar>
+	{{#avatar}}
 		<center><p><img alt='{{cl_alias}}' src='/{{avatar}}_thumb'></center>
 	</TMPL_IF>
 	<tr>
 	<td>
 	<TMPL_LOOP user_creo_list>
 		<p class=user_creo_list>
-		<TMPL_IF cl_selected>
+		{{#cl_selected}}
 			{{#cl_quarantine}}<s>{{/cl_quarantine}}
 			&#149;&nbsp;{{cl_title}}
 			{{#cl_quarantine}}</s>{{/cl_quarantine}}
@@ -27,7 +27,7 @@
 		</p>
 	</TMPL_LOOP>
 
-	<TMPL_IF user_creo_list_more>
+	{{#user_creo_list_more}}
 		<div class=more_creos>
 					<a href="/users/{{c_user_id}}.html#creos">... читать ещё {{user_creo_list_more}} ...</a>
 		</div>

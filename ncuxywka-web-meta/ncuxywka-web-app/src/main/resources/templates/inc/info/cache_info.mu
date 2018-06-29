@@ -1,4 +1,4 @@
-<TMPL_IF cache_total_size>
+{{#cache_total_size}}
 
 <table class="info creo_statistic">
 	<tr>

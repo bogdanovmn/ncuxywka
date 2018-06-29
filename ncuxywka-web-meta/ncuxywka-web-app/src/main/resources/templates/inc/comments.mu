@@ -1,16 +1,16 @@
-<TMPL_IF multi_page>
+{{#multi_page}}
 	<TMPL_INCLUDE NAME="pages.tpl">
 </TMPL_IF>
 
-<TMPL_IF comments>
+{{#comments}}
 <TMPL_LOOP comments>
 	<table class={{#cm_major}}major_{{/cm_major}}{{#cm_group_name}}group_{{cm_group_type}}_{{/cm_group_name}}comment>
 		<tr>
 			<td class=who>
-				<TMPL_IF cm_group_name>
+				{{#cm_group_name}}
 						<span class=group>{{cm_group_name}}</span>
 					</TMPL_IF>
-				<TMPL_IF cm_user_id>
+				{{#cm_user_id}}
 					<a class=user href='/users/{{cm_user_id}}.html'><span class=user_name>{{cm_user_name}}</span></a>
 				<TMPL_ELSE>
 					<span class=anonim>{{cm_alias}}</span>
@@ -21,8 +21,8 @@
 				<span class=post_date>{{cm_post_date}}</span>
 		<tr>
 			<td class=msg colspan=3>
-				<TMPL_IF cm_for_creo>
-					<TMPL_IF cm_comment_phrase>
+				{{#cm_for_creo}}
+					{{#cm_comment_phrase}}
 						<span class=group>{{cm_comment_phrase}}</span><br><br>
 					</TMPL_IF>
 				</TMPL_IF>
@@ -30,7 +30,7 @@
 	</table>
 </TMPL_LOOP>
 
-<TMPL_IF multi_page>
+{{#multi_page}}
 	<hr>
 	<TMPL_INCLUDE NAME="pages.tpl">
 </TMPL_IF>

@@ -1,4 +1,4 @@
-<TMPL_IF contact_list>
+{{#contact_list}}
 
 <table class=info>
 	<tr>

@@ -8,7 +8,7 @@
 		<h1>РЕ<span class=letter>ЗY</span>ЛЬТАТ П<span class=letter>О</span>ИСКА</h1>
 </center>
 
-<TMPL_IF creo_list>
+{{#creo_list}}
 	<table class="creo_list search_creo_list">
 		<tr>
 
@@ -21,7 +21,7 @@
 			<td class=date>
 				{{cl_post_date}}
 			<td class=user>
-				<TMPL_IF cl_user_id>
+				{{#cl_user_id}}
 					<a href='/users/{{cl_user_id}}.html'>{{cl_alias}}</a>
 				<TMPL_ELSE>
 					{{cl_alias}}

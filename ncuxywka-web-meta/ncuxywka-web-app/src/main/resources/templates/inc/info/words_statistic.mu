@@ -1,4 +1,4 @@
-<TMPL_IF wc_data_debug>
+{{#wc_data_debug}}
 
 <TMPL_LOOP wc_data_debug>
 	<table class=info_gray>

@@ -5,22 +5,22 @@
 <tr>
 	<td id="m_b_info" class=selected onclick="select_block('b_info');">Анкета
 	<td id="m_b_actions" onclick="select_block('b_actions');">Активность
-	<TMPL_IF creo_list>
+	{{#creo_list}}
 		<td id="m_b_creos" onclick="select_block('b_creos');">Анализы
 	</TMPL_IF>
 
-	<TMPL_IF selected_creo_list> 
+	{{#selected_creo_list}} 
 		<td id="m_b_favorite" onclick="select_block('b_favorite');">Избранное
 	</TMPL_IF>
 
-	<TMPL_IF creo_list>
+	{{#creo_list}}
 		<td id="m_b_lexicon" onclick="select_block('b_lexicon');">Лексикон
 	</TMPL_IF>
 </table>
 
 
 <div class="user_list_open" id="b_info">
-	<TMPL_IF avatar>
+	{{#avatar}}
 		<p><img src='/{{avatar}}_thumb' alt='Фото'><br><br>
 	</TMPL_IF>
 
@@ -30,7 +30,7 @@
 		{{u_name}}
 		<br>
 		<br>
-		<TMPL_IF u_city>
+		{{#u_city}}
 			<b>Город:</b>
 			<br>
 			{{u_city}}
@@ -38,7 +38,7 @@
 			<br>
 		</TMPL_IF>
 
-		<TMPL_IF u_hates>
+		{{#u_hates}}
 			<b>Жалуется:</b>
 			<br>
 			{{ESCAPE}}="NONE" NAME=u_hates>
@@ -46,7 +46,7 @@
 			<br>
 		</TMPL_IF>
 
-		<TMPL_IF u_loves>
+		{{#u_loves}}
 			<b>Отношение к лекарствам:</b>
 			<br>
 			{{ESCAPE}}="NONE" NAME=u_loves>
@@ -54,7 +54,7 @@
 			<br>
 		</TMPL_IF>
 
-		<TMPL_IF u_about>
+		{{#u_about}}
 			<b>О себе:</b>
 			<br>
 			{{ESCAPE}}="NONE" NAME=u_about>
@@ -82,13 +82,13 @@
 		<br>
 		<b>Диагнозы:</b>
 		<br>
-		<TMPL_IF u_from_comments_count>
+		{{#u_from_comments_count}}
 			<a href='/talks/from/{{u_id}}'>Отправленные пациэнтом ({{u_from_comments_count}})</a>
 		<TMPL_ELSE>
 			Отправленные пациэнтом (0)
 		</TMPL_IF>
 		<br>
-		<TMPL_IF u_for_comments_count>
+		{{#u_for_comments_count}}
 			<a href='/talks/for/{{u_id}}'>Полученные пациэнтом ({{u_for_comments_count}})</a>
 		<TMPL_ELSE>
 			Полученные пациэнтом (0)
@@ -99,7 +99,7 @@
 		<br>
 		{{user_votes_out_rank_title}}
 
-		<TMPL_IF user_auth>
+		{{#user_auth}}
 			<br>
 			<br>
 			<TMPL_UNLESS can_delete>
@@ -109,7 +109,7 @@
 	</p>
 </div>
 
-<TMPL_IF creo_list>
+{{#creo_list}}
 	<a id=creos></a>
 	<div class="user_list" id="b_creos">
 	<table class=user_creo_list>
@@ -134,7 +134,7 @@
 	</div>
 </TMPL_IF>
 
-<TMPL_IF selected_creo_list>
+{{#selected_creo_list}}
 	<div class="user_list" id="b_favorite">
 	<table class=creo_list>
 		<tr>
@@ -149,7 +149,7 @@
 			<td class=date>
 				{{scl_post_date}}
 			<td class=user>
-				<TMPL_IF scl_user_id>
+				{{#scl_user_id}}
 					<a href="/users/{{scl_user_id}}.html">{{scl_alias}}</a>
 				<TMPL_ELSE>
 					{{scl_alias}}
@@ -161,7 +161,7 @@
 			<td class=comments>
 				{{scl_comments_count}}
 			<td class=resume>{{scl_votes_count}}
-			<TMPL_IF scl_can_delete>
+			{{#scl_can_delete}}
 				<td class=action><a href='/select/del/{{scl_id}}'>[X]</a>
 			</TMPL_IF>
 	</TMPL_LOOP>
@@ -169,7 +169,7 @@
 	</div>
 </TMPL_IF>
 
-<TMPL_IF words_cloud>
+{{#words_cloud}}
 	<div class="user_list" id="b_lexicon">
 	<TMPL_LOOP words_cloud>
 			<div class=words_cloud_title>
@@ -191,7 +191,7 @@
 	</div>
 </TMPL_IF>
 
-<TMPL_IF ad_votes>
+{{#ad_votes}}
 	<table class=creo_votes>
 	<TMPL_LOOP ad_votes>
 			<tr>

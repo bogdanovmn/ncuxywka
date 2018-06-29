@@ -23,7 +23,7 @@
 			{{ESCAPE}}="NONE" NAME="cm_msg">
 	<tr>
 		<td class=copyright>
-			<TMPL_IF cm_user_id>
+			{{#cm_user_id}}
 				<a class=user href='/users/{{cm_user_id}}.html'><span class=user_name>{{cm_user_name}}</span></a>,
 			<TMPL_ELSE>
 				<span class=anonim>{{cm_alias}},</span>

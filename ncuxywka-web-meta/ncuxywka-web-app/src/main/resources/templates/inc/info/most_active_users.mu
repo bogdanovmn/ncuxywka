@@ -1,4 +1,4 @@
-<TMPL_IF most_active_users>
+{{#most_active_users}}
 
 <table class=info>
 	<tr>

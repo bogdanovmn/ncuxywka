@@ -1,4 +1,4 @@
-<TMPL_IF petr_top_users_list>
+{{#petr_top_users_list}}
 
 <table class=info>
 	<tr>
@@ -8,7 +8,7 @@
 	<TMPL_LOOP petr_top_users_list>
 		<p class=user_creo_list>
 		<span class=note>[{{pp_cnt}}] </span>
-		<TMPL_IF pp_user_id>
+		{{#pp_user_id}}
 			<a href="/users/{{pp_user_id}}.html"><b>{{pp_alias}}</b></a>
 		<TMPL_ELSE>
 			{{pp_alias}}
