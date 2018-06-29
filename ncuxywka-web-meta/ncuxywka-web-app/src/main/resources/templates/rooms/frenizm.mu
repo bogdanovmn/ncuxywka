@@ -6,9 +6,9 @@
 <img src='/img/{{skin_pic_nizm}}' width=350 height=200>
 <h1>ПО<span class=letter>Y</span>МНИЧАЙ<span class=letter>!</span></h1>
 <center>
-<TMPL_INCLUDE NAME='../inc/comments_post_form.tpl'>
+{{> ../inc/comments_post_form }}
 </center>
 
 <h1>ДИСП<span class=letter>Y</span>Т:</h1>
 
-<TMPL_INCLUDE NAME='../inc/comments.tpl'>
+{{> ../inc/comments }}

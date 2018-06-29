@@ -103,18 +103,18 @@
 
 {{/unless_close}}
 
-<TMPL_INCLUDE NAME="social_networks.tpl">
+{{> social_networks }}
 
 {{#comments}}
 	<div class=header>ДИАГНО<span class=letter>Z</span>Ы:</div>
 {{/if_close}}
 
-<TMPL_INCLUDE NAME="inc/comments.tpl">
+{{> inc/comments }}
 
 {{^deleted}}
 	<div class=header>П<span class=letter>О</span>СТАВЬ Д<span class=letter>И</span>АГНО<span class=letter>Z</span>!</div>
 	
-	<TMPL_INCLUDE NAME="inc/comments_post_form.tpl">
+	{{> inc/comments_post_form }}
 {{/unless_close}}
 
 </center>

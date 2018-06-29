@@ -1,26 +1,26 @@
-<TMPL_INCLUDE NAME="info/notice.tpl">
-<TMPL_INCLUDE NAME="info/cache_info.tpl">
-<TMPL_INCLUDE NAME="info/creo_statistic.tpl">
-<TMPL_INCLUDE NAME="info/profiler.tpl">
-<TMPL_INCLUDE NAME="info/contact_list.tpl">
-<TMPL_INCLUDE NAME="info/user_edit.tpl">
-<TMPL_INCLUDE NAME="info/user_favorites.tpl">
-<TMPL_INCLUDE NAME="info/words_statistic.tpl">
-<TMPL_INCLUDE NAME="info/top_users_by_creos_count.tpl">
-<TMPL_INCLUDE NAME="info/ban_total_list.tpl">
-<TMPL_INCLUDE NAME="info/most_active_users.tpl">
-<TMPL_INCLUDE NAME="info/top_users_by_votes.tpl">
-<TMPL_INCLUDE NAME="info/creo_edit.tpl">
-<TMPL_INCLUDE NAME="info/petr_top_users_list.tpl">
-<TMPL_INCLUDE NAME="info/top_creo_list.tpl">
-<TMPL_INCLUDE NAME="info/anti_top_creo_list.tpl">
-<TMPL_INCLUDE NAME="info/vova_last_creos.tpl">
-<TMPL_INCLUDE NAME="info/popular_creo_list.tpl">
-<TMPL_INCLUDE NAME="info/creo_top_by_comments.tpl">
-<TMPL_INCLUDE NAME="info/random_creo_list.tpl">
-<TMPL_INCLUDE NAME="info/user_creo_list.tpl">
-<TMPL_INCLUDE NAME="info/user_black_copy_creo_list.tpl">
-<TMPL_INCLUDE NAME="info/anti_top_votes.tpl">
-<TMPL_INCLUDE NAME="info/top_selected_creos.tpl">
-<TMPL_INCLUDE NAME="info/top_creo_views.tpl">
-<TMPL_INCLUDE NAME="info/online.tpl">
+{{> info/notice }}
+{{> info/cache_info }}
+{{> info/creo_statistic }}
+{{> info/profiler }}
+{{> info/contact_list }}
+{{> info/user_edit }}
+{{> info/user_favorites }}
+{{> info/words_statistic }}
+{{> info/top_users_by_creos_count }}
+{{> info/ban_total_list }}
+{{> info/most_active_users }}
+{{> info/top_users_by_votes }}
+{{> info/creo_edit }}
+{{> info/petr_top_users_list }}
+{{> info/top_creo_list }}
+{{> info/anti_top_creo_list }}
+{{> info/vova_last_creos }}
+{{> info/popular_creo_list }}
+{{> info/creo_top_by_comments }}
+{{> info/random_creo_list }}
+{{> info/user_creo_list }}
+{{> info/user_black_copy_creo_list }}
+{{> info/anti_top_votes }}
+{{> info/top_selected_creos }}
+{{> info/top_creo_views }}
+{{> info/online }}

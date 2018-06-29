@@ -7,9 +7,9 @@
 
 <h1>СК<span class=letter>А</span>ЖИ!</h1>
 <center>
-<TMPL_INCLUDE NAME='../inc/comments_post_form.tpl'>
+{{> ../inc/comments_post_form }}
 </center>
 
 <h1>ДИСП<span class=letter>Y</span>Т:</h1>
 
-<TMPL_INCLUDE NAME='../inc/comments.tpl'>
+{{> ../inc/comments }}

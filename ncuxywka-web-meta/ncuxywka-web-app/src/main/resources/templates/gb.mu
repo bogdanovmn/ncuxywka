@@ -7,10 +7,10 @@
 
 <h1>СКАЖИ<span class=letter>!</span></h1>
 
-<TMPL_INCLUDE NAME="inc/comments_post_form.tpl">
+{{> inc/comments_post_form }}
 
 <h1>ДИСП<span class=letter>Y</span>Т:</h1>
 
 </center>
 
-<TMPL_INCLUDE NAME="inc/comments.tpl">
+{{> inc/comments }}

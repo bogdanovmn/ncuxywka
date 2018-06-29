@@ -1,7 +1,7 @@
 <h1>ДИАГНО<span class=letter>Z</span>Ы:</h1>
 
 {{#multi_page}}
-	<TMPL_INCLUDE NAME="inc/pages.tpl">
+	{{> inc/pages }}
 {{/if_close}}
 
 {{#last_comments}}
@@ -34,5 +34,5 @@
 
 {{#multi_page}}
 	<hr>
-	<TMPL_INCLUDE NAME="inc/pages.tpl">
+	{{> inc/pages }}
 {{/if_close}}

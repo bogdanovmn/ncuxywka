@@ -26,10 +26,10 @@
 	<img src='/img/{{skin_pic_proc}}' width=400>
 	<h1>ПОБ<span class=letter>Y</span>ЯНЬ!</h1>
 	<center>
-	<TMPL_INCLUDE NAME='../inc/comments_post_form.tpl'>
+	{{> ../inc/comments_post_form }}
 	</center>
 	<h1>Дисп<span class=letter>у</span>т:</h1>
-	<TMPL_INCLUDE NAME='../inc/comments.tpl'>
+	{{> ../inc/comments }}
 	
 	<script type=text/javascript> 
 	<!--

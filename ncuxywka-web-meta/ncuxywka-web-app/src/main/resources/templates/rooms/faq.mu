@@ -54,8 +54,8 @@
 <hr>
 <center>
 <h1><span class=letter>Z</span>АДАЙ ВОПРОС<span class=letter>!</span></h1>
-<TMPL_INCLUDE NAME="../inc/comments_post_form.tpl">
+{{> ../inc/comments_post_form }}
 <h1>ОБС<span class=letter>Y</span>ЖДЕНИЕ:</h1>
 </center>
 
-<TMPL_INCLUDE NAME="../inc/comments.tpl">
+{{> ../inc/comments }}

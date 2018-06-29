@@ -1,4 +1,4 @@
-<TMPL_INCLUDE NAME="top.tpl">
+{{> top }}
 
 <td class=content>
 	<div class=error>
@@ -39,4 +39,4 @@
 	</div>
 
 <!-- Bottom -->
-<TMPL_INCLUDE NAME="bottom.tpl">
+{{> bottom }}

@@ -33,9 +33,9 @@
 	</table>
 {{/loop_close}}
 
-<TMPL_INCLUDE NAME="../inc/pages.tpl">
+{{> ../inc/pages }}
 <div class=header>ТЫ <span class=letter>Z</span>НАЕШЬ ПРОДОЛЖЕНИЕ<span class=letter>?</span></div>
 
 <center>
-<TMPL_INCLUDE NAME='../inc/comments_post_form.tpl'>
+{{> ../inc/comments_post_form }}
 </center>

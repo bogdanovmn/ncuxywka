@@ -1,5 +1,5 @@
 {{#multi_page}}
-	<TMPL_INCLUDE NAME="pages.tpl">
+	{{> pages }}
 {{/if_close}}
 
 {{#comments}}
@@ -32,7 +32,7 @@
 
 {{#multi_page}}
 	<hr>
-	<TMPL_INCLUDE NAME="pages.tpl">
+	{{> pages }}
 {{/if_close}}
 
 {{/if_close}}

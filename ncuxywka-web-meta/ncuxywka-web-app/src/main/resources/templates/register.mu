@@ -1,6 +1,6 @@
 <h1><span class=letter>Z</span>АРЕГИСТРИР<span class=letter>Y</span>ЙСЯ!</h1>
 
-<TMPL_INCLUDE NAME='inc/error_msg.tpl'>
+{{> inc/error_msg }}
 
 {{#user_auth}}
 	<p>Вы уже зарегистрированы!<br>Перед регистрацией другого пациэнта вам необходимо <a href='/auth/out'>выйти</a>.</p>

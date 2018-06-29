@@ -35,7 +35,7 @@
 	{{/loop_close}}
 	</table>
 	{{#multi_page}}
-		<TMPL_INCLUDE NAME="inc/pages.tpl">
+		{{> inc/pages }}
 	{{/if_close}}
 {{/if_close}}
 
@@ -55,7 +55,7 @@
 
 	<h1>В<span class=letter>А</span>Ш<span class=letter>А</span> ПЕРЕПИСК<span class=letter>А</span> С ЭТИ<span class=letter>М</span> П<span class=letter>А</span>ЦИЭНТО<span class=letter>М</span><span class=letter></span>:</h1>
 	{{#multi_page}}
-		<TMPL_INCLUDE NAME="inc/pages.tpl">
+		{{> inc/pages }}
 	{{/if_close}}
 	<table class=personal_messages>
 	{{#messages}}
@@ -71,6 +71,6 @@
 	{{/loop_close}}
 	</table>
 	{{#multi_page}}
-		<TMPL_INCLUDE NAME="inc/pages.tpl">
+		{{> inc/pages }}
 	{{/if_close}}
 {{/if_close}}

@@ -1,7 +1,7 @@
 {{#black_copy_edit}}
 	<h1>ЧЕРН<span class=letter>О</span>ВИ<span class=letter>К</span></h1>
 
-	<TMPL_INCLUDE NAME='inc/error_msg.tpl'>
+	{{> inc/error_msg }}
 
 	<form onsubmit="return check_post_data();" name='update_black_copy' method=post action='/black_copy/'>
 		<table class=form>
