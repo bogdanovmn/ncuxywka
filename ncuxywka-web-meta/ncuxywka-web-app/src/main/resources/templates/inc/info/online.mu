@@ -10,7 +10,7 @@
 					<a class=user_online href='/users/{{o_user_id}}.html'>{{o_user_name}}</a>
 					<br>
 					<span class=note>
-						{{o_action_time}}<TMPL_IF o_path_descr>, {{o_path_descr}}</TMPL_IF>
+						{{o_action_time}}{{#o_path_descr}}, {{o_path_descr}}{{/o_path_descr}}
 					</span>
 				</TMPL_IF>
 			</p>

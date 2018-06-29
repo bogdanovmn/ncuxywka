@@ -4,7 +4,7 @@
 
 <TMPL_IF comments>
 <TMPL_LOOP comments>
-	<table class=<TMPL_IF cm_major>major_</TMPL_IF><TMPL_IF cm_group_name>group_{{cm_group_type}}_</TMPL_IF>comment>
+	<table class={{#cm_major}}major_{{/cm_major}}{{#cm_group_name}}group_{{cm_group_type}}_{{/cm_group_name}}comment>
 		<tr>
 			<td class=who>
 				<TMPL_IF cm_group_name>
@@ -16,7 +16,7 @@
 					<span class=anonim>{{cm_alias}}</span>
 				</TMPL_IF>
 			<td class=stamp>
-				<TMPL_IF cm_reply><a href='#' onclick="reply_to('{{ESCAPE}}=JS NAME=cm_alias> {{ESCAPE}}=JS NAME=cm_inner_id>')">Ответить</a>&nbsp;&nbsp;&nbsp;</TMPL_IF><i>{{cm_inner_id}}</i>
+				{{#cm_reply}}<a href='#' onclick="reply_to('{{ESCAPE}}=JS NAME=cm_alias> {{ESCAPE}}=JS NAME=cm_inner_id>')">Ответить</a>&nbsp;&nbsp;&nbsp;{{/cm_reply}}<i>{{cm_inner_id}}</i>
 				&nbsp;	
 				<span class=post_date>{{cm_post_date}}</span>
 		<tr>

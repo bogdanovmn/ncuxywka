@@ -10,7 +10,7 @@
 		<br>
 		<select name=user_id_1>
 			<TMPL_LOOP users_1>
-				<option value="{{user_id}}" <TMPL_IF selected>selected</TMPL_IF>>
+				<option value="{{user_id}}" {{#selected}}selected{{/selected}}>
 					{{user_name}}
 				</option>
 			</TMPL_LOOP>
@@ -20,7 +20,7 @@
 		<br>
 		<select name=depth>
 			<TMPL_LOOP depth>
-				<option value="{{value}}" <TMPL_IF selected>selected</TMPL_IF>>
+				<option value="{{value}}" {{#selected}}selected{{/selected}}>
 					{{name}}
 				</option>
 			</TMPL_LOOP>

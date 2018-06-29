@@ -27,9 +27,9 @@
 					{{cl_alias}}
 				</TMPL_IF>
 			<td class=title>
-				<TMPL_IF cl_quarantine><s></TMPL_IF>
+				{{#cl_quarantine}}<s>{{/cl_quarantine}}
 				<a href="/creos/{{ESCAPE}}=URL NAME='cl_id'>.html">{{cl_title}}</a>
-				<TMPL_IF cl_quarantine></s></TMPL_IF>
+				{{#cl_quarantine}}</s>{{/cl_quarantine}}
 				<TMPL_UNLESS cl_self_vote>
 					<span class=subnote>?</span>
 				</TMPL_UNLESS>

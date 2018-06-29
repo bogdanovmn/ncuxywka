@@ -16,7 +16,7 @@
 		<tr>
 			<td>&nbsp;
 			<td>
-			<input type=submit id=submit_add name=add value='<TMPL_IF post_button_caption>{{post_button_caption}}<TMPL_ELSE>Поставить диагноз</TMPL_IF>'>
+			<input type=submit id=submit_add name=add value='{{#post_button_caption}}{{post_button_caption}}<TMPL_ELSE>Поставить диагноз{{/post_button_caption}}'>
 	</table>
 	<TMPL_IF creo_id>
 		<input type=hidden name=id value='{{creo_id}}'>

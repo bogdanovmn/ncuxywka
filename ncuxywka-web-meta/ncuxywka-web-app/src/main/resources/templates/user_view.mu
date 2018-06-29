@@ -120,9 +120,9 @@
 			<td class=date>
 				{{cl_post_date}}
 			<td class=title>
-				<TMPL_IF cl_quarantine><s></TMPL_IF>
+				{{#cl_quarantine}}<s>{{/cl_quarantine}}
 				<a href="/creos/{{ESCAPE}}=URL NAME=cl_id>.html">{{cl_title}}</a>
-				<TMPL_IF cl_quarantine></s></TMPL_IF>
+				{{#cl_quarantine}}</s>{{/cl_quarantine}}
 				<TMPL_UNLESS cl_self_vote>
 					<span class=subnote>?</span>
 				</TMPL_UNLESS>
@@ -143,7 +143,7 @@
 			<th class=title>Название
 			<th class=comments>Диаг
 			<th class=resume>Голоса
-			<TMPL_IF can_delete><th class=action>...</TMPL_IF>
+			{{#can_delete}}<th class=action>...{{/can_delete}}
 	<TMPL_LOOP selected_creo_list>
 		<tr>
 			<td class=date>
@@ -155,9 +155,9 @@
 					{{scl_alias}}
 				</TMPL_IF>
 			<td class=title>
-				<TMPL_IF scl_quarantine><s></TMPL_IF>
+				{{#scl_quarantine}}<s>{{/scl_quarantine}}
 				<a href="/creos/{{ESCAPE}}=URL NAME=scl_id>.html">{{scl_title}}</a>
-				<TMPL_IF scl_quarantine></s></TMPL_IF>
+				{{#scl_quarantine}}</s>{{/scl_quarantine}}
 			<td class=comments>
 				{{scl_comments_count}}
 			<td class=resume>{{scl_votes_count}}
@@ -181,7 +181,7 @@
 			</div>
 			<div class=words_cloud_{{wc_size}}>
 			<TMPL_LOOP wc_data>
-				<span style='font-size: {{font_size}}px; <TMPL_IF font_size_sub_minimum>color: gray;</TMPL_IF>'>
+				<span style='font-size: {{font_size}}px; {{#font_size_sub_minimum}}color: gray;{{/font_size_sub_minimum}}'>
 					{{word}}
 				</span>
 				&nbsp;

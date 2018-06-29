@@ -5,7 +5,7 @@
 </TMPL_IF>
 
 <TMPL_LOOP last_comments>
-	<table class='<TMPL_IF lc_major>major_</TMPL_IF><TMPL_IF lc_group_name>group_{{lc_group_type}}_</TMPL_IF>comment talks_comment'>
+	<table class='{{#lc_major}}major_{{/lc_major}}{{#lc_group_name}}group_{{lc_group_type}}_{{/lc_group_name}}comment talks_comment'>
 		<tr>
 			<td class=who>
 				<TMPL_IF lc_group_name>
@@ -16,7 +16,7 @@
 				<TMPL_ELSE>
 					<span class=anonim>{{lc_alias}}</span> 
 				</TMPL_IF>
-				<span class=array>&rarr;</span> <TMPL_IF lc_quarantine><s></TMPL_IF><a href="/creos/{{ESCAPE}}=URL NAME=lc_creo_id>.html">{{lc_creo_alias}}: {{lc_creo_title}}<TMPL_IF lc_quarantine></s></TMPL_IF>
+				<span class=array>&rarr;</span> {{#lc_quarantine}}<s>{{/lc_quarantine}}<a href="/creos/{{ESCAPE}}=URL NAME=lc_creo_id>.html">{{lc_creo_alias}}: {{lc_creo_title}}{{#lc_quarantine}}</s>{{/lc_quarantine}}
 				</a>
 			<td class="stamp">
 				<span class=post_date><TMPL_VAR	NAME=lc_post_date></span>

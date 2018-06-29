@@ -23,7 +23,7 @@
 				Для <a class=user href='/users/{{lm_to_user_id}}.html'><span class=user_name>{{lm_to_user_name}}</span></a>
 			</TMPL_IF>
 			<span class=date>
-				<TMPL_IF lm_is_in_message><a href='/pm/dialog/{{lm_user_id}}/'>Ответить</a>&nbsp;&nbsp;</TMPL_IF>
+				{{#lm_is_in_message}}<a href='/pm/dialog/{{lm_user_id}}/'>Ответить</a>&nbsp;&nbsp;{{/lm_is_in_message}}
 				{{lm_date}}
 			</span>
 		<tr>

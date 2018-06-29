@@ -51,9 +51,9 @@
 	<TMPL_IF rank_5>
 		<h2 class=user_rank>Тяжелый случай (нуждаются в срочной лоботомии)</h2>
 		<TMPL_LOOP rank_5>
-			<TMPL_IF ru_plagiarist><s></TMPL_IF>
+			{{#ru_plagiarist}}<s>{{/ru_plagiarist}}
 			<p><a href='/users/{{ru_id}}.html'>{{ru_name}}</a></p>
-			<TMPL_IF ru_plagiarist></s></TMPL_IF>
+			{{#ru_plagiarist}}</s>{{/ru_plagiarist}}
 		</TMPL_LOOP>
 	</TMPL_IF>
 	</table>
@@ -83,12 +83,12 @@
 <div class=user_list id="date">
 	<table class=user_list_by_reg_date>
 		<TMPL_LOOP users_by_reg_date>
-			<tr <TMPL_IF u_group>class=group</TMPL_IF>>
-				<td class=date><TMPL_IF u_show_date>{{u_reg_date}}</TMPL_IF>
+			<tr {{#u_group}}class=group{{/u_group}}>
+				<td class=date>{{#u_show_date}}{{u_reg_date}}{{/u_show_date}}
 				<td class=name>
-					<TMPL_IF u_plagiarist><s></TMPL_IF>
+					{{#u_plagiarist}}<s>{{/u_plagiarist}}
 					<a href='/users/{{u_id}}.html'>{{u_name}}</a>
-					<TMPL_IF u_plagiarist></s></TMPL_IF>
+					{{#u_plagiarist}}</s>{{/u_plagiarist}}
 		</TMPL_LOOP>
 	</table>
 </div>
@@ -107,9 +107,9 @@
 							<span class=user_letter>{{ull_letter}}</span>
 							<br><br>
 							<TMPL_LOOP ull_users>
-								<TMPL_IF u_plagiarist><s></TMPL_IF>
+								{{#u_plagiarist}}<s>{{/u_plagiarist}}
 								<a href='/users/{{u_id}}.html'>{{u_name}}</a>
-								<TMPL_IF u_plagiarist></s></TMPL_IF>
+								{{#u_plagiarist}}</s>{{/u_plagiarist}}
 								<br>
 							</TMPL_LOOP>
 						</TMPL_LOOP>

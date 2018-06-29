@@ -1,5 +1,5 @@
 
-<table class=pages <TMPL_IF width>style='width:{{width}}px'</TMPL_IF>>
+<table class=pages {{#width}}style='width:{{width}}px'{{/width}}>
 <tr>
 <TMPL_IF no_empty>
 <td class=pages_navigation><span class=note>Страницы:&nbsp;&nbsp;</span>

@@ -13,13 +13,13 @@
 	<TMPL_LOOP user_creo_list>
 		<p class=user_creo_list>
 		<TMPL_IF cl_selected>
-			<TMPL_IF cl_quarantine><s></TMPL_IF>
+			{{#cl_quarantine}}<s>{{/cl_quarantine}}
 			&#149;&nbsp;{{cl_title}}
-			<TMPL_IF cl_quarantine></s></TMPL_IF>
+			{{#cl_quarantine}}</s>{{/cl_quarantine}}
 		<TMPL_ELSE>
 			<a title="Диагнозов: {{cl_comments_count}}" href="/creos/{{cl_id}}.html">
-				<TMPL_IF cl_quarantine><s></TMPL_IF>
-				{{cl_title}}<TMPL_IF cl_quarantine></s></TMPL_IF></a>
+				{{#cl_quarantine}}<s>{{/cl_quarantine}}
+				{{cl_title}}{{#cl_quarantine}}</s>{{/cl_quarantine}}</a>
 		</TMPL_IF>
 		<TMPL_UNLESS cl_self_vote>
 			<span class=subnote>?</span>
