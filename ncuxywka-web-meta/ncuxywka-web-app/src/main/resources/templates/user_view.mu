@@ -1,4 +1,4 @@
-<h1>ЛИЧНО<span class=letter>Е</span> ДЕЛО: "<span class=letter>{{u_name}}></span>"</h1>
+<h1>ЛИЧНО<span class=letter>Е</span> ДЕЛО: "<span class=letter>{{u_name}}</span>"</h1>
 
 
 <table class=user_edit_menu>
@@ -21,19 +21,19 @@
 
 <div class="user_list_open" id="b_info">
 	<TMPL_IF avatar>
-		<p><img src='/{{avatar}}>_thumb' alt='Фото'><br><br>
+		<p><img src='/{{avatar}}_thumb' alt='Фото'><br><br>
 	</TMPL_IF>
 
 	<p>
 		<b>Имя:</b>
 		<br>
-		{{u_name}}>
+		{{u_name}}
 		<br>
 		<br>
 		<TMPL_IF u_city>
 			<b>Город:</b>
 			<br>
-			{{u_city}}>
+			{{u_city}}
 			<br>
 			<br>
 		</TMPL_IF>
@@ -64,12 +64,12 @@
 
 		<b>Дата регистрации:</b>
 		<br>
-		{{u_reg_date}}>
+		{{u_reg_date}}
 		<br>
 		<br>
 		<b>Дата изменения данных:</b>
 		<br>
-		{{u_edit_date}}>
+		{{u_edit_date}}
 	</p>
 </div>
 
@@ -83,13 +83,13 @@
 		<b>Диагнозы:</b>
 		<br>
 		<TMPL_IF u_from_comments_count>
-			<a href='/talks/from/{{u_id}}>'>Отправленные пациэнтом ({{u_from_comments_count}}>)</a>
+			<a href='/talks/from/{{u_id}}'>Отправленные пациэнтом ({{u_from_comments_count}})</a>
 		<TMPL_ELSE>
 			Отправленные пациэнтом (0)
 		</TMPL_IF>
 		<br>
 		<TMPL_IF u_for_comments_count>
-			<a href='/talks/for/{{u_id}}>'>Полученные пациэнтом ({{u_for_comments_count}}>)</a>
+			<a href='/talks/for/{{u_id}}'>Полученные пациэнтом ({{u_for_comments_count}})</a>
 		<TMPL_ELSE>
 			Полученные пациэнтом (0)
 		</TMPL_IF>
@@ -97,13 +97,13 @@
 		<br>
 		<b>Отношение к окружающим пациэнтам:</b>
 		<br>
-		{{user_votes_out_rank_title}}>
+		{{user_votes_out_rank_title}}
 
 		<TMPL_IF user_auth>
 			<br>
 			<br>
 			<TMPL_UNLESS can_delete>
-				[ <a href="/pm/dialog/{{u_id}}>/">Отправить этому пациэнту личное сообщение</a> ]
+				[ <a href="/pm/dialog/{{u_id}}/">Отправить этому пациэнту личное сообщение</a> ]
 			</TMPL_UNLESS>
 		</TMPL_IF>
 	</p>
@@ -118,17 +118,17 @@
 	<TMPL_LOOP creo_list>
 		<tr>
 			<td class=date>
-				{{cl_post_date}}>
+				{{cl_post_date}}
 			<td class=title>
 				<TMPL_IF cl_quarantine><s></TMPL_IF>
-				<a href="/creos/{{ESCAPE}}=URL NAME=cl_id>.html">{{cl_title}}></a>
+				<a href="/creos/{{ESCAPE}}=URL NAME=cl_id>.html">{{cl_title}}</a>
 				<TMPL_IF cl_quarantine></s></TMPL_IF>
 				<TMPL_UNLESS cl_self_vote>
 					<span class=subnote>?</span>
 				</TMPL_UNLESS>
 			<td class=comments>
-				{{cl_comments_count}}>
-			<td class=resume>{{cl_votes_count}}>
+				{{cl_comments_count}}
+			<td class=resume>{{cl_votes_count}}
 	</TMPL_LOOP>
 	</table>
 	</div>
@@ -147,22 +147,22 @@
 	<TMPL_LOOP selected_creo_list>
 		<tr>
 			<td class=date>
-				{{scl_post_date}}>
+				{{scl_post_date}}
 			<td class=user>
 				<TMPL_IF scl_user_id>
-					<a href="/users/{{scl_user_id}}>.html">{{scl_alias}}></a>
+					<a href="/users/{{scl_user_id}}.html">{{scl_alias}}</a>
 				<TMPL_ELSE>
-					{{scl_alias}}>
+					{{scl_alias}}
 				</TMPL_IF>
 			<td class=title>
 				<TMPL_IF scl_quarantine><s></TMPL_IF>
-				<a href="/creos/{{ESCAPE}}=URL NAME=scl_id>.html">{{scl_title}}></a>
+				<a href="/creos/{{ESCAPE}}=URL NAME=scl_id>.html">{{scl_title}}</a>
 				<TMPL_IF scl_quarantine></s></TMPL_IF>
 			<td class=comments>
-				{{scl_comments_count}}>
-			<td class=resume>{{scl_votes_count}}>
+				{{scl_comments_count}}
+			<td class=resume>{{scl_votes_count}}
 			<TMPL_IF scl_can_delete>
-				<td class=action><a href='/select/del/{{scl_id}}>'>[X]</a>
+				<td class=action><a href='/select/del/{{scl_id}}'>[X]</a>
 			</TMPL_IF>
 	</TMPL_LOOP>
 	</table>
@@ -173,16 +173,16 @@
 	<div class="user_list" id="b_lexicon">
 	<TMPL_LOOP words_cloud>
 			<div class=words_cloud_title>
-				<span class=title>{{wc_title}}></span>
+				<span class=title>{{wc_title}}</span>
 				<span class=note>
-					показано {{wc_visible}}>/{{wc_uniq}}> словарного запаса
-					, относительный уровень кругозора: {{wc_perfect}}>%
+					показано {{wc_visible}}/{{wc_uniq}} словарного запаса
+					, относительный уровень кругозора: {{wc_perfect}}%
 				</span>
 			</div>
-			<div class=words_cloud_{{wc_size}}>>
+			<div class=words_cloud_{{wc_size}}>
 			<TMPL_LOOP wc_data>
-				<span style='font-size: {{font_size}}>px; <TMPL_IF font_size_sub_minimum>color: gray;</TMPL_IF>'>
-					{{word}}>
+				<span style='font-size: {{font_size}}px; <TMPL_IF font_size_sub_minimum>color: gray;</TMPL_IF>'>
+					{{word}}
 				</span>
 				&nbsp;
 			</TMPL_LOOP>
@@ -195,11 +195,11 @@
 	<table class=creo_votes>
 	<TMPL_LOOP ad_votes>
 			<tr>
-			<td class=creo_title><a href="/creosa/{{uv_creo_id}}>.html">{{uv_user_name}}> - {{uv_creo_title}}></a>
-		<td class=gray>{{uv_ip}}>
-		<td>{{uv_vote}}>
-		<td class=gray>{{uv_date}}>
-		<td>{{uv_delta}}>
+			<td class=creo_title><a href="/creosa/{{uv_creo_id}}.html">{{uv_user_name}} - {{uv_creo_title}}</a>
+		<td class=gray>{{uv_ip}}
+		<td>{{uv_vote}}
+		<td class=gray>{{uv_date}}
+		<td>{{uv_delta}}
 
 	</TMPL_LOOP>
 	</table>

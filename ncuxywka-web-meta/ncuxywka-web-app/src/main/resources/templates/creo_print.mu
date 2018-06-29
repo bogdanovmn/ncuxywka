@@ -5,8 +5,8 @@
 	<h1>АНАЛИ<span class=letter>Z</span>:</h1>
 </TMPL_IF>
 <p>
-<a href='/users/{{c_user_id}}>.html'><span class=creo_author>{{c_alias}}></span></a>, {{c_post_date}}>
-<br><br><span class=creo_title>{{c_title}}></span>
+<a href='/users/{{c_user_id}}.html'><span class=creo_author>{{c_alias}}</span></a>, {{c_post_date}}
+<br><br><span class=creo_title>{{c_title}}</span>
 <br><br>
 </p>
 </center>

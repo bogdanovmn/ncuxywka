@@ -8,22 +8,22 @@
 			<tr>
 				<td><span class=note>Название:</span>
 				<td>
-				<input id=creo_title size=75 maxlength=250 type=text name=title value='{{c_title}}>'>
+				<input id=creo_title size=75 maxlength=250 type=text name=title value='{{c_title}}'>
 			<tr>
 				<td><span class=note>Анализы:</span>
 				<td>
-				<textarea id=creo_body name=body value='' cols=75 rows=25>{{c_body}}></textarea>
+				<textarea id=creo_body name=body value='' cols=75 rows=25>{{c_body}}</textarea>
 			<tr>
 				<td>&nbsp;
 				<td>
 					<input type=submit name='update' value='Сохранить изменения'>
 		</table>
 		<input type=hidden name=action value='add'>
-		<input type=hidden name=id value='{{creo_id}}>'>
+		<input type=hidden name=id value='{{creo_id}}'>
 	</form>
 <TMPL_ELSE>
 	<TMPL_UNLESS can_public>
-		<div class=strict>Ваши предыдущие анализы показали нам что Вы достаточно здоровы!<br>Мы советуем Вам сдать следующий анализ<br>не ранее чем через {{time_to_public}}></div> 
+		<div class=strict>Ваши предыдущие анализы показали нам что Вы достаточно здоровы!<br>Мы советуем Вам сдать следующий анализ<br>не ранее чем через {{time_to_public}}</div> 
 		<p>&nbsp;
 	</TMPL_UNLESS>
 	<table class=black_copy_menu>
@@ -33,7 +33,7 @@
 				<TMPL_IF can_public>
 					<input type=submit value="Сдать этот анализ">
 				</TMPL_IF>
-				<input type=hidden name="id" value="{{creo_id}}>">
+				<input type=hidden name="id" value="{{creo_id}}">
 				<input type=hidden name="action" value="public">
 				<TMPL_IF can_public>
 					<br>
@@ -41,12 +41,12 @@
 				</TMPL_IF>
 			</form>
 		<td class=edit>
-			<a href="/black_copy/edit/{{creo_id}}>.html">
+			<a href="/black_copy/edit/{{creo_id}}.html">
 				<input type=button value="Внести правки">
 			</a>
 	</table>
 	<h1>ЧЕРН<span class=letter>О</span>ВИ<span class=letter>К</span></h1>
-	<span class=creo_title>{{c_title}}></span>
+	<span class=creo_title>{{c_title}}</span>
 	<br><br>
 	<div class=creo_body>{{ESCAPE}}="NONE" NAME=c_body></div>
 </TMPL_IF>

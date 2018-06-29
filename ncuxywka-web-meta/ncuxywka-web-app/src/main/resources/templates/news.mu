@@ -26,14 +26,14 @@
 <TMPL_LOOP news>
 	<tr>
 	<td class=info>
-		<b>{{n_post_date}}></b> 
-		от <a href="/users/{{n_user_id}}>.html">{{n_user_name}}></a>
+		<b>{{n_post_date}}</b> 
+		от <a href="/users/{{n_user_id}}.html">{{n_user_name}}</a>
 	<td class=menu>
 		<TMPL_IF god>
-			<a href="/news/hide/{{n_id}}>">Удалить</a>
+			<a href="/news/hide/{{n_id}}">Удалить</a>
 		</TMPL_IF>
 	<tr>
 	<td class=text colspan=2>
-		{{n_msg}}>
+		{{n_msg}}
 </TMPL_LOOP>
 </table>

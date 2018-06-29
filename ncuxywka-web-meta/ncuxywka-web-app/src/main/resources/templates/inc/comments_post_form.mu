@@ -4,10 +4,10 @@
 			<td><span class=note>Пациэнт:</span>
 			<td>
 			<TMPL_IF user_auth>
-				<span class=user_name>{{alias}}></span>
-				<input type=hidden name=alias value='{{alias}}>'>
+				<span class=user_name>{{alias}}</span>
+				<input type=hidden name=alias value='{{alias}}'>
 			<TMPL_ELSE>
-				<input type=text maxlength=50 name=alias value='{{alias}}>'>
+				<input type=text maxlength=50 name=alias value='{{alias}}'>
 			</TMPL_IF>
 		<tr>
 			<td><span class=note>Диагноз:</span>
@@ -16,13 +16,13 @@
 		<tr>
 			<td>&nbsp;
 			<td>
-			<input type=submit id=submit_add name=add value='<TMPL_IF post_button_caption>{{post_button_caption}}><TMPL_ELSE>Поставить диагноз</TMPL_IF>'>
+			<input type=submit id=submit_add name=add value='<TMPL_IF post_button_caption>{{post_button_caption}}<TMPL_ELSE>Поставить диагноз</TMPL_IF>'>
 	</table>
 	<TMPL_IF creo_id>
-		<input type=hidden name=id value='{{creo_id}}>'>
+		<input type=hidden name=id value='{{creo_id}}'>
 	</TMPL_IF>
 	<TMPL_IF room_name>
-		<input type=hidden name=room value='{{room_name}}>'>
+		<input type=hidden name=room value='{{room_name}}'>
 	</TMPL_IF>
 	<input type=hidden id=action name=action value='add'>
 </form>

@@ -5,11 +5,11 @@
 	<title>{{meta_title}} DEFAULT='ПСИХУЮШКА'></title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta name='description' content="{{meta_description}} DEFAULT='Литературный портал: свободная публикация рассказов и стихов о любых сторонах нашего бытия и сознания.'>"> 
-	<link rel="stylesheet" href="/css/{{skin_css_main}}>" type="text/css">
+	<link rel="stylesheet" href="/css/{{skin_css_main}}" type="text/css">
 	<link rel="icon" type="image/png" href="/img/favicon.ico">
 
 	<TMPL_LOOP skin_js_include>
-		<script type="text/javascript" src="/js/{{js_file}}>">
+		<script type="text/javascript" src="/js/{{js_file}}">
 	</TMPL_LOOP>
 
 	<script type="text/javascript">

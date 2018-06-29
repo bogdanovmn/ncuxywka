@@ -26,16 +26,16 @@
 	<td>
 		<TMPL_LOOP new_users>
 			<p>
-			<a href="/users/{{nu_id}}>.html">{{nu_name}}></a>
+			<a href="/users/{{nu_id}}.html">{{nu_name}}</a>
 			<br>
-			<span class=note>{{nu_reg_date}}></span>
+			<span class=note>{{nu_reg_date}}</span>
 			</p>
 		</TMPL_LOOP>
 	</table>
 	
 	</center>
 <td>
-	<center><img width=465px alt='ПСИХУЮШКА.COM' src='/img/{{skin_pic_main}}>'></center>
+	<center><img width=465px alt='ПСИХУЮШКА.COM' src='/img/{{skin_pic_main}}'></center>
 </table>		
 
 <table class=news>
@@ -45,10 +45,10 @@
 	<td class=info>
 		<TMPL_LOOP news>
 			<p>
-			<b>{{n_post_date}}></b>
-			от <a class=author href="/users/{{n_user_id}}>.html">{{n_user_name}}></a>
+			<b>{{n_post_date}}</b>
+			от <a class=author href="/users/{{n_user_id}}.html">{{n_user_name}}</a>
 			<br>
-			{{n_msg}}>
+			{{n_msg}}
 			</p>
 		</TMPL_LOOP>
 		<div class=more>
@@ -62,20 +62,20 @@
 		<tr class=info>
 			<td>
 				<a href="/creos/{{ESCAPE}}=URL NAME=lc_id>.html">
-					<b>{{lc_alias}}></b> : {{lc_title}}>
+					<b>{{lc_alias}}</b> : {{lc_title}}
 				</a>
 			<td class=date>
-				<b>{{lc_post_date}}></b>
+				<b>{{lc_post_date}}</b>
 		<tr class=info>
 			<td colspan=2 class=diag>
-				Диагнозов: {{lc_comments_count}}>
+				Диагнозов: {{lc_comments_count}}
 		<tr class=text>
 			<td colspan=2>
 				<table class=creo_preview_text>
 				<tr>
 					<td class=avatar>
 						<TMPL_IF lc_avatar>
-							<center><img alt='{{lc_alias}}>' src='/{{lc_avatar}}>_thumb'></center>
+							<center><img alt='{{lc_alias}}' src='/{{lc_avatar}}_thumb'></center>
 						<TMPL_ELSE>
 							&nbsp;
 						</TMPL_IF>
@@ -89,11 +89,11 @@
 			<tr class=more_creos>
 				<td colspan=2>
 					<TMPL_LOOP lc_more>
-						<i>{{lc_post_date}}></i>
+						<i>{{lc_post_date}}</i>
 						<a href="/creos/{{ESCAPE}}=URL NAME=lc_id>.html">
-							{{lc_title}}>
+							{{lc_title}}
 						</a>
-						<i>&nbsp;({{lc_comments_count}}> диаг.)</i><TMPL_UNLESS __last__>,&nbsp;</TMPL_UNLESS>
+						<i>&nbsp;({{lc_comments_count}} диаг.)</i><TMPL_UNLESS __last__>,&nbsp;</TMPL_UNLESS>
 						<br>
 					</TMPL_LOOP>
 		</TMPL_IF>

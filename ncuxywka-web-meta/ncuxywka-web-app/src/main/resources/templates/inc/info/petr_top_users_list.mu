@@ -7,11 +7,11 @@
 	<td>
 	<TMPL_LOOP petr_top_users_list>
 		<p class=user_creo_list>
-		<span class=note>[{{pp_cnt}}>] </span>
+		<span class=note>[{{pp_cnt}}] </span>
 		<TMPL_IF pp_user_id>
-			<a href="/users/{{pp_user_id}}>.html"><b>{{pp_alias}}></b></a>
+			<a href="/users/{{pp_user_id}}.html"><b>{{pp_alias}}</b></a>
 		<TMPL_ELSE>
-			{{pp_alias}}>
+			{{pp_alias}}
 		</TMPL_IF>
 		</p>
 	</TMPL_LOOP>

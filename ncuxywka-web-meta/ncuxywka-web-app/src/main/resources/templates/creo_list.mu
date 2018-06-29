@@ -34,9 +34,9 @@
 <p class=jump>
 <TMPL_LOOP jump_links>
 	<TMPL_IF selected>
-		<span>&nbsp;{{title}}>&nbsp;</span>
+		<span>&nbsp;{{title}}&nbsp;</span>
 	<TMPL_ELSE>
-		<a href='/{{type}}>/{{name}}>/'>&nbsp;{{title}}>&nbsp;</a>
+		<a href='/{{type}}/{{name}}/'>&nbsp;{{title}}&nbsp;</a>
 	</TMPL_IF> 
 </TMPL_LOOP>
 </p>
@@ -47,24 +47,24 @@
 <TMPL_LOOP creo_list>
 	<tr>
 		<td class=date>
-			{{cl_post_date}}>
+			{{cl_post_date}}
 		<TMPL_UNLESS alex_jile>
 			<td class=user>
 				<TMPL_IF cl_user_id>
-					<a href='/users/{{cl_user_id}}>.html'>{{cl_alias}}></a>
+					<a href='/users/{{cl_user_id}}.html'>{{cl_alias}}</a>
 				<TMPL_ELSE>
-					{{cl_alias}}>
+					{{cl_alias}}
 				</TMPL_IF>
 		</TMPL_UNLESS>
 		<td class=title>
-			<a href="/creos/{{ESCAPE}}=URL NAME=cl_id>.html">{{cl_title}}></a>
+			<a href="/creos/{{ESCAPE}}=URL NAME=cl_id>.html">{{cl_title}}</a>
 			<TMPL_UNLESS cl_self_vote>
 				<span class=subnote>?</span>
 			</TMPL_UNLESS>
 		<td class=comments>
-			{{cl_comments}}>
+			{{cl_comments}}
 		<td class=resume>
-			{{cl_votes}}>
+			{{cl_votes}}
 </TMPL_LOOP>
 </table>
 

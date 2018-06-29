@@ -1,6 +1,6 @@
 <div class=search_menu>
 	<form method=post action="/search/">
-		<input type=text name=search_text value="{{search_text}}>">
+		<input type=text name=search_text value="{{search_text}}">
 		<input type=submit value="Найти">
 	</form>
 </div>
@@ -19,16 +19,16 @@
 	<TMPL_LOOP creo_list>
 		<tr>
 			<td class=date>
-				{{cl_post_date}}>
+				{{cl_post_date}}
 			<td class=user>
 				<TMPL_IF cl_user_id>
-					<a href='/users/{{cl_user_id}}>.html'>{{cl_alias}}></a>
+					<a href='/users/{{cl_user_id}}.html'>{{cl_alias}}</a>
 				<TMPL_ELSE>
-					{{cl_alias}}>
+					{{cl_alias}}
 				</TMPL_IF>
 			<td class=title>
 				<TMPL_IF cl_quarantine><s></TMPL_IF>
-				<a href="/creos/{{ESCAPE}}=URL NAME='cl_id'>.html">{{cl_title}}></a>
+				<a href="/creos/{{ESCAPE}}=URL NAME='cl_id'>.html">{{cl_title}}</a>
 				<TMPL_IF cl_quarantine></s></TMPL_IF>
 				<TMPL_UNLESS cl_self_vote>
 					<span class=subnote>?</span>

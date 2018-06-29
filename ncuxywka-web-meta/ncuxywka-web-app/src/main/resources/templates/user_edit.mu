@@ -31,7 +31,7 @@
 		<tr>
 			<td>
 				<TMPL_IF avatar>
-					<p><img src='/{{avatar}}>_thumb'>
+					<p><img src='/{{avatar}}_thumb'>
 					<br><input type=checkbox name=delete_avatar> Удалить аватар
 				</TMPL_IF>
 			<td class=change_avatar>
@@ -47,7 +47,7 @@
 		<tr>
 			<td>e-mail <span class=require>*</span>
 			<td>
-			<input size=35 type=text maxlength=50 name=email value='{{email}}>'>
+			<input size=35 type=text maxlength=50 name=email value='{{email}}'>
 		</table>
 	</div>
 	<div class=edit_elements id="about">
@@ -55,19 +55,19 @@
 			<tr>
 				<td>Город:
 				<td>
-				<input size=35 type=text maxlength=50 name=city value='{{city}}>'>
+				<input size=35 type=text maxlength=50 name=city value='{{city}}'>
 			<tr>
 				<td>На что жалуемся, товарищ?
 				<td>
-				<textarea name=hates value='' cols=60 rows=6>{{hates}}></textarea>
+				<textarea name=hates value='' cols=60 rows=6>{{hates}}</textarea>
 			<tr>
 				<td>Отношение к лекарствам:
 				<td>
-				<textarea name=loves value='' cols=60 rows=6>{{loves}}></textarea>
+				<textarea name=loves value='' cols=60 rows=6>{{loves}}</textarea>
 			<tr>
 				<td>О себе:
 				<td>
-				<textarea name=about value='' cols=60 rows=6>{{about}}></textarea>
+				<textarea name=about value='' cols=60 rows=6>{{about}}</textarea>
 		</table>
 	</div>
 	<input type=hidden name=action value='add'>
