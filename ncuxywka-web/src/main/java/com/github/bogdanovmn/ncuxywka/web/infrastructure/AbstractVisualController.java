@@ -1,0 +1,38 @@
+package com.github.bogdanovmn.ncuxywka.web.infrastructure;
+
+import com.github.bogdanovmn.ncuxywka.web.infrastructure.config.mustache.Layout;
+import com.github.bogdanovmn.ncuxywka.web.infrastructure.menu.MenuBuilder;
+import com.github.bogdanovmn.ncuxywka.web.infrastructure.menu.MenuItem;
+import com.samskivert.mustache.Mustache;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+
+import java.util.Map;
+
+public abstract class AbstractVisualController extends AbstractController {
+	@Autowired
+	private Mustache.Compiler compiler;
+	@Autowired
+	private MenuBuilder menuBuilder;
+
+	@ModelAttribute("layout")
+	public Mustache.Lambda layout(Map<String, Object> model) {
+		return new Layout(compiler, "main");
+	}
+
+	@ModelAttribute
+	public void addCommonAttributes(Model model) {
+		model.addAttribute("userName", getUser().getName());
+		model.addAttribute(
+			"menu",
+			menuBuilder
+				.setSelectedItem(currentMenuItem())
+				.setUser(getUser())
+				.build()
+		);
+	}
+
+	protected abstract MenuItem currentMenuItem();
+	protected MenuItem currentAdminMenuItem() { return MenuItem.NONE; }
+}
