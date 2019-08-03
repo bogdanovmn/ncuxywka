@@ -1,11 +1,11 @@
 package com.github.bogdanovmn.ncuxywka.web.app.user;
 
-import com.github.bogdanovmn.ncuxywka.web.app.AbstractVisualController;
-import com.github.bogdanovmn.ncuxywka.web.app.FormErrors;
-import com.github.bogdanovmn.ncuxywka.web.app.HeadMenu;
-import com.github.bogdanovmn.ncuxywka.web.app.config.security.Md5PasswordEncoder;
-import com.github.bogdanovmn.ncuxywka.web.orm.User;
-import com.github.bogdanovmn.ncuxywka.web.orm.UserRepository;
+import com.github.bogdanovmn.ncuxywka.model.entity.User;
+import com.github.bogdanovmn.ncuxywka.model.entity.UserRepository;
+import com.github.bogdanovmn.ncuxywka.web.app.infrastructure.AbstractVisualController;
+import com.github.bogdanovmn.ncuxywka.web.app.infrastructure.FormErrors;
+import com.github.bogdanovmn.ncuxywka.web.app.infrastructure.HeadMenu;
+import com.github.bogdanovmn.ncuxywka.web.app.infrastructure.config.security.Md5PasswordEncoder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 import org.springframework.stereotype.Controller;

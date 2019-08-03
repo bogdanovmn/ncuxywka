@@ -1,9 +1,9 @@
 package com.github.bogdanovmn.ncuxywka.web.app.user;
 
-import com.github.bogdanovmn.ncuxywka.web.app.AbstractMinVisualController;
-import com.github.bogdanovmn.ncuxywka.web.app.FormErrors;
-import com.github.bogdanovmn.ncuxywka.web.app.config.security.ProjectSecurityService;
-import com.github.bogdanovmn.ncuxywka.web.orm.User;
+import com.github.bogdanovmn.ncuxywka.model.entity.User;
+import com.github.bogdanovmn.ncuxywka.web.app.infrastructure.AbstractMinVisualController;
+import com.github.bogdanovmn.ncuxywka.web.app.infrastructure.FormErrors;
+import com.github.bogdanovmn.ncuxywka.web.app.infrastructure.config.security.ProjectSecurityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

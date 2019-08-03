@@ -1,9 +1,9 @@
 package com.github.bogdanovmn.ncuxywka.web.app.user;
 
-import com.github.bogdanovmn.ncuxywka.web.orm.EntityFactory;
-import com.github.bogdanovmn.ncuxywka.web.orm.User;
-import com.github.bogdanovmn.ncuxywka.web.orm.UserRepository;
-import com.github.bogdanovmn.ncuxywka.web.orm.UserRole;
+import com.github.bogdanovmn.common.spring.jpa.EntityFactory;
+import com.github.bogdanovmn.ncuxywka.model.entity.User;
+import com.github.bogdanovmn.ncuxywka.model.entity.UserRepository;
+import com.github.bogdanovmn.ncuxywka.model.entity.UserRole;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.DigestUtils;
