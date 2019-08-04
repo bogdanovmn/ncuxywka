@@ -11,7 +11,7 @@ public abstract class AbstractController {
 	private ProjectSecurityService securityService;
 
 	public User getUser() {
-		return securityService.getLoggedInUser();
+		return securityService.getCurrentUser();
 	}
 
 	@ModelAttribute("isAdmin")
@@ -22,7 +22,6 @@ public abstract class AbstractController {
 
 	@ModelAttribute("isGuest")
 	public boolean isGuest() {
-		User user = getUser();
-		return user == null;
+		return !securityService.isLogged();
 	}
 }

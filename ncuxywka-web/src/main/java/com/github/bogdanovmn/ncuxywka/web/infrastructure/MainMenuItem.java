@@ -8,6 +8,7 @@ public enum MainMenuItem implements MenuItem {
 
 	MAIN,
 	FAQ,
+	REGISTRATION,
 	POST_CREO,
 	GB,
 
@@ -15,6 +16,7 @@ public enum MainMenuItem implements MenuItem {
 
 	USERS,
 	CREOS,
+	QUARANTINE,
 	DIAGNOSES,
 
 //	OTHER_ROOMS,
@@ -34,9 +36,9 @@ public enum MainMenuItem implements MenuItem {
 	DIAGNOSES_TO_ME,
 	LOGOUT,
 
-//	ADMIN
+//	MAINDOCTOR
 
-	ADMIN,
+	RANDOM_CREO,
 
 	NONE;
 

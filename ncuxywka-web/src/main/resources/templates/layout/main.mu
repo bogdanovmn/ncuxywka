@@ -16,6 +16,7 @@
 
 <body>
 <div class=main>
+	{{> inc/navigation}}
     <div id=mid_area>
         <!-- Content -->
         <div id=data_area>

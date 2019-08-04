@@ -27,8 +27,9 @@ public class UserRole extends BaseEntityWithUniqueName {
 	}
 
 	public static enum Role {
-		ADMIN,
 		GUEST,
-		PATIENT
+		USER,
+		ADMIN,
+		PLAGIARISER
 	}
 }

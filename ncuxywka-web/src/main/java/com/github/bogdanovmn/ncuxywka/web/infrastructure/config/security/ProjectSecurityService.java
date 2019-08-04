@@ -2,6 +2,7 @@ package com.github.bogdanovmn.ncuxywka.web.infrastructure.config.security;
 
 
 import com.github.bogdanovmn.ncuxywka.model.entity.User;
+import com.github.bogdanovmn.ncuxywka.model.entity.UserRole;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,10 +27,11 @@ public class ProjectSecurityService {
 	}
 
 	public boolean isLogged() {
-		return this.getLoggedInUser() != null;
+		User currentUser = getCurrentUser();
+		return currentUser != null && !currentUser.withRole(UserRole.Role.GUEST.name());
 	}
 
-	public User getLoggedInUser() {
+	public User getCurrentUser() {
 		Object userDetails = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		if (userDetails instanceof ProjectUserDetails) {
 			return ((ProjectUserDetails)userDetails).getUser();

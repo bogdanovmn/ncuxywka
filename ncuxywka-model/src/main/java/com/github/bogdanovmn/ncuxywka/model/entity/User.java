@@ -9,6 +9,7 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.util.Collections;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Set;
 
 @Getter
@@ -51,6 +52,11 @@ public class User extends BaseEntityWithUniqueName implements UserAuthorization 
 
 	public User(String name) {
 		super(name);
+	}
+
+	public User setRole(UserRole.Role role) {
+		roles = new HashSet<>(Collections.singleton(new UserRole(role.name())));
+		return this;
 	}
 
 	public static User guest() {

@@ -27,65 +27,101 @@ menu:
       - id: MAIN
         title: Главная
         url: /
+
       - id: FAQ
         title: Справочная
         note: FAQ
         url: /faq
+
       - id: POST_CREO
+        role: USER
         title: Лабороторная
         note: Сдать анализы
         url: /creos/draft
+
+      - id: REGISTRATION
+        role: GUEST
+        title: Регистратура
+        url: /registration
+
       - id: GB
         title: Палата №6
         url: /gb
+
   - id: FILE_CABINET
     title: Картотека
     items:
       - id: USERS
         title: Пациэнты
         url: /users
+
       - id: CREOS
         title: Анализы
         url: /creos
+
+      - id: QUARANTINE
+        title: Карантин
+        url: /quarantine
+
       - id: DIAGNOSES
         title: Диагнозы
         url: /diagnoses
+
+  - id: USER
+    title: Бюллетень
+    role: USER
+    items:
+      - id: SETTINGS
+        title: Настройки
+        url: /settings
+
+      - id: PERSONAL_MESSAGES
+        title: Личные сообщения
+        url: /pm
+
+      - id: DIAGNOSES_FROM_ME
+        title: Мои диагнозы
+        url: /diagnoses?from=%uid
+
+      - id: DIAGNOSES_TO_ME
+        title: Диагнозы к моим анализам
+        url: /diagnoses?to=%uid
+
+      - id: LOGOUT
+        title: Выйти
+        url: /logout
+
   - id: OTHER_ROOMS
     title: Другие палаты
     items:
       - id: WISH_ROOM
         title: Книга желаний
         url: /wish_room
+
       - id: PETR_ROOM
         title: Похождения поросенка Петра
         url: /petr_room
+
       - id: FRENIZM_ROOM
         title: Олегофренизмы
         url: /frenizm_room
+
       - id: MAINSHIT_ROOM
         title: Главсрач
         url: /mainshit_room
+
       - id: PROCEDURE_ROOM
         title: Процедурная
         url: /proc_room
+
       - id: NEOFUTURIZM_CREOS
         title: Неофотуризм
         url: /neofuturizm
-  - id: USER
-    title: Бюллетень
+
+  - id: MAINDOCTOR
+    title: Кабинет Главврача
+    role: ADMIN
     items:
-      - id: SETTINGS
-        title: Настройки
-        url: /settings
-      - id: PERSONAL_MESSAGES
-        title: Личные сообщения
-        url: /pm
-      - id: DIAGNOSES_FROM_ME
-        title: Мои диагнозы
-        url: /diagnoses?from=%uid
-      - id: DIAGNOSES_TO_ME
-        title: Диагнозы к моим анализам
-        url: /diagnoses?to=%uid
-      - id: LOGOUT
-        title: Выйти
-        url: /logout
+      - id: RANDOM_CREO
+        title: Случайные крео
+        url: /lab/random-creo

@@ -1,6 +1,5 @@
 package com.github.bogdanovmn.ncuxywka.web.user;
 
-import com.github.bogdanovmn.common.spring.jpa.EntityFactory;
 import com.github.bogdanovmn.ncuxywka.model.entity.User;
 import com.github.bogdanovmn.ncuxywka.model.entity.UserRepository;
 import com.github.bogdanovmn.ncuxywka.model.entity.UserRole;
@@ -9,17 +8,14 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.DigestUtils;
 
 import java.util.Date;
-import java.util.HashSet;
 
 @Service
 class RegistrationService {
 	private final UserRepository userRepository;
-	private final EntityFactory entityFactory;
 
 	@Autowired
-	public RegistrationService(UserRepository userRepository, EntityFactory entityFactory) {
+	public RegistrationService(UserRepository userRepository) {
 		this.userRepository = userRepository;
-		this.entityFactory = entityFactory;
 	}
 
 	User addUser(UserRegistrationForm userForm) {
@@ -34,15 +30,7 @@ class RegistrationService {
 					)
 				)
 				.setRegisterDate(new Date())
-				.setRoles(
-					new HashSet<UserRole>() {{
-						add(
-							(UserRole) entityFactory.getPersistBaseEntityWithUniqueName(
-								new UserRole("User")
-							)
-						);
-					}}
-				)
+				.setRole(UserRole.Role.USER)
 		);
 	}
 

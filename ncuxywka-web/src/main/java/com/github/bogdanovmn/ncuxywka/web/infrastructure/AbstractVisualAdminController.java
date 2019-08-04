@@ -7,5 +7,5 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/admin")
 public abstract class AbstractVisualAdminController extends AbstractVisualController {
-	protected MenuItem currentMenuItem() { return MainMenuItem.ADMIN; }
+	protected MenuItem currentMenuItem() { return MainMenuItem.NONE; }
 }
