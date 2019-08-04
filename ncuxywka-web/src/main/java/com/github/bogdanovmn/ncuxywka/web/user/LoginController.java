@@ -11,7 +11,7 @@ class LoginController extends AbstractMinVisualController {
 	@GetMapping("/login")
 	ModelAndView form(Model model, String error) {
 		if (getUser() != null) {
-			return new ModelAndView("redirect:/index");
+			return new ModelAndView("redirect:/");
 		}
 
 		if (error != null) {

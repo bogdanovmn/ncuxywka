@@ -1,3 +1,3 @@
-{{#error_msg}}
-	<div class=error>{{error_msg}}</div>
-{{/if_close}}
+{{#errorMsg}}
+	<div class=error>{{errorMsg}}</div>
+{{/errorMsg}}

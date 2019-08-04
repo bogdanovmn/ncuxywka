@@ -1,11 +1,12 @@
 package com.github.bogdanovmn.ncuxywka.web.user;
 
+import com.github.bogdanovmn.common.spring.menu.MenuItem;
 import com.github.bogdanovmn.ncuxywka.model.entity.User;
 import com.github.bogdanovmn.ncuxywka.model.entity.UserRepository;
 import com.github.bogdanovmn.ncuxywka.web.infrastructure.AbstractVisualController;
 import com.github.bogdanovmn.ncuxywka.web.infrastructure.FormErrors;
+import com.github.bogdanovmn.ncuxywka.web.infrastructure.MainMenuItem;
 import com.github.bogdanovmn.ncuxywka.web.infrastructure.config.security.Md5PasswordEncoder;
-import com.github.bogdanovmn.ncuxywka.web.infrastructure.menu.MenuItem;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 import org.springframework.stereotype.Controller;
@@ -29,7 +30,7 @@ class UserSettingsController extends AbstractVisualController {
 
 	@Override
 	protected MenuItem currentMenuItem() {
-		return MenuItem.SETTINGS;
+		return MainMenuItem.SETTINGS;
 	}
 
 	@InitBinder

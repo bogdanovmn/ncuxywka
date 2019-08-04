@@ -18,7 +18,6 @@ public class ProjectUserDetailsService implements UserDetailsService {
 	}
 
 	@Override
-//	@Transactional(readOnly = true)
 	public UserDetails loadUserByUsername(String name)
 		throws UsernameNotFoundException
 	{

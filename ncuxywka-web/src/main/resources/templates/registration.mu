@@ -1,10 +1,13 @@
-<h1><span class=letter>Z</span>АРЕГИСТРИР<span class=letter>Y</span>ЙСЯ!</h1>
+{{#layout}}
+
+	<h1><span class=letter>Z</span>АРЕГИСТРИР<span class=letter>Y</span>ЙСЯ!</h1>
 
 {{> inc/error_msg }}
 
 {{#user_auth}}
 	<p>Вы уже зарегистрированы!<br>Перед регистрацией другого пациэнта вам необходимо <a href='/auth/out'>выйти</a>.</p>
-<TMPL_ELSE>
+{{/user_auth}}
+{{^user_auth}}
 	<p>Прежде чем регистрироваться, прочитайте пожалуйста <a href='/faq_room/'>FAQ</a><br><br></p>
 	<form onsubmit="return check_post_data();" name='add_user' method=post action=''>
 		<table class=form>
@@ -51,7 +54,7 @@
 		</table>
 		<input type=hidden name=action value='add'>
 	</form>
-{{/if_close}}
+{{/user_auth}}
 
 <SCRIPT language='javascript' type="text/javascript">
 <!--
@@ -83,3 +86,6 @@ function check_post_data() {
 }
 -->
 </SCRIPT>
+
+{{/layout}}
+

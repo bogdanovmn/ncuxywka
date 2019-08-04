@@ -1,4 +1,6 @@
-<table class=main_news>
+{{#layout}}
+
+	<table class=main_news>
 <tr>
 <td class=about>
 	<center>
@@ -7,7 +9,7 @@
 		<tr>
 		<td class=title>КУДА Я ПОПАЛ?
 		<tr>
-		<td><b>Психуюшка</b> - это литературное онлайн сообщество, полная свобода слова и отсутствие цензуры. <a href='/faq_room/'>Подробнее...</a>
+		<td><b>Психуюшка</b> - это литературное онлайн сообщество, полная свобода слова и отсутствие цензуры. <a href='/faq/'>Подробнее...</a>
 	</table>
 	
 	<table class=info_about>
@@ -15,7 +17,7 @@
 	<td class=title>ЗАЧЕМ?
 	<tr>
 	<td><p><a href='/creos/'>Почитать анализы</a>
-		<p><a href='/talks/'>Поставить диагнозы</a>
+		<p><a href='/diagnoses/'>Поставить диагнозы</a>
 		<p><a href='/add_creo/'>Прислать свои анализы</a>
 	</table>
 	
@@ -26,11 +28,11 @@
 	<td>
 		{{#new_users}}
 			<p>
-			<a href="/users/{{nu_id}}.html">{{nu_name}}</a>
+			<a href="/users/{{id}}">{{name}}</a>
 			<br>
-			<span class=note>{{nu_reg_date}}</span>
+			<span class=note>{{reg_date}}</span>
 			</p>
-		{{/loop_close}}
+		{{/new_users}}
 	</table>
 	
 	</center>
@@ -45,12 +47,12 @@
 	<td class=info>
 		{{#news}}
 			<p>
-			<b>{{n_post_date}}</b>
-			от <a class=author href="/users/{{n_user_id}}.html">{{n_user_name}}</a>
+			<b>{{post_date}}</b>
+			от <a class=author href="/users/{{user.id}}">{{user.name}}</a>
 			<br>
-			{{n_msg}}
+			{{message}}
 			</p>
-		{{/loop_close}}
+		{{/news}}
 		<div class=more>
 			<a href="/news/">Архив новостей</a>
 		</div>
@@ -61,41 +63,43 @@
 	<table class=creo_preview>
 		<tr class=info>
 			<td>
-				<a href="/creos/{{ESCAPE}}=URL NAME=lc_id>.html">
-					<b>{{lc_alias}}</b> : {{lc_title}}
+				<a href="/creos/{{id}}">
+					<b>{{alias}}</b> : {{title}}
 				</a>
 			<td class=date>
-				<b>{{lc_post_date}}</b>
+				<b>{{postDate}}</b>
 		<tr class=info>
 			<td colspan=2 class=diag>
-				Диагнозов: {{lc_comments_count}}
+				Диагнозов: {{commentsCount}}
 		<tr class=text>
 			<td colspan=2>
 				<table class=creo_preview_text>
 				<tr>
 					<td class=avatar>
-						{{#lc_avatar}}
-							<center><img alt='{{lc_alias}}' src='/{{lc_avatar}}_thumb'></center>
-						<TMPL_ELSE>
+						{{#avatar}}
+							<center><img alt='{{alias}}' src='/{{avatar}}_thumb'></center>
+						{{/avatar}}
+						{{^avatar}}
 							&nbsp;
-						{{/if_close}}
+						{{/avatar}}
 					<td class=text>
-						{{ESCAPE}}="NONE" NAME=lc_body>
-						{{#lc_cuted}}
+						{{body}}
+						{{#cuted}}
 							<br><span class=note>--> Ампутировано <--</span>
-						{{/if_close}}
+						{{/cuted}}
 				</table>
-		{{#lc_more}}
+		{{#more.0}}
 			<tr class=more_creos>
 				<td colspan=2>
-					{{#lc_more}}
-						<i>{{lc_post_date}}</i>
-						<a href="/creos/{{ESCAPE}}=URL NAME=lc_id>.html">
-							{{lc_title}}
+					{{#more}}
+						<i>{{post_date}}</i>
+						<a href="/creos/{{id}}>">
+							{{title}}
 						</a>
-						<i>&nbsp;({{lc_comments_count}} диаг.)</i>{{#__last__}},&nbsp;{{/__last__}}
+						<i>&nbsp;({{commentsCount}} диаг.)</i>{{#__last__}},&nbsp;{{/__last__}}
 						<br>
-					{{/loop_close}}
-		{{/if_close}}
+					{{/more}}
+		{{/more.0}}
 	</table>
-{{/loop_close}}
+{{/last_creos}}
+{{/layout}}

@@ -1,13 +1,22 @@
 package com.github.bogdanovmn.ncuxywka.model.entity;
 
 import com.github.bogdanovmn.common.spring.jpa.BaseEntityWithUniqueName;
+import com.github.bogdanovmn.common.spring.menu.UserAuthorization;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.Collections;
 import java.util.Date;
 import java.util.Set;
 
+@Getter
+@Setter
+@NoArgsConstructor
+
 @Entity
-public class User extends BaseEntityWithUniqueName {
+public class User extends BaseEntityWithUniqueName implements UserAuthorization {
 	@Column(unique = true, nullable = false)
 	private String email;
 
@@ -40,45 +49,21 @@ public class User extends BaseEntityWithUniqueName {
 	)
 	private Set<UserRole> roles;
 
-	public User() {}
-
 	public User(String name) {
 		super(name);
 	}
 
-	public String getEmail() {
-		return email;
+	public static User guest() {
+		return new User("Случайный посетитель").setRoles(Collections.singleton(UserRole.guest()));
 	}
 
-	public User setEmail(String email) {
-		this.email = email;
-		return this;
+	@Override
+	public String userName() {
+		return getName();
 	}
 
-	public String getPasswordHash() {
-		return passwordHash;
-	}
-
-	public User setPasswordHash(String passwordHash) {
-		this.passwordHash = passwordHash;
-		return this;
-	}
-
-	public Date getRegisterDate() {
-		return registerDate;
-	}
-
-	public User setRegisterDate(Date registerDate) {
-		this.registerDate = registerDate;
-		return this;
-	}
-
-	public Set<UserRole> getRoles() {
-		return roles;
-	}
-
-	public User setRoles(Set<UserRole> roles) {
-		this.roles = roles;
-		return this;
+	@Override
+	public boolean withRole(String role) {
+		return roles.contains(new UserRole(role));
 	}
 }

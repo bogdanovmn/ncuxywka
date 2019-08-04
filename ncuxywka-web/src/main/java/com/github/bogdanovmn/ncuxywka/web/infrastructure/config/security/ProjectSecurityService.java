@@ -34,7 +34,9 @@ public class ProjectSecurityService {
 		if (userDetails instanceof ProjectUserDetails) {
 			return ((ProjectUserDetails)userDetails).getUser();
 		}
-
+		if (userDetails instanceof User) {
+			return (User) userDetails;
+		}
 		return null;
 	}
 

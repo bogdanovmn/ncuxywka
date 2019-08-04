@@ -1,6 +1,8 @@
-package com.github.bogdanovmn.ncuxywka.web.infrastructure.menu;
+package com.github.bogdanovmn.ncuxywka.web.infrastructure;
 
-public enum MenuItem {
+import com.github.bogdanovmn.common.spring.menu.MenuItem;
+
+public enum MainMenuItem implements MenuItem {
 
 //	MAIN_ROOMS,
 
@@ -36,5 +38,10 @@ public enum MenuItem {
 
 	ADMIN,
 
-	NONE
+	NONE;
+
+	@Override
+	public String note() {
+		return null;
+	}
 }

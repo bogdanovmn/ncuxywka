@@ -10,22 +10,25 @@ public class Layout implements Mustache.Lambda {
 	private String body;
 	private final Mustache.Compiler compiler;
 	private final String name;
+	private final String contextPath;
 
-	public Layout(Mustache.Compiler compiler, String name) {
+	public Layout(Mustache.Compiler compiler, String name, String contextPath) {
 		this.compiler = compiler;
 		this.name = name;
+		this.contextPath = contextPath;
 	}
 
-	public Layout(Mustache.Compiler compiler) {
+	public Layout(Mustache.Compiler compiler, String contextPath) {
 		this.compiler = compiler;
 		this.name = "min";
+		this.contextPath = contextPath;
 	}
 
 	@Override
 	public void execute(Template.Fragment frag, Writer out) throws IOException {
 		body = frag.execute();
 		compiler.compile(
-			String.format("{{>layout_%s}}", this.name)
+			String.format("{{>layout/%s}}", this.name)
 		).execute(frag.context(), out);
 	}
 

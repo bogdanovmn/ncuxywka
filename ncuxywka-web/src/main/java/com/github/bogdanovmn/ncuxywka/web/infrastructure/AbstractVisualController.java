@@ -1,10 +1,11 @@
 package com.github.bogdanovmn.ncuxywka.web.infrastructure;
 
+import com.github.bogdanovmn.common.spring.menu.MenuBuilder;
+import com.github.bogdanovmn.common.spring.menu.MenuItem;
 import com.github.bogdanovmn.ncuxywka.web.infrastructure.config.mustache.Layout;
-import com.github.bogdanovmn.ncuxywka.web.infrastructure.menu.MenuBuilder;
-import com.github.bogdanovmn.ncuxywka.web.infrastructure.menu.MenuItem;
 import com.samskivert.mustache.Mustache;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
@@ -16,9 +17,12 @@ public abstract class AbstractVisualController extends AbstractController {
 	@Autowired
 	private MenuBuilder menuBuilder;
 
+	@Value("${server.servlet.context-path:}")
+	private String contextPath;
+
 	@ModelAttribute("layout")
 	public Mustache.Lambda layout(Map<String, Object> model) {
-		return new Layout(compiler, "main");
+		return new Layout(compiler, "main", contextPath);
 	}
 
 	@ModelAttribute
@@ -34,5 +38,5 @@ public abstract class AbstractVisualController extends AbstractController {
 	}
 
 	protected abstract MenuItem currentMenuItem();
-	protected MenuItem currentAdminMenuItem() { return MenuItem.NONE; }
+	protected MenuItem currentAdminMenuItem() { return MainMenuItem.NONE; }
 }
