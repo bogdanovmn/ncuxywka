@@ -10,8 +10,8 @@
 		<a href="/creos/{{pcl_id}}.html"><b>{{pcl_title}}</b> - {{pcl_alias}}</a>
 		<span class=subnote> [Последнее: {{pcl_last_comment_date}} от {{pcl_comment_alias}}]</span>
 		</p>
-	{{/loop_close}}
+	{{/popular_creo_list}}
 	
 </table>
 
-{{/if_close}}
+{{/popular_creo_list}}

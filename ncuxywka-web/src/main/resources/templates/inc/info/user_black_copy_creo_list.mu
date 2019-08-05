@@ -11,8 +11,8 @@
 				{{bccl_title}}
 			</a>
 		</p>
-	{{/loop_close}}
+	{{/user_black_copy_creo_list}}
 	
 </table>
 
-{{/if_close}}
+{{/user_black_copy_creo_list}}

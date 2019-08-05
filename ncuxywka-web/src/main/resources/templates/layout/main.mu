@@ -15,14 +15,19 @@
 </head>
 
 <body>
-<div class=main>
-	{{> inc/navigation}}
-    <div id=mid_area>
-        <!-- Content -->
-        <div id=data_area>
-            {{{layout.body}}}
-        </div>
-    </div>
+<div class=container>
+	{{> inc/top}}
+	<div class="row">
+		<div class="col">
+			{{> inc/navigation}}
+		</div>
+		<div class="col">
+			{{{layout.body}}}
+		</div>
+		<div class="col">
+			{{> inc/info_blocks}}
+		</div>
+	</div>
 </div>
 </body>
 </html>

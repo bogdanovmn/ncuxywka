@@ -10,19 +10,20 @@
 			{{#user_ban_left_time}}
 				До окончания процедур осталось
 				<span class=note>{{user_ban_left_time}}</span>
-			<TMPL_ELSE>
+			{{/user_ban_left_time}}
+			{{^user_ban_left_time}}
 				<a href="/procedure/user/{{u_id}}">Назначить процедуры</a>
 				<br>
 				<span class=note>Продолжительность: 6 часов</span>
-			{{/if_close}}
+			{{/user_ban_left_time}}
 			</p>
-		{{/if_close}}
+		{{/ms_user_ban}}
 		
 		{{#god}}
 			<p class=submenu>&#149;&nbsp;
 				<a target=_blank href="http://ip-whois.net/ip_geo.php?ip={{u_ip}}">География</a>
 			</p>
-		{{/if_close}}
+		{{/god}}
 </table>
 
-{{/if_close}}
+{{/user_edit_menu}}

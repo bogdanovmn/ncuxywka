@@ -11,8 +11,8 @@
 		<a href="/users/{{tul_user_id}}.html"><b>{{tul_user_name}}</b></a>
 		<br><span class=subnote>[Голосов: {{tul_cnt}}]</span>
 		</p>
-	{{/loop_close}}
+	{{/top_users_by_votes}}
 	
 </table>
 
-{{/if_close}}
+{{/top_users_by_votes}}

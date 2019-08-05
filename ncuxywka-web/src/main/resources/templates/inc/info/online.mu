@@ -12,9 +12,9 @@
 					<span class=note>
 						{{o_action_time}}{{#o_path_descr}}, {{o_path_descr}}{{/o_path_descr}}
 					</span>
-				{{/if_close}}
+				{{/o_user_id}}
 			</p>
-		{{/loop_close}}
+		{{/online}}
 </table>
 
-{{/if_close}}
+{{/online}}

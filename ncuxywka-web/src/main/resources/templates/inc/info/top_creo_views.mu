@@ -13,8 +13,8 @@
 		<br>
 		<span class=subnote>{{cvt_user_name}}</span>
 		</p>
-	{{/loop_close}}
+	{{/top_creo_views}}
 	
 </table>
 
-{{/if_close}}
+{{/top_creo_views}}

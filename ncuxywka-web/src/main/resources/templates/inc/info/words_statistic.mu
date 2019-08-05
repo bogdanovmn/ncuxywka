@@ -19,9 +19,9 @@
 			<span class=note>[{{freq}}, {{percent}}%] </span>
 			'{{word}}'
 			</p>
-		{{/loop_close}}
+		{{/wc_data}}
 		
 	</table>
-{{/loop_close}}
+{{/wc_data_debug}}
 
-{{/if_close}}
+{{/wc_data_debug}}

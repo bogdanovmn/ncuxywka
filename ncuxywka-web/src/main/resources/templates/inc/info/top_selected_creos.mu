@@ -13,8 +13,8 @@
 		<br>
 		<span class=subnote>{{sct_user_name}}</span>
 		</p>
-	{{/loop_close}}
+	{{/top_selected_creos}}
 	
 </table>
 
-{{/if_close}}
+{{/top_selected_creos}}

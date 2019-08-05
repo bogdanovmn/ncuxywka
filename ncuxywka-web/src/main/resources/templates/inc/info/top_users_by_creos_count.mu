@@ -11,8 +11,8 @@
 		<a href="/users/{{ccu_id}}.html"><b>{{ccu_name}}</b></a>
 		<span class=subnote>[{{ccu_cnt}}]</span>
 		</p>
-	{{/loop_close}}
+	{{/top_users_by_creos_count}}
 	
 </table>
 
-{{/if_close}}
+{{/top_users_by_creos_count}}

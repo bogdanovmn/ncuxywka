@@ -10,8 +10,8 @@
 		<a href="/pm/dialog/{{cl_user_id}}/"><b>{{cl_user_name}}</b></a>
 		<br><span class=subnote>Сообщений: {{cl_cnt}}</span>
 		</p>
-	{{/loop_close}}
+	{{/contact_list}}
 	
 </table>
 
-{{/if_close}}
+{{/contact_list}}

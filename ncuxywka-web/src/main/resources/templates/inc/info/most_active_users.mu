@@ -10,8 +10,8 @@
 		<span class=note>{{__counter__}}. </span>
 		<a href="/users/{{au_id}}.html"><b>{{au_name}}</b></a>
 		</p>
-	{{/loop_close}}
+	{{/most_active_users}}
 	
 </table>
 
-{{/if_close}}
+{{/most_active_users}}

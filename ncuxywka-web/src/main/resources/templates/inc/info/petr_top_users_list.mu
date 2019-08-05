@@ -10,12 +10,13 @@
 		<span class=note>[{{pp_cnt}}] </span>
 		{{#pp_user_id}}
 			<a href="/users/{{pp_user_id}}.html"><b>{{pp_alias}}</b></a>
-		<TMPL_ELSE>
+		{{/pp_user_id}}
+		{{^pp_user_id}}
 			{{pp_alias}}
-		{{/if_close}}
+		{{/pp_user_id}}
 		</p>
-	{{/loop_close}}
+	{{/petr_top_users_list}}
 	
 </table>
 
-{{/if_close}}
+{{/petr_top_users_list}}

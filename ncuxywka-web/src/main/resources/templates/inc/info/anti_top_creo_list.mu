@@ -12,12 +12,12 @@
 			<b>{{tcl_title}}</b></a>
 			{{^tcl_self_vote}}
 				<span class=subnote>?</span>
-			{{/unless_close}}
+			{{/tcl_self_vote}}
 		<br>
 		<span class=subnote>{{tcl_alias}}</span>
 		</p>
-	{{/loop_close}}
+	{{/anti_top_creo_list}}
 	
 </table>
 
-{{/if_close}}
+{{/anti_top_creo_list}}

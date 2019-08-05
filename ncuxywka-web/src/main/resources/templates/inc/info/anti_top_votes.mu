@@ -11,8 +11,8 @@
 		<br><span class=subnote>{{vs_alias}}</span>
 		<!--span class=subnote> [Голосов: {{vs_cnt}}] </span-->
 		</p>
-	{{/loop_close}}
+	{{/anti_top_votes}}
 	
 </table>
 
-{{/if_close}}
+{{/anti_top_votes}}

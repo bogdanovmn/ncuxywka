@@ -1,6 +1,7 @@
 package com.github.bogdanovmn.ncuxywka.web;
 
 import com.github.bogdanovmn.common.spring.menu.MenuConfiguration;
+import com.github.bogdanovmn.ncuxywka.web.infrastructure.config.SkinConfiguration;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
@@ -17,7 +18,10 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableJpaRepositories(basePackages = "com.github.bogdanovmn.ncuxywka.model")
 @EntityScan(basePackages = "com.github.bogdanovmn.ncuxywka.model")
 @EnableTransactionManagement
-@EnableConfigurationProperties(MenuConfiguration.class)
+@EnableConfigurationProperties({
+	MenuConfiguration.class,
+	SkinConfiguration.class
+})
 public class App {
 	public static void main(String[] args) {
 		SpringApplication.run(App.class, args);

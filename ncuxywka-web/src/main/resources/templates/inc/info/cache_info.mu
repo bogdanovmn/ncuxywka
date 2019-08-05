@@ -22,4 +22,4 @@
 		</p>
 </table>
 
-{{/if_close}}
+{{/cache_total_size}}

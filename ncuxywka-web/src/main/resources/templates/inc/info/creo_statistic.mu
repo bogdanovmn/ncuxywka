@@ -11,12 +11,12 @@
 			<span class=value>{{views_total}}</span>
 		</p>
 		{{#selections_total}}
-			<p title="{{#selections_info}}{{si_user_name}}&#10;&#13;{{/loop_close}}">
+			<p title="{{#selections_info}}{{si_user_name}}&#10;&#13;{{/selections_info}}">
 				Добавили в избранное:
 				<br>
 				<span class=value>{{selections_total}}</span>
 			</p>
-		{{/if_close}}
+		{{/selections_total}}
 </table>
 
-{{/if_close}}
+{{/creo_statistic}}

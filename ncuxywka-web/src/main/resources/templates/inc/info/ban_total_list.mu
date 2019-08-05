@@ -10,8 +10,8 @@
 		<a href="/users/{{btl_user_id}}.html"><b>{{btl_name}}</b></a>
 		<br><span class=note>[Общее время: {{btl_time}}]</span>
 		</p>
-	{{/loop_close}}
+	{{/ban_total_list}}
 	
 </table>
 
-{{/if_close}}
+{{/ban_total_list}}

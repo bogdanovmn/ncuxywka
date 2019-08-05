@@ -2,6 +2,7 @@ package com.github.bogdanovmn.ncuxywka.web.infrastructure;
 
 import com.github.bogdanovmn.common.spring.menu.MenuBuilder;
 import com.github.bogdanovmn.common.spring.menu.MenuItem;
+import com.github.bogdanovmn.ncuxywka.web.infrastructure.config.SkinConfiguration;
 import com.github.bogdanovmn.ncuxywka.web.infrastructure.config.mustache.Layout;
 import com.samskivert.mustache.Mustache;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,8 @@ public abstract class AbstractVisualController extends AbstractController {
 	private Mustache.Compiler compiler;
 	@Autowired
 	private MenuBuilder menuBuilder;
+	@Autowired
+	private SkinConfiguration skinConfiguration;
 
 	@Value("${server.servlet.context-path:}")
 	private String contextPath;
@@ -27,6 +30,7 @@ public abstract class AbstractVisualController extends AbstractController {
 
 	@ModelAttribute
 	public void addCommonAttributes(Model model) {
+		model.addAttribute("skin", skinConfiguration.activeTemplate());
 		model.addAttribute("userName", getUser().getName());
 		model.addAttribute(
 			"menu",

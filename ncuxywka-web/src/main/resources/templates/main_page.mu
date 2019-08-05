@@ -1,6 +1,6 @@
 {{#layout}}
 
-	<table class=main_news>
+<table class=main_news>
 <tr>
 <td class=about>
 	<center>
@@ -9,16 +9,16 @@
 		<tr>
 		<td class=title>КУДА Я ПОПАЛ?
 		<tr>
-		<td><b>Психуюшка</b> - это литературное онлайн сообщество, полная свобода слова и отсутствие цензуры. <a href='/faq/'>Подробнее...</a>
+		<td><b>Психуюшка</b> - это литературное онлайн сообщество, полная свобода слова и отсутствие цензуры. <a href='{{layout.contextPath}}/faq/'>Подробнее...</a>
 	</table>
 	
 	<table class=info_about>
 	<tr>
 	<td class=title>ЗАЧЕМ?
 	<tr>
-	<td><p><a href='/creos/'>Почитать анализы</a>
-		<p><a href='/diagnoses/'>Поставить диагнозы</a>
-		<p><a href='/add_creo/'>Прислать свои анализы</a>
+	<td><p><a href='{{layout.contextPath}}/creos/'>Почитать анализы</a>
+		<p><a href='{{layout.contextPath}}/diagnoses/'>Поставить диагнозы</a>
+		<p><a href='{{layout.contextPath}}/add_creo/'>Прислать свои анализы</a>
 	</table>
 	
 	<table class=info_news>
@@ -28,7 +28,7 @@
 	<td>
 		{{#new_users}}
 			<p>
-			<a href="/users/{{id}}">{{name}}</a>
+			<a href="{{layout.contextPath}}/users/{{id}}">{{name}}</a>
 			<br>
 			<span class=note>{{reg_date}}</span>
 			</p>
@@ -37,7 +37,7 @@
 	
 	</center>
 <td>
-	<center><img width=465px alt='ПСИХУЮШКА.COM' src='/img/{{skin_pic_main}}'></center>
+	<center><img width=465px alt='ПСИХУЮШКА.COM' src='{{layout.contextPath}}/img/{{skin.img.main}}'></center>
 </table>		
 
 <table class=news>
@@ -48,22 +48,22 @@
 		{{#news}}
 			<p>
 			<b>{{post_date}}</b>
-			от <a class=author href="/users/{{user.id}}">{{user.name}}</a>
+			от <a class=author href="{{layout.contextPath}}/users/{{user.id}}">{{user.name}}</a>
 			<br>
 			{{message}}
 			</p>
 		{{/news}}
 		<div class=more>
-			<a href="/news/">Архив новостей</a>
+			<a href="{{layout.contextPath}}/news/">Архив новостей</a>
 		</div>
 </table>
 
-<div class=last_creos_title>Последние <a href='/creos/'>анализы</a>:</div>
+<div class=last_creos_title>Последние <a href='{{layout.contextPath}}/creos/'>анализы</a>:</div>
 {{#last_creos}}
 	<table class=creo_preview>
 		<tr class=info>
 			<td>
-				<a href="/creos/{{id}}">
+				<a href="{{layout.contextPath}}/creos/{{id}}">
 					<b>{{alias}}</b> : {{title}}
 				</a>
 			<td class=date>
@@ -93,7 +93,7 @@
 				<td colspan=2>
 					{{#more}}
 						<i>{{post_date}}</i>
-						<a href="/creos/{{id}}>">
+						<a href="{{layout.contextPath}}/creos/{{id}}>">
 							{{title}}
 						</a>
 						<i>&nbsp;({{commentsCount}} диаг.)</i>{{#__last__}},&nbsp;{{/__last__}}
