@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="{{layout.contextPath}}/css/auto_main.css" type="text/css">
+    <!--<link rel="stylesheet" href="{{layout.contextPath}}/css/auto_main.css" type="text/css">-->
     <link rel="icon" type="image/png" href="{{layout.contextPath}}/img/icon.png" />
 
     <script language="javascript" type="text/javascript" src="{{layout.contextPath}}/webjars/jquery/jquery.min.js"></script>
@@ -15,19 +15,20 @@
 </head>
 
 <body>
-<div class=container>
+<div class="container-fluid small">
 	{{> inc/top}}
-	<div class="row">
-		<div class="col">
+	<div class="row flex-nowrap">
+		<div class="col-2">
 			{{> inc/navigation}}
 		</div>
-		<div class="col">
+		<div class="col-7">
 			{{{layout.body}}}
 		</div>
-		<div class="col">
+		<div class="col-3">
 			{{> inc/info_blocks}}
 		</div>
 	</div>
+	{{> inc/footer}}
 </div>
 </body>
 </html>

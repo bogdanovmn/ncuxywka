@@ -1,50 +1,46 @@
 {{#layout}}
 
-<table class=main_news>
-<tr>
-<td class=about>
-	<center>
-	
-	<table class=info_about>
-		<tr>
-		<td class=title>КУДА Я ПОПАЛ?
-		<tr>
-		<td><b>Психуюшка</b> - это литературное онлайн сообщество, полная свобода слова и отсутствие цензуры. <a href='{{layout.contextPath}}/faq/'>Подробнее...</a>
-	</table>
-	
-	<table class=info_about>
-	<tr>
-	<td class=title>ЗАЧЕМ?
-	<tr>
-	<td><p><a href='{{layout.contextPath}}/creos/'>Почитать анализы</a>
-		<p><a href='{{layout.contextPath}}/diagnoses/'>Поставить диагнозы</a>
-		<p><a href='{{layout.contextPath}}/add_creo/'>Прислать свои анализы</a>
-	</table>
-	
-	<table class=info_news>
-	<tr>
-	<td class=title>Новички
-	<tr>
-	<td>
-		{{#new_users}}
-			<p>
-			<a href="{{layout.contextPath}}/users/{{id}}">{{name}}</a>
-			<br>
-			<span class=note>{{reg_date}}</span>
-			</p>
-		{{/new_users}}
-	</table>
-	
-	</center>
-<td>
-	<center><img width=465px alt='ПСИХУЮШКА.COM' src='{{layout.contextPath}}/img/{{skin.img.main}}'></center>
-</table>		
+<div class="row">
+	<div class="col-4">
+		<div class="card">
+			<div class="card-header">КУДА Я ПОПАЛ?</div>
+			<div class="card-body">
+				<b>Психуюшка</b> - это литературное онлайн сообщество, полная свобода слова и отсутствие цензуры. <a href='{{layout.contextPath}}/faq/'>Подробнее...</a>
+			</div>
+		</div>
 
-<table class=news>
-<tr>
-	<td class=title>Пси-Новости
-<tr>
-	<td class=info>
+		<div class="card">
+			<div class="card-header">ЗАЧЕМ?</div>
+			<div class="card-body">
+				<p><a href='{{layout.contextPath}}/creos/'>Почитать анализы</a></p>
+				<p><a href='{{layout.contextPath}}/diagnoses/'>Поставить диагнозы</a></p>
+				<p><a href='{{layout.contextPath}}/add_creo/'>Прислать свои анализы</a></p>
+			</div>
+		</div>
+
+		<div class="card">
+			<div class="card-header">Новички</div>
+			<div class="card-body">
+				{{#newUsers}}
+					<p>
+					<a href="{{layout.contextPath}}/users/{{id}}">{{name}}</a>
+					<br>
+					<span class=note>{{regDate}}</span>
+					</p>
+				{{/newUsers}}
+			</div>
+		</div>
+	</div>
+	<div class="col-8">
+		<div class="card-img-overlay">
+			<img class="img-fluid" alt='ПСИХУЮШКА.COM' src='{{layout.contextPath}}/img/{{skin.img.main}}'>
+		</div>
+	</div>
+</div>
+
+<div class="card">
+	<div class="card-header">Пси-Новости</div>
+	<div class="card-body">
 		{{#news}}
 			<p>
 			<b>{{post_date}}</b>
@@ -56,50 +52,53 @@
 		<div class=more>
 			<a href="{{layout.contextPath}}/news/">Архив новостей</a>
 		</div>
-</table>
+	</div>
+</div>
 
-<div class=last_creos_title>Последние <a href='{{layout.contextPath}}/creos/'>анализы</a>:</div>
-{{#last_creos}}
-	<table class=creo_preview>
-		<tr class=info>
-			<td>
-				<a href="{{layout.contextPath}}/creos/{{id}}">
-					<b>{{alias}}</b> : {{title}}
-				</a>
-			<td class=date>
-				<b>{{postDate}}</b>
-		<tr class=info>
-			<td colspan=2 class=diag>
-				Диагнозов: {{commentsCount}}
-		<tr class=text>
-			<td colspan=2>
-				<table class=creo_preview_text>
-				<tr>
-					<td class=avatar>
-						{{#avatar}}
-							<center><img alt='{{alias}}' src='/{{avatar}}_thumb'></center>
-						{{/avatar}}
-						{{^avatar}}
-							&nbsp;
-						{{/avatar}}
-					<td class=text>
-						{{body}}
-						{{#cuted}}
-							<br><span class=note>--> Ампутировано <--</span>
-						{{/cuted}}
-				</table>
-		{{#more.0}}
-			<tr class=more_creos>
-				<td colspan=2>
-					{{#more}}
-						<i>{{post_date}}</i>
-						<a href="{{layout.contextPath}}/creos/{{id}}>">
-							{{title}}
-						</a>
-						<i>&nbsp;({{commentsCount}} диаг.)</i>{{#__last__}},&nbsp;{{/__last__}}
-						<br>
-					{{/more}}
-		{{/more.0}}
-	</table>
-{{/last_creos}}
+<div class="card">
+	<div class="card-header">Последние <a href='{{layout.contextPath}}/creos/'>анализы</a>:</div>
+	<div class="card-body">
+		{{#lastCreos}}
+			<div class="card">
+				<div class="card-header">
+					<a href="{{layout.contextPath}}/creos/{{id}}">
+						<b>{{alias}}</b> : {{title}}
+					</a>
+					<b>{{postDate}}</b>
+					Диагнозов: {{commentsCount}}
+				</div>
+				<div class="card-body">
+					<div class="row">
+						<div class="col">
+							{{#avatar}}
+								<img alt='{{alias}}' src='/{{avatar}}_thumb'>
+							{{/avatar}}
+							{{^avatar}}
+								&nbsp;
+							{{/avatar}}
+						</div>
+						<div class="col">
+							{{body}}
+							{{#cuted}}
+								<br><span class=note>--> Ампутировано <--</span>
+							{{/cuted}}
+						</div>
+					</div>
+				</div>
+				{{#more.0}}
+					<div class="card-footer">
+						{{#more}}
+							<i>{{postDate}}</i>
+							<a href="{{layout.contextPath}}/creos/{{id}}>">
+								{{title}}
+							</a>
+							<i>&nbsp;({{commentsCount}} диаг.)</i>
+							<br>
+						{{/more}}
+					</div>
+				{{/more.0}}
+			</div>
+		{{/lastCreos}}
+	</div>
+</div>
 {{/layout}}
