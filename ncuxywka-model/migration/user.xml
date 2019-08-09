@@ -1,0 +1,37 @@
+<!DOCTYPE etl SYSTEM "http://scriptella.javaforge.com/dtd/etl.dtd">
+<etl>
+	<description>User table migration</description>
+	<properties>
+		<include href="etl.properties"/> <!--Load from external properties file-->
+	</properties>
+	<!-- Connection declarations -->
+	<connection id="old" driver="$driver" url="$src_url" user="$user" password="$password" classpath="$classpath"/>
+	<connection id="new" driver="$driver" url="$dest_url" user="$user" password="$password" classpath="$classpath"/>
+	<connection id="debug" driver="text"/>
+
+	<query connection-id="old">
+		select id user_id, users.* from users
+		<query connection-id="new">
+			select id ip_id from ip_address where ipv4 = ?ip
+			<script connection-id="debug">
+				user_id=[$user_id] $name ip=[$ip_id] $ip
+			</script>
+			<script>
+				insert into user (id, name, created, email, password_hash, updated, ip_id)
+				values (?user_id, ?name, ?reg_date, ?email, ?pass_hash, ?edit_date, ?ip_id);
+
+				insert into user_detail (about, city, hates, illness, loves, updated, user_id)
+				values (?about, ?city, ?hates, ?illness, ?loves, ?reg_date, ?user_id)
+			</script>
+		</query>
+	</query>
+
+	<!-- Uncomment and modify to run a query-based transformation
+	<query connection-id="con1">
+		SELECT * FROM Table
+		<script connection-id="con2">
+			INSERT INTO Table(ID, Name, Password) VALUES (?1, ?2, ?password);
+		</script>
+	</query>
+	-->
+</etl>

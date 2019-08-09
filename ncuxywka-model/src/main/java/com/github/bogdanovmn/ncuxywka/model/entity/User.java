@@ -7,8 +7,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.Collections;
-import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -18,29 +18,19 @@ import java.util.Set;
 
 @Entity
 public class User extends BaseEntityWithUniqueName implements UserAuthorization {
-	@Column(unique = true, nullable = false)
 	private String email;
 
 	@Column(nullable = false, length = 32)
 	private String passwordHash;
 
 	@Column(nullable = false)
-	private Date registerDate;
+	private LocalDateTime created;
 
 	@Column(nullable = false)
-	private Date editDate;
+	private LocalDateTime updated;
 
-	@Column(columnDefinition = "TEXT")
-	private String about;
-	@Column(columnDefinition = "TEXT")
-	private String loves;
-	@Column(columnDefinition = "TEXT")
-	private String hates;
-	@Column(columnDefinition = "TEXT")
-	private String illness;
-	private String city;
-	@Column(length = 15)
-	private String ip;
+	@OneToOne(fetch = FetchType.LAZY)
+	private IpAddress ip;
 
 	@ManyToMany(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
 	@JoinTable(

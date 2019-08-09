@@ -47,7 +47,7 @@ class UserSettingsController extends AbstractVisualController {
 
 		model.addAttribute("referer", referer);
 		model.addAttribute("userEmail", user.getEmail());
-		model.addAttribute("userRegistrationDate", user.getRegisterDate());
+		model.addAttribute("userRegistrationDate", user.getCreated());
 		model.addAttribute(
 			"userSettingsForm",
 			new UserSettingsForm()

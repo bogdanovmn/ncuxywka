@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.DigestUtils;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 @Service
 class RegistrationService {
@@ -29,7 +29,7 @@ class RegistrationService {
 						userForm.getPassword().getBytes()
 					)
 				)
-				.setRegisterDate(new Date())
+				.setCreated(LocalDateTime.now())
 				.setRole(UserRole.Role.USER)
 		);
 	}
