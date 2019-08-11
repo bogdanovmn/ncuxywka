@@ -7,6 +7,8 @@ import lombok.Setter;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.OneToOne;
 import java.time.LocalDateTime;
 
 @Getter
@@ -14,10 +16,15 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 
 @Entity
-public class IpAddress extends BaseEntity {
-	@Column(length = 15, nullable = false, unique = true)
-	private String ipv4;
-
+public class CommentTopic extends BaseEntity {
 	@Column(nullable = false)
 	private LocalDateTime created;
+
+	@Column(nullable = false)
+	private LocalDateTime updated;
+
+	@OneToOne(fetch = FetchType.LAZY)
+	private Comment lastComment;
+
+	private int commentsCount = 0;
 }

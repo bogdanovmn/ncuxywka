@@ -10,18 +10,18 @@
 	<connection id="debug" driver="text"/>
 
 	<query connection-id="old">
-		select id user_id, users.* from users
+		select id creo_id, creo.* from creo
 		<query connection-id="new">
 			select id ip_id from ip_address where ipv4 = ?ip
 			<script connection-id="debug">
-				user_id=[$user_id] $name ip=[$ip_id] $ip
+				creo_id=[$creo_id] ip=[$ip_id] $ip user=[$user_id] title=$title
 			</script>
 			<script>
-				insert into user (id, name, created, email, password_hash, updated, ip_id)
-				values (?user_id, ?name, ?reg_date, ?email, ?pass_hash, ?edit_date, ?ip_id);
+				insert into creo (id, title, created, status, user_id, ip_id, updated)
+				values (?creo_id, ?title, ?post_date, ?type, ?user_id, ?ip_id, ?post_date);
 
-				insert into user_detail (about, city, hates, illness, loves, updated, user_id)
-				values (?about, ?city, ?hates, ?illness, ?loves, ?reg_date, ?user_id)
+				insert into creo_text (creo_id, text)
+				values (?creo_id, ?body)
 			</script>
 		</query>
 	</query>

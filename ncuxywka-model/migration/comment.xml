@@ -1,0 +1,27 @@
+<!DOCTYPE etl SYSTEM "http://scriptella.javaforge.com/dtd/etl.dtd">
+<etl>
+	<description>User table migration</description>
+	<properties>
+		<include href="etl.properties"/> <!--Load from external properties file-->
+	</properties>
+	<!-- Connection declarations -->
+	<connection id="old" driver="$driver" url="$src_url" user="$user" password="$password" classpath="$classpath"/>
+	<connection id="new" driver="$driver" url="$dest_url" user="$user" password="$password" classpath="$classpath"/>
+	<connection id="debug" driver="text"/>
+	<connection id="js" driver="script"/>
+
+	<query connection-id="new">
+		select * from ip_address where ipv4 = ?ip;
+		<script connection-id="js">
+			etl.globals["ips"][$ipv4] = $id;
+			etl.globals['ips1'] = $id;
+		</script>
+	</query>
+
+	<query connection-id="old">
+		select * from comments c  order by id limit 10
+		<script connection-id="debug">
+			creo_id=[$creo_id] ip=[${etl.globals['ips1']}] $ip user=[${comments.user_id] comment_id=[$c_id] topic_id=[$c_topic_id]
+		</script>
+	</query>
+</etl>

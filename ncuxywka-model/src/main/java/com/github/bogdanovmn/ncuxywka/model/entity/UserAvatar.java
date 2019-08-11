@@ -22,6 +22,7 @@ public class UserAvatar extends BaseEntity {
 
 	@Column(nullable = false)
 	private byte[] original;
+
 	@Column(nullable = false)
 	private byte[] thumbnail;
 

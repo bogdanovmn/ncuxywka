@@ -1,0 +1,33 @@
+@startuml
+
+class Comment {
+    +id
+    +topic_id
+    +user_id
+    +text
+    +created
+    +ip
+}
+
+class Topic {
+    +id
+    +created
+    +comments_count
+    +last_comment_id
+}
+
+class Creo {
+    +id
+    +topic_id
+}
+
+class SpecialRoom {
+    +id
+    +topic_id
+}
+
+Creo -> Topic
+Topic --> Comment
+SpecialRoom --> Topic
+
+@enduml

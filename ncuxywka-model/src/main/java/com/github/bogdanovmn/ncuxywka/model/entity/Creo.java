@@ -1,26 +1,38 @@
 package com.github.bogdanovmn.ncuxywka.model.entity;
 
-import com.github.bogdanovmn.common.spring.jpa.BaseEntity;
+import com.github.bogdanovmn.ncuxywka.model.common.BaseEntityAuditable;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.time.LocalDateTime;
+
+@Getter
+@Setter
+@NoArgsConstructor
 
 @Entity
-public class Creo extends BaseEntity {
+public class Creo extends BaseEntityAuditable {
 	@ManyToOne
 	@JoinColumn(nullable = false)
 	private User user;
+
 	@Column(nullable = false)
 	private String title;
-	@Column(columnDefinition = "TEXT", nullable = false)
-	private String body;
+
 	@Column(nullable = false)
-	private Date postDate;
+	private LocalDateTime updated;
+
+	@Enumerated(EnumType.ORDINAL)
 	@Column(nullable = false)
-	private Date editDate;
-	@Enumerated(EnumType.STRING)
-	@Column(length = 12, nullable = false)
-	private CreoType type;
-	@Column(length = 15)
-	private String ip;
+	private CreoStatus status;
+
+//	@OneToOne(fetch = FetchType.LAZY, optional = false)
+//	@JoinColumn(name = "creo_text_id")
+//	private CreoText text;
+
+	@OneToOne(fetch = FetchType.LAZY)
+	private CommentTopic commentTopic;
+
 }

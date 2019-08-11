@@ -29,7 +29,7 @@ public class User extends BaseEntityWithUniqueName implements UserAuthorization 
 	@Column(nullable = false)
 	private LocalDateTime updated;
 
-	@OneToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.LAZY, optional = false)
 	private IpAddress ip;
 
 	@ManyToMany(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
