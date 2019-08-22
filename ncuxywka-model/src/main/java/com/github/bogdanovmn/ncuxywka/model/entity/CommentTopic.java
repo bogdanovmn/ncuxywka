@@ -23,8 +23,5 @@ public class CommentTopic extends BaseEntity {
 	@Column(nullable = false)
 	private LocalDateTime updated;
 
-	@OneToOne(fetch = FetchType.LAZY)
-	private Comment lastComment;
-
 	private int commentsCount = 0;
 }

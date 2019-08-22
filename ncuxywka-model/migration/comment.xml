@@ -7,21 +7,69 @@
 	<!-- Connection declarations -->
 	<connection id="old" driver="$driver" url="$src_url" user="$user" password="$password" classpath="$classpath"/>
 	<connection id="new" driver="$driver" url="$dest_url" user="$user" password="$password" classpath="$classpath"/>
-	<connection id="debug" driver="text"/>
+	<connection id="log" driver="text"/>
 	<connection id="js" driver="script"/>
 
-	<query connection-id="new">
-		select * from ip_address where ipv4 = ?ip;
-		<script connection-id="js">
-			etl.globals["ips"][$ipv4] = $id;
-			etl.globals['ips1'] = $id;
-		</script>
-	</query>
 
 	<query connection-id="old">
-		select * from comments c  order by id limit 10
-		<script connection-id="debug">
-			creo_id=[$creo_id] ip=[${etl.globals['ips1']}] $ip user=[${comments.user_id] comment_id=[$c_id] topic_id=[$c_topic_id]
-		</script>
+		select
+			id        cm_id,
+			creo_id   cm_creo_id,
+			user_id   cm_user_id,
+			alias     cm_alias,
+			post_date cm_post_date,
+			ip        cm_ip,
+			msg       cm_msg
+		from comments
+		<query connection-id="new">
+			select id ip_id from ip_address where ipv4 = ?cm_ip
+			<script connection-id="log">
+				creo_id=[$cm_creo_id] ip=[$ip_id] $cm_ip comment=[$cm_id]
+			</script>
+
+			<query connection-id="new">
+				select comment_topic_id topic_id
+				from creo
+				where id = ?cm_creo_id
+
+				<script if="topic_id ne null" connection-id="new">
+					insert into comment (id, created, alias, message, user_id, ip_id, topic_id)
+					values (?cm_id, ?cm_post_date, ?cm_alias, ?cm_msg, ?cm_user_id, ?ip_id, ?topic_id);
+				</script>
+				<query if="topic_id eq null" connection-id="old">
+					select count(*) cnt
+					from comments
+					where creo_id = ?cm_creo_id
+
+					<query connection-id="old">
+						select post_date last_comment_date
+						from comments
+						where creo_id = ?cm_creo_id
+						order by id desc
+						limit 1
+
+						<query connection-id="old">
+							select post_date first_comment_date
+							from comments
+							where creo_id = ?cm_creo_id
+							order by id asc
+							limit 1
+
+							<script connection-id="new">
+								insert into comment_topic (comments_count, created, updated)
+								values (?cnt, ?first_comment_date, ?last_comment_date);
+
+								update creo
+								set comment_topic_id = last_insert_id()
+								where id = ?cm_creo_id;
+
+								insert into comment (id, created, alias, message, user_id, ip_id, topic_id)
+								values (?cm_id, ?cm_post_date, ?cm_alias, ?cm_msg, ?cm_user_id, ?ip_id, last_insert_id());
+							</script>
+						</query>
+					</query>
+				</query>
+			</query>
+		</query>
 	</query>
 </etl>
