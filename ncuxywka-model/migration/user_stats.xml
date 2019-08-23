@@ -1,0 +1,50 @@
+<!DOCTYPE etl SYSTEM "http://scriptella.javaforge.com/dtd/etl.dtd">
+<etl>
+	<description>User table migration</description>
+	<properties>
+		<include href="etl.properties"/> <!--Load from external properties file-->
+	</properties>
+	<!-- Connection declarations -->
+	<connection id="old" driver="$driver" url="$src_url" user="$user" password="$password" classpath="$classpath"/>
+	<connection id="new" driver="$driver" url="$dest_url" user="$user" password="$password" classpath="$classpath"/>
+	<connection id="debug" driver="text"/>
+
+	<query connection-id="old">
+		select * from user_stats us
+
+		<script connection-id="debug">
+			user_id=[$user_id]
+		</script>
+
+		<script connection-id="new">
+			insert into user_statistic (
+				user_id,
+				comments_in,
+				comments_in_by_self,
+				comments_out,
+				creo_posts,
+				room_comments,
+				votes_in,
+				votes_in_rank,
+				votes_out,
+				votes_out_rank,
+				guest_book_comments,
+				updated
+			)
+			values (
+				?user_id,
+				?comments_in,
+				?comments_in_by_self,
+				?comments_out,
+				?creo_post,
+				?spec_comments,
+				?votes_in,
+				?votes_in_rank,
+				?votes_out,
+				?votes_out_rank,
+				?gb_comments,
+				date_sub(now(), interval 1 year)
+			)
+		</script>
+	</query>
+</etl>

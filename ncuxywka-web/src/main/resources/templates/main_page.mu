@@ -21,13 +21,13 @@
 		<div class="card">
 			<div class="card-header">Новички</div>
 			<div class="card-body">
-				{{#newUsers}}
+				{{#lastActiveUsers}}
 					<p>
 					<a href="{{layout.contextPath}}/users/{{id}}">{{name}}</a>
 					<br>
 					<span class=note>{{regDate}}</span>
 					</p>
-				{{/newUsers}}
+				{{/lastActiveUsers}}
 			</div>
 		</div>
 	</div>

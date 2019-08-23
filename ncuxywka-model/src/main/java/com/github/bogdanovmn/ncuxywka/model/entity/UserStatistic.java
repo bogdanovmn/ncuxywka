@@ -2,22 +2,26 @@ package com.github.bogdanovmn.ncuxywka.model.entity;
 
 import com.github.bogdanovmn.common.spring.jpa.BaseEntity;
 
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Entity
 public class UserStatistic extends BaseEntity {
-	@ManyToOne
-	@JoinColumn(nullable = false)
+	@OneToOne(fetch = FetchType.LAZY, optional = false)
+	@MapsId
 	private User user;
+
 	private int votesIn;
 	private int votesOut;
-	private int votesInRank;
-	private int votesOutRank;
+	private Integer votesInRank;
+	private Integer votesOutRank;
 	private int commentsIn;
 	private int commentsOut;
 	private int commentsInBySelf;
 	private int roomComments;
+	private int guestBookComments;
 	private int creoPosts;
+
+	@Column(nullable = false)
+	private LocalDateTime updated;
 }
