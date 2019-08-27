@@ -7,13 +7,13 @@
 	<!-- Connection declarations -->
 	<connection id="old" driver="$driver" url="$src_url" user="$user" password="$password" classpath="$classpath"/>
 	<connection id="new" driver="$driver" url="$dest_url" user="$user" password="$password" classpath="$classpath"/>
-	<connection id="debug" driver="text"/>
+	<connection id="log" driver="text"/>
 
 	<query connection-id="old">
 		select id user_id, users.* from users
 		<query connection-id="new">
 			select id ip_id from ip_address where ipv4 = ?ip
-			<script connection-id="debug">
+			<script connection-id="log">
 				user_id=[$user_id] $name ip=[$ip_id] $ip
 			</script>
 			<script>
@@ -24,5 +24,15 @@
 				values (?about, ?city, ?hates, ?illness, ?loves, ?reg_date, ?user_id)
 			</script>
 		</query>
+	</query>
+
+	<query connection-id="old">
+		select * from user_group where group_id = 4
+		<script connection-id="log">
+			user_id=[$user_id] mute
+		</script>
+		<script connection-id="new">
+			update user set muted = 1 where id = ?user_id
+		</script>
 	</query>
 </etl>

@@ -1,5 +1,8 @@
 package com.github.bogdanovmn.ncuxywka.model.entity;
 
+import lombok.Getter;
+
+@Getter
 public enum CreoStatus {
 	CREO(0),
 	QUARANTINE(1),

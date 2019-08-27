@@ -4,12 +4,10 @@ import com.github.bogdanovmn.ncuxywka.model.entity.User;
 import com.github.bogdanovmn.ncuxywka.model.entity.UserRepository;
 import com.github.bogdanovmn.ncuxywka.model.entity.UserRole;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.util.DigestUtils;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Service
 public
@@ -43,9 +41,5 @@ class RegistrationService {
 
 	boolean isUserNameExists(String name) {
 		return userRepository.findFirstByName(name) != null;
-	}
-
-	public List<User> lastActiveUsers(int lastUsersCount) {
-		return userRepository.findLastActive(PageRequest.of(0, lastUsersCount));
 	}
 }

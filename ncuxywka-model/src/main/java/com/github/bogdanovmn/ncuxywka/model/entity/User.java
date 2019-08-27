@@ -18,6 +18,10 @@ import java.util.Set;
 
 @Entity
 public class User extends BaseEntityWithUniqueName implements UserAuthorization {
+	/**
+	 * Don't show any creos from this user
+	 */
+	private boolean muted;
 	private String email;
 
 	@Column(nullable = false, length = 32)
@@ -32,7 +36,7 @@ public class User extends BaseEntityWithUniqueName implements UserAuthorization 
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)
 	private IpAddress ip;
 
-	@ManyToMany(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
+	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(
 		name = "role2user",
 		joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),

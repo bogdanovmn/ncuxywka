@@ -1,10 +1,10 @@
-package com.github.bogdanovmn.ncuxywka.web;
+package com.github.bogdanovmn.ncuxywka.web.mainpage;
 
 import com.github.bogdanovmn.common.spring.menu.MenuItem;
 import com.github.bogdanovmn.common.spring.mvc.ViewTemplate;
 import com.github.bogdanovmn.ncuxywka.web.infrastructure.AbstractVisualController;
 import com.github.bogdanovmn.ncuxywka.web.infrastructure.MainMenuItem;
-import com.github.bogdanovmn.ncuxywka.web.user.RegistrationService;
+import com.github.bogdanovmn.ncuxywka.web.news.NewsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -17,9 +17,16 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("/")
 class MainPageController extends AbstractVisualController {
 	@Autowired
-	private RegistrationService registrationService;
-	@Value("${main-page.last-users-count:3}")
-	private int lastUsersCount;
+	private NewsService newsService;
+	@Autowired
+	private MainPageService mainPageService;
+
+	@Value("${main-page.new-users-count:3}")
+	private int newUsersCount;
+	@Value("${main-page.news-count:2}")
+	private int newsCount;
+	@Value("${main-page.creo-authors-count:3}")
+	private int creoAuthorsCount;
 
 	@Override
 	protected MenuItem currentMenuItem() {
@@ -29,8 +36,9 @@ class MainPageController extends AbstractVisualController {
 	@GetMapping
 	ModelAndView mainPage(Model model) {
 		return new ViewTemplate("main_page")
-			.with("news", null)
-			.with("lastActiveUsers", registrationService.lastActiveUsers(lastUsersCount))
+			.with("news", newsService.last(newsCount))
+			.with("newUsers", mainPageService.newActiveUsers(newUsersCount))
+			.with("lastCreos", mainPageService.lastCreos(creoAuthorsCount))
 			.modelAndView();
 	}
 }

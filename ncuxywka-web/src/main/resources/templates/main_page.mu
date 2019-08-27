@@ -21,13 +21,13 @@
 		<div class="card">
 			<div class="card-header">Новички</div>
 			<div class="card-body">
-				{{#lastActiveUsers}}
+				{{#newUsers}}
 					<p>
 					<a href="{{layout.contextPath}}/users/{{id}}">{{name}}</a>
 					<br>
-					<span class=note>{{regDate}}</span>
+					<span class=note>{{created}}</span>
 					</p>
-				{{/lastActiveUsers}}
+				{{/newUsers}}
 			</div>
 		</div>
 	</div>
@@ -43,10 +43,10 @@
 	<div class="card-body">
 		{{#news}}
 			<p>
-			<b>{{post_date}}</b>
-			от <a class=author href="{{layout.contextPath}}/users/{{user.id}}">{{user.name}}</a>
-			<br>
-			{{message}}
+				<b>{{created}}</b>
+				от <a class=author href="{{layout.contextPath}}/users/{{user.id}}">{{user.name}}</a>
+				<br>
+				{{text}}
 			</p>
 		{{/news}}
 		<div class=more>
@@ -58,47 +58,47 @@
 <div class="card">
 	<div class="card-header">Последние <a href='{{layout.contextPath}}/creos/'>анализы</a>:</div>
 	<div class="card-body">
-		{{#lastCreos}}
+		{{#lastCreos.previews}}
 			<div class="card">
 				<div class="card-header">
 					<a href="{{layout.contextPath}}/creos/{{id}}">
-						<b>{{alias}}</b> : {{title}}
+						<b>{{author}}</b> : {{title}}
 					</a>
-					<b>{{postDate}}</b>
+					<b>{{creo.created}}</b>
 					Диагнозов: {{commentsCount}}
 				</div>
 				<div class="card-body">
 					<div class="row">
 						<div class="col">
 							{{#avatar}}
-								<img alt='{{alias}}' src='/{{avatar}}_thumb'>
+								<img alt='{{authorName}}' src='/{{avatar}}_thumb'>
 							{{/avatar}}
 							{{^avatar}}
 								&nbsp;
 							{{/avatar}}
 						</div>
 						<div class="col">
-							{{body}}
+							{{text}}
 							{{#cuted}}
 								<br><span class=note>--> Ампутировано <--</span>
 							{{/cuted}}
 						</div>
 					</div>
 				</div>
-				{{#more.0}}
+				{{#previousCreos.0}}
 					<div class="card-footer">
-						{{#more}}
-							<i>{{postDate}}</i>
+						{{#previousCreos}}
+							<i>{{created}}</i>
 							<a href="{{layout.contextPath}}/creos/{{id}}>">
 								{{title}}
 							</a>
 							<i>&nbsp;({{commentsCount}} диаг.)</i>
 							<br>
-						{{/more}}
+						{{/previousCreos}}
 					</div>
-				{{/more.0}}
+				{{/previousCreos.0}}
 			</div>
-		{{/lastCreos}}
+		{{/lastCreos.previews}}
 	</div>
 </div>
 {{/layout}}

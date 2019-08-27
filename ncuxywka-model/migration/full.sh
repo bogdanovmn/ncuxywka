@@ -4,4 +4,5 @@ scriptella.sh \
     user.xml \
     creo.xml \
     comment.xml \
-    user_stats.xml
+    user_stats.xml \
+    news.xml

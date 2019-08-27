@@ -20,5 +20,5 @@ public interface UserRepository extends JpaRepository<User, Integer> {
 			"or us.creoPosts > 0 " +
 		"order by u.id desc"
 	)
-	List<User> findLastActive(Pageable page);
+	List<User> findNewActive(Pageable page);
 }

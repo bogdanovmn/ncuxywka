@@ -28,10 +28,6 @@ public class Creo extends BaseEntityAuditable {
 	@Column(nullable = false)
 	private CreoStatus status;
 
-//	@OneToOne(fetch = FetchType.LAZY, optional = false)
-//	@JoinColumn(name = "creo_text_id")
-//	private CreoText text;
-
 	@OneToOne(fetch = FetchType.LAZY)
 	private CommentTopic commentTopic;
 
