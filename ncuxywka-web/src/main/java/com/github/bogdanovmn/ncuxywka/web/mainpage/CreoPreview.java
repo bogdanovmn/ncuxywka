@@ -1,41 +1,50 @@
 package com.github.bogdanovmn.ncuxywka.web.mainpage;
 
-import com.github.bogdanovmn.ncuxywka.model.entity.Creo;
+import com.github.bogdanovmn.ncuxywka.model.entity.CreoRepository.CreoMinView;
+import com.github.bogdanovmn.ncuxywka.web.TruncatedText;
 
 import java.util.ArrayList;
 import java.util.List;
 
 class CreoPreview {
-	private final Creo creo;
-	private final String text;
-	private final List<Creo> previousCreos = new ArrayList<>();
+	private static final int MAX_CHARS = 512;
+	private static final int MAX_LINES = 8;
 
-	CreoPreview(Creo creo, String text) {
-		this.creo = creo;
-		this.text = text;
+	private final CreoMinView creoView;
+	private final TruncatedText text;
+	private final List<CreoMinView> previousCreos = new ArrayList<>();
+
+	CreoPreview(CreoMinView creoView, String text) {
+		this.creoView = creoView;
+		this.text = new TruncatedText(text, MAX_LINES, MAX_CHARS);
 	}
 
-	void addPreviousCreo(Creo creo) {
-		previousCreos.add(creo);
+	void addPreviousCreo(CreoMinView creoView) {
+		previousCreos.add(creoView);
 	}
 
 	int id() {
-		return creo.getId();
+		return creoView.getCreo().getId();
 	}
 
 	String text() {
-		return text;
+		return text.value();
 	}
 
+	boolean truncated() {
+		return text.truncated();
+	}
+
+
 	String title() {
-		return creo.getTitle();
+		return creoView.getCreo().getTitle();
 	}
 
 	String author() {
-		return creo.getUser().getName();
+		return creoView.getCreo().getUser().getName();
 	}
 
-	List<Creo> previousCreos() {
+	List<CreoMinView> previousCreos() {
 		return previousCreos;
 	}
 }

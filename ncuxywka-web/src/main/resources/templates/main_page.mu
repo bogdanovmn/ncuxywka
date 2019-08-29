@@ -65,9 +65,9 @@
 						<b>{{author}}</b> : {{title}}
 					</a>
 					<b>{{creo.created}}</b>
-					Диагнозов: {{commentsCount}}
+					Диагнозов: {{creoView.statistic.comments}}
 				</div>
-				<div class="card-body">
+				<div class="card-body body">
 					<div class="row">
 						<div class="col">
 							{{#avatar}}
@@ -78,21 +78,21 @@
 							{{/avatar}}
 						</div>
 						<div class="col">
-							{{text}}
-							{{#cuted}}
+							<pre>{{text}}</pre>
+							{{#truncated}}
 								<br><span class=note>--> Ампутировано <--</span>
-							{{/cuted}}
+							{{/truncated}}
 						</div>
 					</div>
 				</div>
 				{{#previousCreos.0}}
 					<div class="card-footer">
 						{{#previousCreos}}
-							<i>{{created}}</i>
-							<a href="{{layout.contextPath}}/creos/{{id}}>">
-								{{title}}
+							<i>{{creo.created}}</i>
+							<a href="{{layout.contextPath}}/creos/{{creo.id}}>">
+								{{creo.title}}
 							</a>
-							<i>&nbsp;({{commentsCount}} диаг.)</i>
+							<i>&nbsp;({{statistic.comments}} диаг.)</i>
 							<br>
 						{{/previousCreos}}
 					</div>

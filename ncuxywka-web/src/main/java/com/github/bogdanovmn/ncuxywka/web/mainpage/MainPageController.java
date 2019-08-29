@@ -25,7 +25,7 @@ class MainPageController extends AbstractVisualController {
 	private int newUsersCount;
 	@Value("${main-page.news-count:2}")
 	private int newsCount;
-	@Value("${main-page.creo-authors-count:3}")
+	@Value("${main-page.creo-authors-count:10}")
 	private int creoAuthorsCount;
 
 	@Override

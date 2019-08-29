@@ -1,16 +1,16 @@
 package com.github.bogdanovmn.ncuxywka.web.mainpage;
 
-import com.github.bogdanovmn.ncuxywka.model.entity.Creo;
+import com.github.bogdanovmn.ncuxywka.model.entity.CreoRepository.CreoMinView;
 import com.github.bogdanovmn.ncuxywka.model.entity.CreoTextRepository;
 
 import java.util.ArrayList;
 import java.util.List;
 
 class LastCreos {
-	private final List<Creo> creos;
+	private final List<CreoMinView> creos;
 	private final CreoTextRepository creoTextRepository;
 
-	LastCreos(List<Creo> creos, CreoTextRepository creoTextRepository) {
+	LastCreos(List<CreoMinView> creos, CreoTextRepository creoTextRepository) {
 		this.creos = creos;
 		this.creoTextRepository = creoTextRepository;
 	}
@@ -19,17 +19,19 @@ class LastCreos {
 		List<CreoPreview> result = new ArrayList<>();
 		int currentUserId = 0;
 		CreoPreview currentPreview = null;
-		for (Creo creo : creos) {
-			if (currentPreview == null || creo.getUser().getId() != currentUserId) {
+		for (CreoMinView creoView : creos) {
+			if (currentPreview == null || creoView.getUser().getId() != currentUserId) {
 				currentPreview = new CreoPreview(
-					creo,
-					creoTextRepository.getOne(creo.getId()).getText()
+					creoView,
+					creoTextRepository.getOne(
+						creoView.getCreo().getId()
+					).getText()
 				);
 				result.add(currentPreview);
-				currentUserId = creo.getUser().getId();
+				currentUserId = creoView.getUser().getId();
 			}
 			else {
-				currentPreview.addPreviousCreo(creo);
+				currentPreview.addPreviousCreo(creoView);
 			}
 		}
 		return result;

@@ -1,6 +1,10 @@
 package com.github.bogdanovmn.ncuxywka.web.mainpage;
 
-import com.github.bogdanovmn.ncuxywka.model.entity.*;
+import com.github.bogdanovmn.ncuxywka.model.entity.CreoRepository;
+import com.github.bogdanovmn.ncuxywka.model.entity.CreoRepository.CreoMinView;
+import com.github.bogdanovmn.ncuxywka.model.entity.CreoTextRepository;
+import com.github.bogdanovmn.ncuxywka.model.entity.User;
+import com.github.bogdanovmn.ncuxywka.model.entity.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
@@ -24,10 +28,10 @@ class MainPageService {
 	LastCreos lastCreos(int lastCreoAuthorsCount) {
 		int currentPage = 0;
 		Set<Integer> authors = new HashSet<>();
-		List<Creo> creos = new ArrayList<>();
+		List<CreoMinView> creos = new ArrayList<>();
 
 		while (!isEnoughAuthors(creos, lastCreoAuthorsCount)) {
-			List<Creo> lastCreosPage = creoRepository.findLast(
+			List<CreoMinView> lastCreosPage = creoRepository.findLast(
 				PageRequest.of(currentPage++, lastCreoAuthorsCount)
 			);
 			if (lastCreosPage == null) {
@@ -42,10 +46,10 @@ class MainPageService {
 		return new LastCreos(creos, creoTextRepository);
 	}
 
-	private boolean isEnoughAuthors(List<Creo> creos, int lastCreoAuthorsCount) {
+	private boolean isEnoughAuthors(List<CreoMinView> creos, int lastCreoAuthorsCount) {
 		int authorsSequence = 0;
 		int prevAuthor = 0;
-		for (Creo creo : creos) {
+		for (CreoMinView creo : creos) {
 			if (prevAuthor != creo.getUser().getId()) {
 				authorsSequence++;
 			}

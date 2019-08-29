@@ -5,4 +5,5 @@ scriptella.sh \
     creo.xml \
     comment.xml \
     user_stats.xml \
+    creo_stats.xml \
     news.xml
