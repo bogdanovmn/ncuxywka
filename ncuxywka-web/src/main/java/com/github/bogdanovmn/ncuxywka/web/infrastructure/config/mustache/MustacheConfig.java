@@ -15,6 +15,7 @@ public class MustacheConfig {
 	) {
 
 		MustacheEnvironmentCollector collector = new MustacheEnvironmentCollector();
+
 		collector.setEnvironment(environment);
 
 		return Mustache.compiler()

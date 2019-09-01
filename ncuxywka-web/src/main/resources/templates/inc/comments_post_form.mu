@@ -1,14 +1,14 @@
-<form id=post_form name=post_form method=post action=''>
+<form id=post_form name=post_form method=post action='{{layout.contextPath}}/comments'>
 	<table class=form>
 		<tr>
 			<td><span class=note>Пациэнт:</span>
 			<td>
-			{{#user_auth}}
-				<span class=user_name>{{alias}}</span>
-				<input type=hidden name=alias value='{{alias}}'>
-			<TMPL_ELSE>
+			{{#user.id}}
+				<span class=user_name>{{user.name}}</span>
+			{{/user.id}}
+			{{^user.id}}
 				<input type=text maxlength=50 name=alias value='{{alias}}'>
-			{{/if_close}}
+			{{/user.id}}
 		<tr>
 			<td><span class=note>Диагноз:</span>
 			<td>
@@ -16,13 +16,8 @@
 		<tr>
 			<td>&nbsp;
 			<td>
-			<input type=submit id=submit_add name=add value='{{#post_button_caption}}{{post_button_caption}}<TMPL_ELSE>Поставить диагноз{{/post_button_caption}}'>
+			<input type=submit value='{{postButtonCaption}}'>
 	</table>
-	{{#creo_id}}
-		<input type=hidden name=id value='{{creo_id}}'>
-	{{/if_close}}
-	{{#room_name}}
-		<input type=hidden name=room value='{{room_name}}'>
-	{{/if_close}}
-	<input type=hidden id=action name=action value='add'>
+	<input type=hidden name=creo_id value='{{creo.id}}'>
+	<input type=hidden name=room_id value='{{room.id}}'>
 </form>

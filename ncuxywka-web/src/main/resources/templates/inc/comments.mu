@@ -1,53 +1,59 @@
-{{#multi_page}}
+{{#isMultiPage}}
 	{{> pages }}
-{{/if_close}}
+{{/isMultiPage}}
 
-{{#comments}}
-{{#comments}}
-	<table class={{#cm_major}}major_{{/cm_major}}{{#cm_group_name}}group_{{cm_group_type}}_{{/cm_group_name}}comment>
-		<tr>
-			<td class=who>
-				{{#cm_group_name}}
-						<span class=group>{{cm_group_name}}</span>
-					{{/if_close}}
-				{{#cm_user_id}}
-					<a class=user href='/users/{{cm_user_id}}.html'><span class=user_name>{{cm_user_name}}</span></a>
-				<TMPL_ELSE>
-					<span class=anonim>{{cm_alias}}</span>
-				{{/if_close}}
-			<td class=stamp>
-				{{#cm_reply}}<a href='#' onclick="reply_to('{{ESCAPE}}=JS NAME=cm_alias> {{ESCAPE}}=JS NAME=cm_inner_id>')">Ответить</a>&nbsp;&nbsp;&nbsp;{{/cm_reply}}<i>{{cm_inner_id}}</i>
-				&nbsp;	
-				<span class=post_date>{{cm_post_date}}</span>
-		<tr>
-			<td class=msg colspan=3>
-				{{#cm_for_creo}}
-					{{#cm_comment_phrase}}
-						<span class=group>{{cm_comment_phrase}}</span><br><br>
-					{{/if_close}}
-				{{/if_close}}
-				{{ESCAPE}}="NONE" NAME=cm_msg>
-	</table>
-{{/loop_close}}
+{{#comments.0}}
+	{{#comments}}
+		<div class="card {{#user.isMajor}}major_{{/user.isMajor}}{{#user.groupName}}group_{{user.groupType}}_{{/user.groupName}}comment">
+			<div class="card-header">
+				<div class="row">
+					<div class="col-8 who">
+						{{#user.groupName}}
+							<span class=group>{{user.groupName}}</span>
+						{{/user.groupName}}
+						{{#user.id}}
+							<a class=user href='/users/{{user.id}}'><span class=user_name>{{user.name}}</span></a>
+						{{/user.id}}
+						{{^user.id}}
+							<span class=anonymous>{{user.name}}</span>
+						{{/user.id}}
+					</div>
+					<div class="col-4 stamp">
+						<a href='#' onclick="reply_to('{{user.name}} {{innerId}}')">Ответить</a>
+						&nbsp;&nbsp;&nbsp;
+						<i>{{innerId}}</i>
+						&nbsp;
+						<span class=post_date>{{comment.created}}</span>
+					</div>
+				</div>
+			</div>
+			<div class="card-body">
+				{{#isForCreo}}
+					{{#user.commentPhrase}}
+						<span class=group>{{user.commentPhrase}}</span><br><br>
+					{{/user.commentPhrase}}
+				{{/isForCreo}}
+				{{{comment.message}}}
+			</div>
+		</div>
+	{{/comments}}
 
-{{#multi_page}}
-	<hr>
-	{{> pages }}
-{{/if_close}}
+	{{#isMultiPage}}
+		<hr>
+		{{> pages }}
+	{{/isMultiPage}}
 
-{{/if_close}}
+{{/comments.0}}
 
-<SCRIPT language='javascript' type="text/javascript">
-<!--
-function reply_to(text) {
-    var insert_text = '--> ' + text + '\n';
-    if(!document.post_form.post_text.value) {
-        document.post_form.post_text.value = insert_text;
-    }
-    else {
-        document.post_form.post_text.value = document.post_form.post_text.value + '\n' + insert_text;
-    }
-    setTimeout("document.getElementById('post_text').focus()", 1);
-}
--->
-</SCRIPT>
+<script>
+	function reply_to(text) {
+		const insert_text = `--> ${text} \n`;
+		if(!document.post_form.post_text.value) {
+			document.post_form.post_text.value = insert_text;
+		}
+		else {
+			document.post_form.post_text.value = document.post_form.post_text.value + '\n' + insert_text;
+		}
+		setTimeout("document.getElementById('post_text').focus()", 1);
+	}
+</script>

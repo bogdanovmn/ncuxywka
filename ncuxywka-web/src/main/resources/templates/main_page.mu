@@ -89,7 +89,7 @@
 					<div class="card-footer">
 						{{#previousCreos}}
 							<i>{{creo.created}}</i>
-							<a href="{{layout.contextPath}}/creos/{{creo.id}}>">
+							<a href="{{layout.contextPath}}/creos/{{creo.id}}">
 								{{creo.title}}
 							</a>
 							<i>&nbsp;({{statistic.comments}} диаг.)</i>
