@@ -22,13 +22,13 @@
 				{{cl_post_date}}
 			<td class=user>
 				{{#cl_user_id}}
-					<a href='/users/{{cl_user_id}}.html'>{{cl_alias}}</a>
+					<a href='{{layout.contextPath}}/users/{{cl_user_id}}.html'>{{cl_alias}}</a>
 				<TMPL_ELSE>
 					{{cl_alias}}
 				{{/if_close}}
 			<td class=title>
 				{{#cl_quarantine}}<s>{{/cl_quarantine}}
-				<a href="/creos/{{ESCAPE}}=URL NAME='cl_id'>.html">{{cl_title}}</a>
+				<a href="{{layout.contextPath}}/creos/{{ESCAPE}}=URL NAME='cl_id'>.html">{{cl_title}}</a>
 				{{#cl_quarantine}}</s>{{/cl_quarantine}}
 				{{^cl_self_vote}}
 					<span class=subnote>?</span>

@@ -13,22 +13,22 @@
 {{/creo.isQuarantine}}
 
 <p>
-<a href='/users/{{creo.user.id}}'>
+<a href='{{layout.contextPath}}/users/{{creo.user.id}}'>
 	<span class=creo_author>{{creo.user.name}}</span></a>,
-	<span class=creo_date>{{creo.created}}</span>
-	&nbsp;&nbsp;<a href='{{layout.contextPath}}/print/{{creo.id}}'><img alt='Для печати' src='{{layout.contextPath}}/img/printer.gif'></a>
+	<span class=creo_date>{{creo.info.created}}</span>
+	&nbsp;&nbsp;<a href='{{layout.contextPath}}/print/{{creo.info.id}}'><img alt='Для печати' src='{{layout.contextPath}}/img/printer.gif'></a>
 </p>
 
-<h1 class=creo_title>{{creo.title}}</h1>
+<h1 class=creo_title>{{creo.info.title}}</h1>
 
 {{#creo.deleted}}
 	<p class='deleted_msg'>
-		{{#user.muted}}
+		{{#creo.user.muted}}
 			Анализ отправлен в регистратуру для поиска хозяина
-		{{/user.muted}}
-		{{^user.muted}}
+		{{/creo.user.muted}}
+		{{^creo.user.muted}}
 			Уборщица шваброй махнула и случайно удалила этот анализ...
-		{{/user.muted}}
+		{{/creo.user.muted}}
 	</p>
 {{/creo.deleted}}
 {{^creo.deleted}}
@@ -41,7 +41,7 @@
 
 {{^isFavorite}}
 	<form method=post action='{{layout.contextPath}}/favorite-creos'>
-		<input type=hidden name=id value='{{creo.id}}'>
+		<input type=hidden name=id value='{{creo.info.id}}'>
 		<input type=submit value='Добавить этот анализ в мое избранное!'>
 	</form>
 {{/isFavorite}}
@@ -83,7 +83,7 @@
 		<tr>
 		<td colspan=2><br><input type=submit value='Оценить'>
 		</table>
-		<input type=hidden name=creo_id value="{{creo.id}}">
+		<input type=hidden name=creo_id value="{{creo.info.id}}">
 	</form>
 {{/canVote}}
 

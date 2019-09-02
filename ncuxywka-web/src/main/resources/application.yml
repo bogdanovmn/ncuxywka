@@ -116,9 +116,9 @@ menu:
         title: Пациэнты
         url: /users
 
-      - id: CREOS
+      - id: CREOS_HISTORY
         title: Анализы
-        url: /creos
+        url: /creos/history
 
       - id: QUARANTINE
         title: Карантин
@@ -174,10 +174,6 @@ menu:
       - id: PROCEDURE_ROOM
         title: Процедурная
         url: /proc_room
-
-      - id: NEOFUTURIZM_CREOS
-        title: Неофотуризм
-        url: /neofuturizm
 
   - id: MAINDOCTOR
     title: Кабинет Главврача

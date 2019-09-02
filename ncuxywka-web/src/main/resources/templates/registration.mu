@@ -5,10 +5,10 @@
 {{> inc/error_msg }}
 
 {{#user_auth}}
-	<p>Вы уже зарегистрированы!<br>Перед регистрацией другого пациэнта вам необходимо <a href='/auth/out'>выйти</a>.</p>
+	<p>Вы уже зарегистрированы!<br>Перед регистрацией другого пациэнта вам необходимо <a href='{{layout.contextPath}}/auth/out'>выйти</a>.</p>
 {{/user_auth}}
 {{^user_auth}}
-	<p>Прежде чем регистрироваться, прочитайте пожалуйста <a href='/faq_room/'>FAQ</a><br><br></p>
+	<p>Прежде чем регистрироваться, прочитайте пожалуйста <a href='{{layout.contextPath}}/faq_room/'>FAQ</a><br><br></p>
 	<form onsubmit="return check_post_data();" name='add_user' method=post action=''>
 		<table class=form>
 			<tr>

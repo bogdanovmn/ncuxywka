@@ -15,7 +15,7 @@ public enum MainMenuItem implements MenuItem {
 // 	FILE_CABINET,
 
 	USERS,
-	CREOS,
+	CREOS_HISTORY,
 	QUARANTINE,
 	DIAGNOSES,
 

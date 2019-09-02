@@ -12,7 +12,7 @@
 							<span class=group>{{user.groupName}}</span>
 						{{/user.groupName}}
 						{{#user.id}}
-							<a class=user href='/users/{{user.id}}'><span class=user_name>{{user.name}}</span></a>
+							<a class=user href='{{layout.contextPath}}/users/{{user.id}}'><span class=user_name>{{user.name}}</span></a>
 						{{/user.id}}
 						{{^user.id}}
 							<span class=anonymous>{{user.name}}</span>

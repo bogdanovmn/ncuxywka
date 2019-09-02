@@ -15,7 +15,7 @@
 	{{#rank_1}}
 		<h2 class=user_rank>Легенды Психуюшки</h2>
 		{{#rank_1}}
-			<p><a href='/users/{{ru_id}}.html'>{{ru_name}}</a></p>
+			<p><a href='{{layout.contextPath}}/users/{{ru_id}}.html'>{{ru_name}}</a></p>
 		{{/loop_close}}
 	{{/if_close}}
 	</table>
@@ -26,21 +26,21 @@
 		{{#rank_2}}
 			<h2 class=user_rank>Шизофреники</h2>
 			{{#rank_2}}
-				<p><a href='/users/{{ru_id}}.html'>{{ru_name}}</a></p>
+				<p><a href='{{layout.contextPath}}/users/{{ru_id}}.html'>{{ru_name}}</a></p>
 			{{/loop_close}}
 		{{/if_close}}
 		<td>
 		{{#rank_3}}
 			<h2 class=user_rank>Пациэнты Фрейда</h2>
 			{{#rank_3}}
-				<p><a href='/users/{{ru_id}}.html'>{{ru_name}}</a></p>
+				<p><a href='{{layout.contextPath}}/users/{{ru_id}}.html'>{{ru_name}}</a></p>
 			{{/loop_close}}
 		{{/if_close}}
 		<td>
 		{{#rank_4}}
 			<h2 class=user_rank>Параноики</h2>
 			{{#rank_4}}
-				<p><a href='/users/{{ru_id}}.html'>{{ru_name}}</a></p>
+				<p><a href='{{layout.contextPath}}/users/{{ru_id}}.html'>{{ru_name}}</a></p>
 			{{/loop_close}}
 		{{/if_close}}
 	</table>
@@ -52,7 +52,7 @@
 		<h2 class=user_rank>Тяжелый случай (нуждаются в срочной лоботомии)</h2>
 		{{#rank_5}}
 			{{#ru_plagiarist}}<s>{{/ru_plagiarist}}
-			<p><a href='/users/{{ru_id}}.html'>{{ru_name}}</a></p>
+			<p><a href='{{layout.contextPath}}/users/{{ru_id}}.html'>{{ru_name}}</a></p>
 			{{#ru_plagiarist}}</s>{{/ru_plagiarist}}
 		{{/loop_close}}
 	{{/if_close}}
@@ -64,14 +64,14 @@
 	{{#rank_0}}
 		<h2 class=user_rank>Диагноз пока не ясен</h2>
 		{{#rank_0}}
-			<p><a href='/users/{{ru_id}}.html'>{{ru_name}}</a></p>
+			<p><a href='{{layout.contextPath}}/users/{{ru_id}}.html'>{{ru_name}}</a></p>
 		{{/loop_close}}
 	{{/if_close}}
 	<td>
 	{{#rank_100}}
 		<h2 class=user_rank>Сидят в очереди на сдачу анализов</h2>
 		{{#rank_100}}
-			<p><a href='/users/{{ru_id}}.html'>{{ru_name}}</a></p>
+			<p><a href='{{layout.contextPath}}/users/{{ru_id}}.html'>{{ru_name}}</a></p>
 		{{/loop_close}}
 	{{/if_close}}
 	</table>
@@ -87,7 +87,7 @@
 				<td class=date>{{#u_show_date}}{{u_reg_date}}{{/u_show_date}}
 				<td class=name>
 					{{#u_plagiarist}}<s>{{/u_plagiarist}}
-					<a href='/users/{{u_id}}.html'>{{u_name}}</a>
+					<a href='{{layout.contextPath}}/users/{{u_id}}.html'>{{u_name}}</a>
 					{{#u_plagiarist}}</s>{{/u_plagiarist}}
 		{{/loop_close}}
 	</table>
@@ -108,7 +108,7 @@
 							<br><br>
 							{{#ull_users}}
 								{{#u_plagiarist}}<s>{{/u_plagiarist}}
-								<a href='/users/{{u_id}}.html'>{{u_name}}</a>
+								<a href='{{layout.contextPath}}/users/{{u_id}}.html'>{{u_name}}</a>
 								{{#u_plagiarist}}</s>{{/u_plagiarist}}
 								<br>
 							{{/loop_close}}

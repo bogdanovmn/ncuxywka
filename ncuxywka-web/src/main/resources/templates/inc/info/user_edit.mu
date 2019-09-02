@@ -12,7 +12,7 @@
 				<span class=note>{{user_ban_left_time}}</span>
 			{{/user_ban_left_time}}
 			{{^user_ban_left_time}}
-				<a href="/procedure/user/{{u_id}}">Назначить процедуры</a>
+				<a href="{{layout.contextPath}}/procedure/user/{{u_id}}">Назначить процедуры</a>
 				<br>
 				<span class=note>Продолжительность: 6 часов</span>
 			{{/user_ban_left_time}}

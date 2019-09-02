@@ -7,7 +7,7 @@
 	<td>
 	{{#user_black_copy_creo_list}}
 		<p class=user_creo_list>
-			<a href="/black_copy/preview/{{bccl_id}}.html">
+			<a href="{{layout.contextPath}}/black_copy/preview/{{bccl_id}}.html">
 				{{bccl_title}}
 			</a>
 		</p>

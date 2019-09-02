@@ -37,11 +37,11 @@
 				<input type=hidden name="action" value="public">
 				{{#can_public}}
 					<br>
-					<input id=faq_read type=checkbox name='faq'> C <a href='/faq_room/'>FAQ'ом</a> ознакомлен и согласен!
+					<input id=faq_read type=checkbox name='faq'> C <a href='{{layout.contextPath}}/faq_room/'>FAQ'ом</a> ознакомлен и согласен!
 				{{/if_close}}
 			</form>
 		<td class=edit>
-			<a href="/black_copy/edit/{{creo_id}}.html">
+			<a href="{{layout.contextPath}}/black_copy/edit/{{creo_id}}.html">
 				<input type=button value="Внести правки">
 			</a>
 	</table>

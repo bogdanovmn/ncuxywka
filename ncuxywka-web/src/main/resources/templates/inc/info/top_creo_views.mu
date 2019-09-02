@@ -8,7 +8,7 @@
 	{{#top_creo_views}}
 		<p class=user_creo_list>
 		<span class=note>[{{cvt_cnt}}] </span>
-		<a href="/creos/{{cvt_creo_id}}.html">
+		<a href="{{layout.contextPath}}/creos/{{cvt_creo_id}}.html">
 			<b>{{cvt_title}}</b></a>
 		<br>
 		<span class=subnote>{{cvt_user_name}}</span>

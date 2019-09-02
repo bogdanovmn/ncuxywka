@@ -25,7 +25,7 @@ public interface CreoRepository extends JpaRepository<Creo, Integer> {
 		CreoStatistic getStatistic();
 	}
 	@Query(
-		"select c as creo, u as user, cs as statistic, ct.text as text " +
+		"select c as info, u as user, cs as statistic, ct.text as text " +
 			"from Creo c " +
 			"join CreoText ct on ct.creo.id = c.id " +
 			"join User u on u.id = c.user.id " +
@@ -36,7 +36,7 @@ public interface CreoRepository extends JpaRepository<Creo, Integer> {
 
 	interface CreoView {
 
-		Creo getCreo();
+		Creo getInfo();
 		User getUser();
 		CreoStatistic getStatistic();
 		String getText();

@@ -83,13 +83,13 @@
 		<b>Диагнозы:</b>
 		<br>
 		{{#u_from_comments_count}}
-			<a href='/talks/from/{{u_id}}'>Отправленные пациэнтом ({{u_from_comments_count}})</a>
+			<a href='{{layout.contextPath}}/talks/from/{{u_id}}'>Отправленные пациэнтом ({{u_from_comments_count}})</a>
 		<TMPL_ELSE>
 			Отправленные пациэнтом (0)
 		{{/if_close}}
 		<br>
 		{{#u_for_comments_count}}
-			<a href='/talks/for/{{u_id}}'>Полученные пациэнтом ({{u_for_comments_count}})</a>
+			<a href='{{layout.contextPath}}/talks/for/{{u_id}}'>Полученные пациэнтом ({{u_for_comments_count}})</a>
 		<TMPL_ELSE>
 			Полученные пациэнтом (0)
 		{{/if_close}}
@@ -103,7 +103,7 @@
 			<br>
 			<br>
 			{{^can_delete}}
-				[ <a href="/pm/dialog/{{u_id}}/">Отправить этому пациэнту личное сообщение</a> ]
+				[ <a href="{{layout.contextPath}}/pm/dialog/{{u_id}}/">Отправить этому пациэнту личное сообщение</a> ]
 			{{/unless_close}}
 		{{/if_close}}
 	</p>
@@ -121,7 +121,7 @@
 				{{cl_post_date}}
 			<td class=title>
 				{{#cl_quarantine}}<s>{{/cl_quarantine}}
-				<a href="/creos/{{ESCAPE}}=URL NAME=cl_id>.html">{{cl_title}}</a>
+				<a href="{{layout.contextPath}}/creos/{{ESCAPE}}=URL NAME=cl_id>.html">{{cl_title}}</a>
 				{{#cl_quarantine}}</s>{{/cl_quarantine}}
 				{{^cl_self_vote}}
 					<span class=subnote>?</span>
@@ -150,19 +150,19 @@
 				{{scl_post_date}}
 			<td class=user>
 				{{#scl_user_id}}
-					<a href="/users/{{scl_user_id}}.html">{{scl_alias}}</a>
+					<a href="{{layout.contextPath}}/users/{{scl_user_id}}.html">{{scl_alias}}</a>
 				<TMPL_ELSE>
 					{{scl_alias}}
 				{{/if_close}}
 			<td class=title>
 				{{#scl_quarantine}}<s>{{/scl_quarantine}}
-				<a href="/creos/{{ESCAPE}}=URL NAME=scl_id>.html">{{scl_title}}</a>
+				<a href="{{layout.contextPath}}/creos/{{ESCAPE}}=URL NAME=scl_id>.html">{{scl_title}}</a>
 				{{#scl_quarantine}}</s>{{/scl_quarantine}}
 			<td class=comments>
 				{{scl_comments_count}}
 			<td class=resume>{{scl_votes_count}}
 			{{#scl_can_delete}}
-				<td class=action><a href='/select/del/{{scl_id}}'>[X]</a>
+				<td class=action><a href='{{layout.contextPath}}/select/del/{{scl_id}}'>[X]</a>
 			{{/if_close}}
 	{{/loop_close}}
 	</table>
@@ -195,7 +195,7 @@
 	<table class=creo_votes>
 	{{#ad_votes}}
 			<tr>
-			<td class=creo_title><a href="/creosa/{{uv_creo_id}}.html">{{uv_user_name}} - {{uv_creo_title}}</a>
+			<td class=creo_title><a href="{{layout.contextPath}}/creosa/{{uv_creo_id}}.html">{{uv_user_name}} - {{uv_creo_title}}</a>
 		<td class=gray>{{uv_ip}}
 		<td>{{uv_vote}}
 		<td class=gray>{{uv_date}}

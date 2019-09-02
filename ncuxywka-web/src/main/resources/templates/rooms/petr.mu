@@ -11,7 +11,7 @@
 своем тракторе. старуха кивнула, улыбнулась, достала откуда-то из жопы волшебную палку, почесала ей подмышками, в паху и дала понюхать Петру. в тот же миг Петр стал расти и обрастать. шерсть
 покрыла его с головы до... да, вот до ног ее почему то не хватило. и начиная с колен из под шерсти выглядывали голые поросячьи ножки. "ну вот и все, с вас 45р", - сказала старуха и захохотала. Петр посмотрел в зеркало и увидел там медведя, большого и волосатого...
 <tr><td class=copyright>
-	<a class=user href='/users/6.html'><span class=user_name>Двуокись сахарозы</span></a>, 2010-04-08 14:29	
+	<a class=user href='{{layout.contextPath}}/users/6.html'><span class=user_name>Двуокись сахарозы</span></a>, 2010-04-08 14:29
 </table>
 
 <h2>Последние страницы истории:</h2>
@@ -24,7 +24,7 @@
 	<tr>
 		<td class=copyright>
 			{{#cm_user_id}}
-				<a class=user href='/users/{{cm_user_id}}.html'><span class=user_name>{{cm_user_name}}</span></a>,
+				<a class=user href='{{layout.contextPath}}/users/{{cm_user_id}}.html'><span class=user_name>{{cm_user_name}}</span></a>,
 			<TMPL_ELSE>
 				<span class=anonim>{{cm_alias}},</span>
 			{{/if_close}}

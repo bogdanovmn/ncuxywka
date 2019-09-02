@@ -8,7 +8,7 @@
 	{{#top_users_by_creos_count}}
 		<p class=user_creo_list>
 		<span class=note>{{__counter__}}. </span>
-		<a href="/users/{{ccu_id}}.html"><b>{{ccu_name}}</b></a>
+		<a href="{{layout.contextPath}}/users/{{ccu_id}}.html"><b>{{ccu_name}}</b></a>
 		<span class=subnote>[{{ccu_cnt}}]</span>
 		</p>
 	{{/top_users_by_creos_count}}

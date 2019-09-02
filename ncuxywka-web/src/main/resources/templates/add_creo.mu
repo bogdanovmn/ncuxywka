@@ -1,12 +1,12 @@
 <h1>СДА<span class=letter>Й</span> АНАЛИ<span class=letter>Z</span>Ы:</h1>
 {{^user_auth}}
-	<div class=strict>Чтобы сдать свои анализы вам необходимо <a href='/register/'>зерегистрироваться</a> <br>и войти на Психуюшку под своим именем.</div>
+	<div class=strict>Чтобы сдать свои анализы вам необходимо <a href='{{layout.contextPath}}/register/'>зерегистрироваться</a> <br>и войти на Психуюшку под своим именем.</div>
 <TMPL_ELSE>
 	{{^can_add}}
 		<div class=strict>Ваши предыдущие анализы показали нам что Вы достаточно здоровы!<br>Мы советуем Вам сдать следующий анализ<br>не ранее чем через {{time_to_post}}</div> 
 		<p>&nbsp;
 	{{/unless_close}}
-	<div class=strict>Перед тем как сдать анализы обязательно прочьтите <a href='/faq_room/'>FAQ</a>!</div>
+	<div class=strict>Перед тем как сдать анализы обязательно прочьтите <a href='{{layout.contextPath}}/faq_room/'>FAQ</a>!</div>
 	<p>&nbsp;
 	<form onsubmit="return check_post_data();" name='add_history' method=post>
 		<table class=form>
@@ -26,7 +26,7 @@
 			<tr>
 				<td>&nbsp;
 				<td>
-				<input id=faq_read type=checkbox name='faq'> C <a href='/faq_room/'>FAQ'ом</a> ознакомлен и согласен!
+				<input id=faq_read type=checkbox name='faq'> C <a href='{{layout.contextPath}}/faq_room/'>FAQ'ом</a> ознакомлен и согласен!
 			<tr>
 				<td>&nbsp;
 				<td>

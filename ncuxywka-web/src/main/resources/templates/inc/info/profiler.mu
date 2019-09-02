@@ -17,7 +17,7 @@
 		{{/profiler_db_connect_time}}
 		<p>
 			Время SQL:
-			<b>{{profiler_sql_time}}</b> (<a href='/doctor/sql_details/'>{{profiler_sql_count}} q</a>)
+			<b>{{profiler_sql_time}}</b> (<a href='{{layout.contextPath}}/doctor/sql_details/'>{{profiler_sql_count}} q</a>)
 		</p>
 		<p>
 			Время Memcached:
