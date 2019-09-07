@@ -7,7 +7,7 @@
 	<td>
 	{{#random_creo_list}}
 		<p class=user_creo_list>
-		<a href="{{layout.contextPath}}/creos/{{cl_id}}.html"><b>{{cl_title}}</b></a>
+		<a href="{{layout.contextPath}}/creos/{{cl_id}}"><b>{{cl_title}}</b></a>
 		<br><span class=link_note>{{cl_alias}}</span>
 		</p>
 	{{/random_creo_list}}

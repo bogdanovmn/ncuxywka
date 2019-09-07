@@ -12,11 +12,11 @@
 					<span class=group>{{lc_group_name}}</span>
 				{{/if_close}}
 				{{#lc_user_id}}
-					<a class=user href='{{layout.contextPath}}/users/{{lc_user_id}}.html'><span class=user_name>{{lc_user_name}}</span></a>
+					<a class=user href='{{layout.contextPath}}/users/{{lc_user_id}}'><span class=user_name>{{lc_user_name}}</span></a>
 				<TMPL_ELSE>
 					<span class=anonim>{{lc_alias}}</span> 
 				{{/if_close}}
-				<span class=array>&rarr;</span> {{#lc_quarantine}}<s>{{/lc_quarantine}}<a href="{{layout.contextPath}}/creos/{{ESCAPE}}=URL NAME=lc_creo_id>.html">{{lc_creo_alias}}: {{lc_creo_title}}{{#lc_quarantine}}</s>{{/lc_quarantine}}
+				<span class=array>&rarr;</span> {{#lc_quarantine}}<s>{{/lc_quarantine}}<a href="{{layout.contextPath}}/creos/{{ESCAPE}}=URL NAME=lc_creo_id>">{{lc_creo_alias}}: {{lc_creo_title}}{{#lc_quarantine}}</s>{{/lc_quarantine}}
 				</a>
 			<td class="stamp">
 				<span class=post_date><TMPL_VAR	NAME=lc_post_date></span>

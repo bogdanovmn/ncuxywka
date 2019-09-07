@@ -18,7 +18,7 @@
 			{{#cl_quarantine}}</s>{{/cl_quarantine}}
 		{{/cl_selected}}
 		{{^cl_selected}}
-			<a title="Диагнозов: {{cl_comments_count}}" href="{{layout.contextPath}}/creos/{{cl_id}}.html">
+			<a title="Диагнозов: {{cl_comments_count}}" href="{{layout.contextPath}}/creos/{{cl_id}}">
 				{{#cl_quarantine}}<s>{{/cl_quarantine}}
 				{{cl_title}}{{#cl_quarantine}}</s>{{/cl_quarantine}}</a>
 		{{/cl_selected}}

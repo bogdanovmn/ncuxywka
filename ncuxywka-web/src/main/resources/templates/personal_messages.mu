@@ -18,9 +18,9 @@
 		<tr>
 		<td class=info>
 			{{#lm_is_in_message}}
-				От <a class=user href='{{layout.contextPath}}/users/{{lm_user_id}}.html'><span class=user_name>{{lm_user_name}}</span></a>
+				От <a class=user href='{{layout.contextPath}}/users/{{lm_user_id}}'><span class=user_name>{{lm_user_name}}</span></a>
 			<TMPL_ELSE>
-				Для <a class=user href='{{layout.contextPath}}/users/{{lm_to_user_id}}.html'><span class=user_name>{{lm_to_user_name}}</span></a>
+				Для <a class=user href='{{layout.contextPath}}/users/{{lm_to_user_id}}'><span class=user_name>{{lm_to_user_name}}</span></a>
 			{{/if_close}}
 			<span class=date>
 				{{#lm_is_in_message}}<a href='{{layout.contextPath}}/pm/dialog/{{lm_user_id}}/'>Ответить</a>&nbsp;&nbsp;{{/lm_is_in_message}}
@@ -61,7 +61,7 @@
 	{{#messages}}
 		<tr>
 		<td class=info>
-			<a class=user href='{{layout.contextPath}}/users/{{dm_user_id}}.html'><span class=user_name>{{dm_user_name}}</span></a>
+			<a class=user href='{{layout.contextPath}}/users/{{dm_user_id}}'><span class=user_name>{{dm_user_name}}</span></a>
 			<span class=date>{{dm_date}}</span>
 		<tr>
 		<td class=text>

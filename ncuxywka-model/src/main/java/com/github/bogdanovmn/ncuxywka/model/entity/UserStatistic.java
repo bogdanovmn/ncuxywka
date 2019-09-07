@@ -1,9 +1,12 @@
 package com.github.bogdanovmn.ncuxywka.model.entity;
 
 import com.github.bogdanovmn.common.spring.jpa.BaseEntity;
+import lombok.Getter;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+
+@Getter
 
 @Entity
 public class UserStatistic extends BaseEntity {

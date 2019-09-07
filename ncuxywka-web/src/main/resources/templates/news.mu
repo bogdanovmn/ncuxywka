@@ -27,7 +27,7 @@
 	<tr>
 	<td class=info>
 		<b>{{n_post_date}}</b> 
-		от <a href="{{layout.contextPath}}/users/{{n_user_id}}.html">{{n_user_name}}</a>
+		от <a href="{{layout.contextPath}}/users/{{n_user_id}}">{{n_user_name}}</a>
 	<td class=menu>
 		{{#god}}
 			<a href="{{layout.contextPath}}/news/hide/{{n_id}}">Удалить</a>

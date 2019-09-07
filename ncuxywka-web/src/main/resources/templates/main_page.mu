@@ -44,7 +44,7 @@
 		{{#news}}
 			<p>
 				<b>{{created}}</b>
-				от <a class=author href="{{layout.contextPath}}/users/{{user.id}}">{{user.name}}</a>
+				от <a class=author href="{{layout.contextPath}}/users/{{user.id}}">{{this.user.name}}</a>
 				<br>
 				{{text}}
 			</p>

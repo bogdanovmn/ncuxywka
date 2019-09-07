@@ -8,7 +8,7 @@
 	{{#top_selected_creos}}
 		<p class=user_creo_list>
 		<span class=note>[{{sct_cnt}}] </span>
-		<a href="{{layout.contextPath}}/creos/{{sct_creo_id}}.html">
+		<a href="{{layout.contextPath}}/creos/{{sct_creo_id}}">
 			<b>{{sct_title}}</b></a>
 		<br>
 		<span class=subnote>{{sct_user_name}}</span>

@@ -8,7 +8,7 @@
 	{{#most_commented_creo_list_revert}}
 		<p class=user_creo_list>
 		<span class=note>[{{mccl_cnt}}] </span>
-		<a href="{{layout.contextPath}}/creos/{{mccl_id}}.html"><b>{{mccl_title}}</b></a>
+		<a href="{{layout.contextPath}}/creos/{{mccl_id}}"><b>{{mccl_title}}</b></a>
 		<br><span class=subnote>{{mccl_alias}}</span>
 		</p>
 	{{/most_commented_creo_list_revert}}
@@ -22,7 +22,7 @@
 	{{#most_commented_creo_list}}
 		<p class=user_creo_list>
 		<span class=note>[{{mccl_cnt}}] </span>
-		<a href="{{layout.contextPath}}/creos/{{mccl_id}}.html"><b>{{mccl_title}}</b></a>
+		<a href="{{layout.contextPath}}/creos/{{mccl_id}}"><b>{{mccl_title}}</b></a>
 		<br><span class=subnote>{{mccl_alias}}</span>
 		</p>
 	{{/most_commented_creo_list}}

@@ -5,6 +5,7 @@ import com.github.bogdanovmn.ncuxywka.model.entity.CreoRepository.CreoMinView;
 import com.github.bogdanovmn.ncuxywka.model.entity.CreoTextRepository;
 import com.github.bogdanovmn.ncuxywka.model.entity.User;
 import com.github.bogdanovmn.ncuxywka.model.entity.UserRepository;
+import com.github.bogdanovmn.ncuxywka.model.entity.UserRepository.UserWithStatistic;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
@@ -59,6 +60,9 @@ class MainPageService {
 	}
 
 	List<User> newActiveUsers(int newUsersCount) {
-		return userRepository.findNewActive(PageRequest.of(0, newUsersCount));
+		return userRepository.findActive(PageRequest.of(0, newUsersCount))
+			.stream()
+			.map(UserWithStatistic::getInfo)
+			.collect(Collectors.toList());
 	}
 }

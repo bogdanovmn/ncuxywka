@@ -121,7 +121,7 @@
 				{{cl_post_date}}
 			<td class=title>
 				{{#cl_quarantine}}<s>{{/cl_quarantine}}
-				<a href="{{layout.contextPath}}/creos/{{ESCAPE}}=URL NAME=cl_id>.html">{{cl_title}}</a>
+				<a href="{{layout.contextPath}}/creos/{{ESCAPE}}=URL NAME=cl_id>">{{cl_title}}</a>
 				{{#cl_quarantine}}</s>{{/cl_quarantine}}
 				{{^cl_self_vote}}
 					<span class=subnote>?</span>
@@ -150,13 +150,13 @@
 				{{scl_post_date}}
 			<td class=user>
 				{{#scl_user_id}}
-					<a href="{{layout.contextPath}}/users/{{scl_user_id}}.html">{{scl_alias}}</a>
+					<a href="{{layout.contextPath}}/users/{{scl_user_id}}">{{scl_alias}}</a>
 				<TMPL_ELSE>
 					{{scl_alias}}
 				{{/if_close}}
 			<td class=title>
 				{{#scl_quarantine}}<s>{{/scl_quarantine}}
-				<a href="{{layout.contextPath}}/creos/{{ESCAPE}}=URL NAME=scl_id>.html">{{scl_title}}</a>
+				<a href="{{layout.contextPath}}/creos/{{ESCAPE}}=URL NAME=scl_id>">{{scl_title}}</a>
 				{{#scl_quarantine}}</s>{{/scl_quarantine}}
 			<td class=comments>
 				{{scl_comments_count}}
@@ -195,7 +195,7 @@
 	<table class=creo_votes>
 	{{#ad_votes}}
 			<tr>
-			<td class=creo_title><a href="{{layout.contextPath}}/creosa/{{uv_creo_id}}.html">{{uv_user_name}} - {{uv_creo_title}}</a>
+			<td class=creo_title><a href="{{layout.contextPath}}/creosa/{{uv_creo_id}}">{{uv_user_name}} - {{uv_creo_title}}</a>
 		<td class=gray>{{uv_ip}}
 		<td>{{uv_vote}}
 		<td class=gray>{{uv_date}}

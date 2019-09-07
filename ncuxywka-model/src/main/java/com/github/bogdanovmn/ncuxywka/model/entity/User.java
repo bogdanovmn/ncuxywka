@@ -36,7 +36,7 @@ public class User extends BaseEntityWithUniqueName implements UserAuthorization 
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)
 	private IpAddress ip;
 
-	@ManyToMany(fetch = FetchType.EAGER)
+	@ManyToMany(fetch = FetchType.LAZY)
 	@JoinTable(
 		name = "role2user",
 		joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
@@ -65,5 +65,9 @@ public class User extends BaseEntityWithUniqueName implements UserAuthorization 
 	@Override
 	public boolean withRole(String role) {
 		return roles.contains(new UserRole(role));
+	}
+
+	public boolean isMainDoctor() {
+		return id == 4;
 	}
 }

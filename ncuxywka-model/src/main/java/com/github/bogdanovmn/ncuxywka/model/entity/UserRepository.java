@@ -12,7 +12,8 @@ public interface UserRepository extends JpaRepository<User, Integer> {
 	User findFirstByEmail(String email);
 
 	@Query(
-		"select u from UserStatistic us " +
+		"select u as info, us as statistic " +
+		"from UserStatistic us " +
 		"join User u on u.id = us.user.id " +
 		"where us.commentsOut > 0 " +
 			"or us.roomComments > 0 " +
@@ -20,5 +21,10 @@ public interface UserRepository extends JpaRepository<User, Integer> {
 			"or us.creoPosts > 0 " +
 		"order by u.id desc"
 	)
-	List<User> findNewActive(Pageable page);
+	List<UserWithStatistic> findActive(Pageable page);
+
+	interface UserWithStatistic {
+		User getInfo();
+		UserStatistic getStatistic();
+	}
 }

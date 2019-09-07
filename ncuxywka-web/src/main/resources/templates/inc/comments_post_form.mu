@@ -4,7 +4,7 @@
 			<td><span class=note>Пациэнт:</span>
 			<td>
 			{{#user.id}}
-				<span class=user_name>{{user.name}}</span>
+				<span class=user_name>{{this.user.name}}</span>
 			{{/user.id}}
 			{{^user.id}}
 				<input type=text maxlength=50 name=alias value='{{alias}}'>

@@ -8,7 +8,7 @@
 	{{#user_favorites}}
 		<p class=user_creo_list>
 		<span class=subnote>[<a href="{{layout.contextPath}}/talks/for/{{uf_uid}}/from/{{uf_master_id}}">{{uf_cnt}} диаг.</a>]</span>
-		<a href="{{layout.contextPath}}/users/{{uf_uid}}.html"><b>{{uf_name}}</b></a>
+		<a href="{{layout.contextPath}}/users/{{uf_uid}}"><b>{{uf_name}}</b></a>
 		</p>
 	{{/user_favorites}}
 	

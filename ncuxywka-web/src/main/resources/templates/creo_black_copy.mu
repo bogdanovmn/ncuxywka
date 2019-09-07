@@ -41,7 +41,7 @@
 				{{/if_close}}
 			</form>
 		<td class=edit>
-			<a href="{{layout.contextPath}}/black_copy/edit/{{creo_id}}.html">
+			<a href="{{layout.contextPath}}/black_copy/edit/{{creo_id}}">
 				<input type=button value="Внести правки">
 			</a>
 	</table>

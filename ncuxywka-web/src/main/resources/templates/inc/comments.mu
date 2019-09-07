@@ -12,14 +12,14 @@
 							<span class=group>{{user.groupName}}</span>
 						{{/user.groupName}}
 						{{#user.id}}
-							<a class=user href='{{layout.contextPath}}/users/{{user.id}}'><span class=user_name>{{user.name}}</span></a>
+							<a class=user href='{{layout.contextPath}}/users/{{user.id}}'><span class=user_name>{{this.user.name}}</span></a>
 						{{/user.id}}
 						{{^user.id}}
-							<span class=anonymous>{{user.name}}</span>
+							<span class=anonymous>{{this.user.name}}</span>
 						{{/user.id}}
 					</div>
 					<div class="col-4 stamp">
-						<a href='#' onclick="reply_to('{{user.name}} {{innerId}}')">Ответить</a>
+						<a href='#' onclick="reply_to('{{this.user.name}} {{innerId}}')">Ответить</a>
 						&nbsp;&nbsp;&nbsp;
 						<i>{{innerId}}</i>
 						&nbsp;
