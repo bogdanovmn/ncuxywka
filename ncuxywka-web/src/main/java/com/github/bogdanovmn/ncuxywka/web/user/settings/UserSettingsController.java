@@ -1,4 +1,4 @@
-package com.github.bogdanovmn.ncuxywka.web.user;
+package com.github.bogdanovmn.ncuxywka.web.user.settings;
 
 import com.github.bogdanovmn.common.spring.menu.MenuItem;
 import com.github.bogdanovmn.ncuxywka.model.entity.User;

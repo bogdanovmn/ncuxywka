@@ -1,4 +1,4 @@
-package com.github.bogdanovmn.ncuxywka.web.user;
+package com.github.bogdanovmn.ncuxywka.web.user.auth;
 
 import com.github.bogdanovmn.ncuxywka.model.entity.User;
 import com.github.bogdanovmn.ncuxywka.model.entity.UserRepository;

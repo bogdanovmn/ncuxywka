@@ -1,4 +1,4 @@
-package com.github.bogdanovmn.ncuxywka.web.user;
+package com.github.bogdanovmn.ncuxywka.web.user.settings;
 
 import javax.validation.constraints.Size;
 

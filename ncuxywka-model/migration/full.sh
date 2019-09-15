@@ -6,4 +6,5 @@ scriptella.sh \
     comment.xml \
     user_stats.xml \
     creo_stats.xml \
+    favorite_creos.xml \
     news.xml

@@ -9,9 +9,10 @@
     <!--<link rel="stylesheet" href="{{layout.contextPath}}/css/auto_main.css" type="text/css">-->
     <link rel="icon" type="image/png" href="{{layout.contextPath}}/img/icon.png" />
 
-    <script language="javascript" type="text/javascript" src="{{layout.contextPath}}/webjars/jquery/jquery.min.js"></script>
-    <script language="javascript" type="text/javascript" src="{{layout.contextPath}}/webjars/bootstrap/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="{{layout.contextPath}}/webjars/bootstrap/css/bootstrap.min.css" type="text/css">
+	<script language="javascript" type="text/javascript" src="{{layout.contextPath}}/webjars/jquery/jquery.min.js"></script>
+	<script language="javascript" type="text/javascript" src="{{layout.contextPath}}/webjars/bootstrap/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="{{layout.contextPath}}/webjars/bootstrap/css/bootstrap.min.css" type="text/css">
+	{{> inc/js_plot}}
 </head>
 
 <body>

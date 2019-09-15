@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 
 @Entity
-public class UserDetail extends BaseEntity {
+public class UserDetails extends BaseEntity {
 	@OneToOne(fetch = FetchType.LAZY, optional = false)
 	@MapsId
 	private User user;

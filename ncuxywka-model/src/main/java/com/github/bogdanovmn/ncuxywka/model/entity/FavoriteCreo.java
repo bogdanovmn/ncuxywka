@@ -6,7 +6,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import java.util.Date;
+import java.time.LocalDateTime;
 
 @Entity
 public class FavoriteCreo extends BaseEntity {
@@ -17,5 +17,5 @@ public class FavoriteCreo extends BaseEntity {
 	@JoinColumn(nullable = false)
 	private Creo creo;
 	@Column(nullable = false)
-	private Date createDate;
+	private LocalDateTime created;
 }

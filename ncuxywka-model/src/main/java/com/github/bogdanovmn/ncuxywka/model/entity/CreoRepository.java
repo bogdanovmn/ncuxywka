@@ -19,7 +19,6 @@ public interface CreoRepository extends JpaRepository<Creo, Integer> {
 	List<CreoMinView> findLast(Pageable pageable);
 
 	interface CreoMinView {
-
 		Creo getCreo();
 		User getUser();
 		CreoStatistic getStatistic();
@@ -56,6 +55,27 @@ public interface CreoRepository extends JpaRepository<Creo, Integer> {
 	interface CommentView {
 		Comment getComment();
 		User getCommentAuthor();
-
 	}
+
+	@Query(
+		"select c as creo, u as user, cs as statistic " +
+		"from Creo c " +
+		"join User u on u.id = c.user.id " +
+		"join CreoStatistic cs on cs.creo.id = c.id " +
+		"where c.status = 0 " +
+		"and u.id = :userId " +
+		"order by c.id desc"
+	)
+	List<CreoMinView> allByUser(@Param("userId") Integer userId);
+
+	@Query(
+		"select c as creo, u as user, cs as statistic " +
+		"from Creo c " +
+		"join User u on u.id = c.user.id " +
+		"join CreoStatistic cs on cs.creo.id = c.id " +
+		"join FavoriteCreo fc on fc.creo.id = c.id " +
+		"where fc.user.id = :userId " +
+		"order by fc.id desc"
+	)
+	List<CreoMinView> allFavoriteByUser(@Param("userId") Integer userId);
 }

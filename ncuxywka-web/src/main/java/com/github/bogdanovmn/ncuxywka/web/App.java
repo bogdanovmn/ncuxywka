@@ -8,6 +8,7 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @SpringBootApplication
@@ -18,6 +19,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableJpaRepositories(basePackages = "com.github.bogdanovmn.ncuxywka.model")
 @EntityScan(basePackages = "com.github.bogdanovmn.ncuxywka.model")
 @EnableTransactionManagement
+@EnableScheduling
 @EnableConfigurationProperties({
 	MenuConfiguration.class,
 	SkinConfiguration.class

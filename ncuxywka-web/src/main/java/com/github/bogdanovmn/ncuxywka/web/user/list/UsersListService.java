@@ -6,7 +6,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 @Service
-class UserService {
+class UsersListService {
 	@Autowired
 	private UserRepository userRepository;
 

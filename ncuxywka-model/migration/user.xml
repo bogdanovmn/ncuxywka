@@ -10,7 +10,20 @@
 	<connection id="log" driver="text"/>
 
 	<query connection-id="old">
-		select id user_id, users.* from users
+		select
+			id user_id,
+			name,
+			reg_date,
+			email,
+			pass_hash,
+			edit_date,
+			if(about   = '', null, about)   about,
+			if(city    = '', null, city)    city,
+			if(hates   = '', null, hates)   hates,
+			if(illness = '', null, illness) illness,
+			if(loves   = '', null, loves)   loves,
+			if(illness = '', null, illness) illness
+		from users
 		<query connection-id="new">
 			select id ip_id from ip_address where ipv4 = ?ip
 			<script connection-id="log">
