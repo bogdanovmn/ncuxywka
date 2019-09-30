@@ -17,7 +17,7 @@ public enum MainMenuItem implements MenuItem {
 	USERS,
 	CREOS_HISTORY,
 	QUARANTINE,
-	DIAGNOSES,
+	COMMENTS,
 
 //	OTHER_ROOMS,
 

@@ -122,11 +122,11 @@ menu:
 
       - id: QUARANTINE
         title: Карантин
-        url: /quarantine
+        url: /creos/history?quarantine
 
-      - id: DIAGNOSES
+      - id: COMMENTS
         title: Диагнозы
-        url: /diagnoses
+        url: /comments
 
   - id: USER
     title: Бюллетень
