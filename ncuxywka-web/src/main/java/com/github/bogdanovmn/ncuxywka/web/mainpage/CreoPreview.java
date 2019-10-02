@@ -1,7 +1,7 @@
 package com.github.bogdanovmn.ncuxywka.web.mainpage;
 
+import com.github.bogdanovmn.common.text.TruncatedText;
 import com.github.bogdanovmn.ncuxywka.model.entity.CreoRepository.CreoMinView;
-import com.github.bogdanovmn.ncuxywka.web.TruncatedText;
 
 import java.util.ArrayList;
 import java.util.List;

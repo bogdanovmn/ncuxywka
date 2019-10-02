@@ -1,5 +1,6 @@
 package com.github.bogdanovmn.ncuxywka.web.comment;
 
+import com.github.bogdanovmn.common.spring.jpa.pagination.ContentPage;
 import com.github.bogdanovmn.common.spring.menu.MenuItem;
 import com.github.bogdanovmn.common.spring.mvc.ViewTemplate;
 import com.github.bogdanovmn.ncuxywka.web.infrastructure.AbstractVisualController;
