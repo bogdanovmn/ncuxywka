@@ -50,12 +50,7 @@ public interface CreoRepository extends JpaRepository<Creo, Integer> {
 		"where cr.id = :creoId " +
 		"order by cm.id"
 	)
-	List<CommentView> allComments(@Param("creoId") Integer creoId);
-
-	interface CommentView {
-		Comment getComment();
-		User getCommentAuthor();
-	}
+	List<Comment> allComments(@Param("creoId") Integer creoId);
 
 	@Query(
 		"select c as creo, u as user, cs as statistic " +

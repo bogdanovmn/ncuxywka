@@ -36,30 +36,28 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	}
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http
-			.anonymous()
-				.principal(User.guest())
-			.and()
-				.authorizeRequests()
-				.anyRequest().anonymous()
-			.antMatchers("/admin/**").hasAuthority(UserRole.Role.ADMIN.name())
+		http.anonymous().principal(User.guest())
+		.and()
+			.authorizeRequests()
+				.antMatchers("/admin/**").hasAuthority(UserRole.Role.ADMIN.name())
+		.anyRequest().anonymous()
 
-			.and()
-				.formLogin()
-					.loginPage("/login")
-					.defaultSuccessUrl("/", true)
-					.permitAll()
+		.and()
+			.formLogin()
+				.loginPage("/login")
+				.defaultSuccessUrl("/", true)
+				.permitAll()
 
-			.and()
-				.logout()
-					.logoutRequestMatcher(
-						new AntPathRequestMatcher("/logout")
-					)
-					.logoutSuccessUrl("/login")
-					.permitAll()
+		.and()
+			.logout()
+				.logoutRequestMatcher(
+					new AntPathRequestMatcher("/logout")
+				)
+				.logoutSuccessUrl("/login")
+				.permitAll()
 
-			.and()
-				.csrf()
-					.disable();
+		.and()
+			.csrf()
+				.disable();
 	}
 }

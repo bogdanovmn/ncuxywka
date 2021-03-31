@@ -4,26 +4,29 @@
 
 {{#comments.0}}
 	{{#comments}}
-		<div class="card {{#user.isMajor}}major_{{/user.isMajor}}{{#user.groupName}}group_{{user.groupType}}_{{/user.groupName}}comment">
+		<div class="card {{#user.isMajor}}major_{{/user.isMajor}}{{#user.groupName}}group_{{user.groupType}}_{{/user.groupName}}comment"
+			 data-comment-id="{{id}}"
+			 data-inner-id=""
+		>
 			<div class="card-header">
 				<div class="row">
 					<div class="col-8 who">
 						{{#user.groupName}}
-							<span class=group>{{user.groupName}}</span>
+							<span class=group>{{.}}</span>
 						{{/user.groupName}}
-						{{#user.id}}
-							<a class=user href='{{layout.contextPath}}/users/{{user.id}}'><span class=user_name>{{this.user.name}}</span></a>
-						{{/user.id}}
-						{{^user.id}}
-							<span class=anonymous>{{this.user.name}}</span>
-						{{/user.id}}
+						{{#user}}
+							<a class=user href='{{layout.contextPath}}/users/{{id}}'><span class=user_name>{{name}}</span></a>
+						{{/user}}
+						{{^user}}
+							<span class=anonymous>{{name}}</span>
+						{{/user}}
 					</div>
 					<div class="col-4 stamp">
-						<a href='#' onclick="reply_to('{{this.user.name}} {{innerId}}')">Ответить</a>
+						<a href='#' onclick="reply_to('{{this.user.name}}', {{id}})">Ответить</a>
 						&nbsp;&nbsp;&nbsp;
-						<i>{{innerId}}</i>
+						<i></i>
 						&nbsp;
-						<span class=post_date>{{comment.created}}</span>
+						<span class=post_date>{{created}}</span>
 					</div>
 				</div>
 			</div>
@@ -33,7 +36,7 @@
 						<span class=group>{{user.commentPhrase}}</span><br><br>
 					{{/user.commentPhrase}}
 				{{/isForCreo}}
-				{{{comment.message}}}
+				{{{message}}}
 			</div>
 		</div>
 	{{/comments}}
@@ -46,8 +49,17 @@
 {{/comments.0}}
 
 <script>
-	function reply_to(text) {
-		const insert_text = `--> ${text} \n`;
+	$(document).ready(function() {
+		let i = 1;
+		$("[data-comment-id]").each(function (){
+			$(this).attr("data-inner-id", i);
+			$(this).find("div.stamp i").text(i);
+			i++;
+		})
+	})
+	function reply_to(userTo, commentId) {
+		const inner_id = $(`[data-comment-id=${commentId}]`).attr("data-inner-id");
+		const insert_text = `--> ${userTo} ${inner_id} \n`;
 		if(!document.post_form.post_text.value) {
 			document.post_form.post_text.value = insert_text;
 		}

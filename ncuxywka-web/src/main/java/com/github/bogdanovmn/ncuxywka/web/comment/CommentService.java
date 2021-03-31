@@ -1,6 +1,7 @@
 package com.github.bogdanovmn.ncuxywka.web.comment;
 
 import com.github.bogdanovmn.common.spring.jpa.pagination.ContentPage;
+import com.github.bogdanovmn.common.spring.jpa.pagination.PageMeta;
 import com.github.bogdanovmn.ncuxywka.model.entity.CommentRepository;
 import com.github.bogdanovmn.ncuxywka.model.entity.CommentRepository.CreosComment;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,9 @@ class CommentService {
 			commentRepository.getAllCreosComments(
 				PageRequest.of(page, 20)
 			),
-			"/comments?"
+			PageMeta.builder()
+				.baseUrl("/comments?")
+			.build()
 		);
 	}
 }
