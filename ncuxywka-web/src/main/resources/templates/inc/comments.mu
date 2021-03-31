@@ -18,11 +18,11 @@
 							<a class=user href='{{layout.contextPath}}/users/{{id}}'><span class=user_name>{{name}}</span></a>
 						{{/user}}
 						{{^user}}
-							<span class=anonymous>{{name}}</span>
+							<span class=anonymous>{{authorName}}</span>
 						{{/user}}
 					</div>
 					<div class="col-4 stamp">
-						<a href='#' onclick="reply_to('{{this.user.name}}', {{id}})">Ответить</a>
+						<a href='#' onclick="reply_to('{{authorName}}', {{id}})">Ответить</a>
 						&nbsp;&nbsp;&nbsp;
 						<i></i>
 						&nbsp;
