@@ -9,7 +9,11 @@ import java.time.LocalDateTime;
 @RequiredArgsConstructor
 public class CommentView {
 	private final Comment comment;
+	private final Long innerId;
 
+	public CommentView(Comment comment) {
+		this(comment, null);
+	}
 	public int id() {
 		return comment.getId();
 	}

@@ -1,4 +1,5 @@
-<center>
+{{#layout}}
+
 <h1>ПА<span class=letter>L</span>АТА <span class=letter>#6</span></h1>
 
 <p class=note>В этой палате происходит свободное и непринужденное общение пациэнтов и врачей.</p>
@@ -11,6 +12,6 @@
 
 <h1>ДИСП<span class=letter>Y</span>Т:</h1>
 
-</center>
-
 {{> inc/comments }}
+
+{{/layout}}

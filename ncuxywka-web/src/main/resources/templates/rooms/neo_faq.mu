@@ -1,4 +1,6 @@
-<center><h1>СП<span class=letter>Р</span>АВОЧНА<span class=letter>Я</span> ПО <span class=letter>NEO</span>ФУТУРИ<span class=letter>Z</span>МУ:</h1></center>
+{{#layout}}
+
+<h1>СП<span class=letter>Р</span>АВОЧНА<span class=letter>Я</span> ПО <span class=letter>NEO</span>ФУТУРИ<span class=letter>Z</span>МУ:</h1>
 <br>
 <br>
 <p>
@@ -51,10 +53,10 @@
 <span class=a_letter>A .</span>
 <span class=answer>Спрашивайте внизу - <a href="{{layout.contextPath}}/users/5">Гоги</a> ответит...</span>
 <hr>
-<center>
 <h1><span class=letter>Z</span>АДАЙ ВОПРОС<span class=letter>!</span></h1>
-{{> ../inc/comments_post_form }}
+{{> inc/comments_post_form }}
 <h1>ОБС<span class=letter>Y</span>ЖДЕНИЕ:</h1>
-</center>
 
-{{> ../inc/comments }}
+{{> inc/comments }}
+
+{{/layout}}

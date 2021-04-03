@@ -33,8 +33,8 @@
 				where id = ?cm_creo_id
 
 				<script if="topic_id ne null" connection-id="new">
-					insert into comment (id, created, alias, message, user_id, ip_id, topic_id)
-					values (?cm_id, ?cm_post_date, ?cm_alias, ?cm_msg, ?cm_user_id, ?ip_id, ?topic_id);
+					insert into comment (created, alias, message, user_id, ip_id, topic_id)
+					values (?cm_post_date, ?cm_alias, ?cm_msg, ?cm_user_id, ?ip_id, ?topic_id);
 				</script>
 				<query if="topic_id eq null" connection-id="old">
 					select count(*) cnt
@@ -63,8 +63,8 @@
 								set comment_topic_id = last_insert_id()
 								where id = ?cm_creo_id;
 
-								insert into comment (id, created, alias, message, user_id, ip_id, topic_id)
-								values (?cm_id, ?cm_post_date, ?cm_alias, ?cm_msg, ?cm_user_id, ?ip_id, last_insert_id());
+								insert into comment (created, alias, message, user_id, ip_id, topic_id)
+								values (?cm_post_date, ?cm_alias, ?cm_msg, ?cm_user_id, ?ip_id, last_insert_id());
 							</script>
 						</query>
 					</query>

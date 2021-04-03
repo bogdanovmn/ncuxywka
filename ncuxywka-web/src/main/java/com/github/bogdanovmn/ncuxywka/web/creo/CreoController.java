@@ -6,7 +6,7 @@ import com.github.bogdanovmn.ncuxywka.model.entity.CreoRepository.CreoMinView;
 import com.github.bogdanovmn.ncuxywka.model.entity.CreoRepository.CreoView;
 import com.github.bogdanovmn.ncuxywka.web.infrastructure.AbstractVisualController;
 import com.github.bogdanovmn.ncuxywka.web.infrastructure.MainMenuItem;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,9 +17,9 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/creos")
+@RequiredArgsConstructor
 class CreoController extends AbstractVisualController {
-	@Autowired
-	private CreoService creoService;
+	private final CreoService creoService;
 
 	@GetMapping("/history")
 	ModelAndView creoList() {

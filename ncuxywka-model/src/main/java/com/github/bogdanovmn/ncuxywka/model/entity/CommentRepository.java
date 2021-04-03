@@ -4,6 +4,7 @@ import com.github.bogdanovmn.common.spring.jpa.BaseEntityRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 public interface CommentRepository extends BaseEntityRepository<Comment> {
 
@@ -17,12 +18,24 @@ public interface CommentRepository extends BaseEntityRepository<Comment> {
 			"left join User cmu on cmu.id = cm.user.id " +
 			"order by cm.id desc"
 	)
-	Page<CreosComment> getAllCreosComments(Pageable pageable);
+	Page<CreoComment> getAllCreosComments(Pageable pageable);
 
-	interface CreosComment {
+	interface CreoComment {
 		Creo getCreo();
 		Comment getComment();
 		User getCreoUser();
 		User getCommentUser();
 	}
+
+	@Query(
+		nativeQuery = true,
+		countQuery = "select count(*) from room r join comment cm on cm.topic_id = r.comment_topic_id where r.id = :room",
+		value =
+			"select cm.* " +
+				"from room r " +
+				"join comment cm on cm.topic_id = r.comment_topic_id " +
+				"where r.id = :room " +
+				"order by cm.id desc"
+	)
+	Page<Comment> getRoomComments(@Param("room") String room, Pageable pageable);
 }

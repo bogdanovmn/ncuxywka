@@ -1,4 +1,5 @@
-<center>
+{{#layout}}
+
 <h1>П<span class=letter>Р</span>ОЦЕДУ<span class=letter>Р</span>НАЯ</h1>
 
 {{^inside}}
@@ -19,17 +20,16 @@
 		<input type=submit value='Начать процедуры'>
 	</form>
 	<br><br>
-<TMPL_ELSE>
+{{/inside}}
+{{#inside}}
 	<p class=note>Вы находитесь в процедурном кабинете. Как вы сюда попали? Возможно сами и добровольно, а возможно вас сюда принудительно отправил Главврач. В любом случае, расслабтесь: у вас выпал замечательный шанс отдохнуть от общества Психуюшки.</p>
 	<p class=proc_left_time>Осталось <span id='left_time'>{{ban_left_time}}</span> секунд</p>
 	<br>
 	<img src='/img/{{skin_pic_proc}}' width=400>
 	<h1>ПОБ<span class=letter>Y</span>ЯНЬ!</h1>
-	<center>
-	{{> ../inc/comments_post_form }}
-	</center>
+	{{> inc/comments_post_form }}
 	<h1>Дисп<span class=letter>у</span>т:</h1>
-	{{> ../inc/comments }}
+	{{> inc/comments }}
 	
 	<script type=text/javascript> 
 	<!--
@@ -44,4 +44,6 @@
 		setInterval('update_left_time()', 1000);
 	//-->
 	</script> 
-{{/unless_close}}
+{{/inside}}
+
+{{/layout}}

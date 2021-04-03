@@ -1,0 +1,55 @@
+<!DOCTYPE etl SYSTEM "http://scriptella.javaforge.com/dtd/etl.dtd">
+<etl>
+	<description>Guest book comment table migration</description>
+	<properties>
+		<include href="etl.properties"/> <!--Load from external properties file-->
+	</properties>
+	<!-- Connection declarations -->
+	<connection id="old" driver="$driver" url="$src_url" user="$user" password="$password" classpath="$classpath"/>
+	<connection id="new" driver="$driver" url="$dest_url" user="$user" password="$password" classpath="$classpath"/>
+	<connection id="log" driver="text"/>
+	<connection id="js" driver="script"/>
+
+
+	<query connection-id="old">
+		select
+			count(*) cnt,
+			min(post_date) first_comment_date,
+			max(post_date) last_comment_date
+		from gb
+
+		<script connection-id="new">
+			insert into comment_topic (comments_count, created, updated)
+			values (?cnt, ?first_comment_date, ?last_comment_date);
+
+			insert into room (id, comment_topic_id)
+			values ('6', last_insert_id());
+		</script>
+	</query>
+
+	<query connection-id="new">
+		select comment_topic_id topic_id
+		from room
+		where id = '6'
+
+		<query connection-id="old">
+			select
+				id        cm_id,
+				user_id   cm_user_id,
+				alias     cm_alias,
+				post_date cm_post_date,
+				ip        cm_ip,
+				msg       cm_msg
+			from gb
+
+			<query connection-id="new">
+				select id ip_id from ip_address where ipv4 = ?cm_ip
+
+				<script connection-id="new">
+					insert into comment (created, alias, message, user_id, ip_id, topic_id)
+					values (?cm_post_date, ?cm_alias, ?cm_msg, ?cm_user_id, ?ip_id, ?topic_id);
+				</script>
+			</query>
+		</query>
+	</query>
+</etl>

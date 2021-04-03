@@ -10,7 +10,7 @@ public enum MainMenuItem implements MenuItem {
 	FAQ,
 	REGISTRATION,
 	POST_CREO,
-	GB,
+	ROOM_6,
 
 // 	FILE_CABINET,
 

@@ -3,24 +3,22 @@ package com.github.bogdanovmn.ncuxywka.web.comment;
 import com.github.bogdanovmn.common.spring.jpa.pagination.ContentPage;
 import com.github.bogdanovmn.common.spring.jpa.pagination.PageMeta;
 import com.github.bogdanovmn.ncuxywka.model.entity.CommentRepository;
-import com.github.bogdanovmn.ncuxywka.model.entity.CommentRepository.CreosComment;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.github.bogdanovmn.ncuxywka.model.entity.CommentRepository.CreoComment;
+import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 @Service
+@RequiredArgsConstructor
 class CommentService {
-	@Autowired
-	private CommentRepository commentRepository;
+	private final CommentRepository commentRepository;
 
-	ContentPage<CreosComment> allCreosComments(Integer page) {
+	ContentPage<CreoComment> allCreosComments(PageMeta page) {
 		return new ContentPage<>(
 			commentRepository.getAllCreosComments(
-				PageRequest.of(page, 20)
+				PageRequest.of(page.getNumber() - 1, 20)
 			),
-			PageMeta.builder()
-				.baseUrl("/comments?")
-			.build()
+			page
 		);
 	}
 }

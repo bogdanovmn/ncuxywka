@@ -5,7 +5,8 @@ spring.datasource.password: 123
 
 spring.jpa.show-sql: true
 spring.jpa.properties.hibernate.format_sql: true
-spring.jpa.properties.hibernate.show_sql_comments: true
+#spring.jpa.properties.hibernate.show_sql_comments: true
+logging.level.org.hibernate.type.BasicBinder: trace
 
 #spring.jpa.hibernate.ddl-auto: create-drop
 spring.jpa.hibernate.ddl-auto: update
@@ -19,6 +20,11 @@ spring.servlet.multipart.max-request-size: 2MB
 server.servlet.context-path: /ncuxywka
 spring.mustache.suffix: .mu
 
+pages.main.new-users-count: 3
+pages.main.news-count: 2
+pages.main.creo-authors-count: 10
+
+pages.common.comments-per-page: 20
 
 skin:
   active: original
@@ -92,7 +98,7 @@ menu:
       - id: FAQ
         title: Справочная
         note: FAQ
-        url: /faq
+        url: /rooms/faq
 
       - id: POST_CREO
         role: USER
@@ -105,9 +111,9 @@ menu:
         title: Регистратура
         url: /registration
 
-      - id: GB
+      - id: ROOM_6
         title: Палата №6
-        url: /gb
+        url: /rooms/6
 
   - id: FILE_CABINET
     title: Картотека
@@ -157,23 +163,23 @@ menu:
     items:
       - id: WISH_ROOM
         title: Книга желаний
-        url: /wish_room
+        url: /rooms/wish
 
       - id: PETR_ROOM
         title: Похождения поросенка Петра
-        url: /petr_room
+        url: /rooms/petr
 
       - id: FRENIZM_ROOM
         title: Олегофренизмы
-        url: /frenizm_room
+        url: /rooms/frenizm
 
       - id: MAINSHIT_ROOM
         title: Главсрач
-        url: /mainshit_room
+        url: /rooms/mainshit
 
       - id: PROCEDURE_ROOM
         title: Процедурная
-        url: /proc_room
+        url: /rooms/proc
 
   - id: MAINDOCTOR
     title: Кабинет Главврача

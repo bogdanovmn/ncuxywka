@@ -1,4 +1,5 @@
-<center>
+{{#layout}}
+
 <h1><span class=letter>И</span>СТОРИЯ ПРО П<span class=letter>О</span>РОСЕНКА<span class=letter> П</span>ЕТРА И ЕГО ДР<span class=letter>УЗ</span>ЕЙ</h1>
 
 <p class=note>Всем известен парасенок Петр и его путешествие на своем воображаемом тракторе к подруге - собаке Марусе. Но история на этом не оканчивается - историю творим мы в прямом эфире Психуюшки!</p>
@@ -33,9 +34,7 @@
 	</table>
 {{/loop_close}}
 
-{{> ../inc/pages }}
+{{> inc/pages }}
 <div class=header>ТЫ <span class=letter>Z</span>НАЕШЬ ПРОДОЛЖЕНИЕ<span class=letter>?</span></div>
 
-<center>
-{{> ../inc/comments_post_form }}
-</center>
+{{> inc/comments_post_form }}

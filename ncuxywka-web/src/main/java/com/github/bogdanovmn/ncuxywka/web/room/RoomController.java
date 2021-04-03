@@ -1,45 +1,50 @@
-package com.github.bogdanovmn.ncuxywka.web.comment;
+package com.github.bogdanovmn.ncuxywka.web.room;
 
 import com.github.bogdanovmn.common.spring.jpa.pagination.ContentPage;
 import com.github.bogdanovmn.common.spring.jpa.pagination.PageMeta;
 import com.github.bogdanovmn.common.spring.menu.MenuItem;
 import com.github.bogdanovmn.common.spring.mvc.ViewTemplate;
-import com.github.bogdanovmn.ncuxywka.model.entity.CommentRepository.CreoComment;
+import com.github.bogdanovmn.ncuxywka.model.entity.RoomType;
+import com.github.bogdanovmn.ncuxywka.web.comment.CommentView;
 import com.github.bogdanovmn.ncuxywka.web.infrastructure.AbstractVisualController;
 import com.github.bogdanovmn.ncuxywka.web.infrastructure.MainMenuItem;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@RequestMapping("/comments")
-class CommentController extends AbstractVisualController {
-	@Autowired
-	private CommentService commentService;
+@RequestMapping("/rooms")
+@RequiredArgsConstructor
+class RoomController extends AbstractVisualController {
+	private final RoomService roomService;
 
-	@GetMapping
-	ModelAndView creoList(
-		@RequestParam(name = "page", required = false, defaultValue = "1") Integer page,
-		@RequestParam(name = "from", required = false) Integer fromUserId,
-		@RequestParam(name = "to"  , required = false) Integer toUserId
+	@GetMapping("/{room}")
+	ModelAndView get(
+		@PathVariable("room") RoomType room,
+		@RequestParam(name = "page", required = false, defaultValue = "1") Integer page
 	) {
-		ContentPage<CreoComment> comments = commentService.allCreosComments(
+		ContentPage<CommentView> comments = roomService.comments(
+			room,
 			PageMeta.builder()
 				.number(page)
-				.baseUrl("/comments?")
+				.baseUrl(
+					String.format("/rooms/%s?", room.getId())
+				)
 			.build()
 		);
-		return new ViewTemplate("creo_comments")
-			.with("comments", comments.content())
+		return new ViewTemplate("rooms/" + room.getId())
+			.with("comments",      comments.content())
 			.with("paginationBar", comments.paginationBar())
+			.with("postButtonCaption", room.getPostButtonCaption())
 			.modelAndView();
 	}
 
 	@Override
 	protected MenuItem currentMenuItem() {
-		return MainMenuItem.COMMENTS;
+		return MainMenuItem.FAQ;
 	}
 }

@@ -6,41 +6,34 @@ import com.github.bogdanovmn.ncuxywka.model.entity.CreoTextRepository;
 import com.github.bogdanovmn.ncuxywka.model.entity.User;
 import com.github.bogdanovmn.ncuxywka.model.entity.UserRepository;
 import com.github.bogdanovmn.ncuxywka.model.entity.UserRepository.UserWithStatistic;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 import java.util.stream.Collectors;
 
 @Service
+@RequiredArgsConstructor
 class MainPageService {
-	@Autowired
-	private CreoRepository creoRepository;
-	@Autowired
-	private UserRepository userRepository;
-	@Autowired
-	private CreoTextRepository creoTextRepository;
+	private final CreoRepository creoRepository;
+	private final UserRepository userRepository;
+	private final CreoTextRepository creoTextRepository;
 
 
 	LastCreos lastCreos(int lastCreoAuthorsCount) {
 		int currentPage = 0;
-		Set<Integer> authors = new HashSet<>();
 		List<CreoMinView> creos = new ArrayList<>();
 
 		while (!isEnoughAuthors(creos, lastCreoAuthorsCount)) {
 			List<CreoMinView> lastCreosPage = creoRepository.findLast(
 				PageRequest.of(currentPage++, lastCreoAuthorsCount)
 			);
-			if (lastCreosPage == null) {
+			if (lastCreosPage.isEmpty()) {
 				break;
 			}
-			authors.addAll(
-				lastCreosPage.stream().map(creo -> creo.getUser().getId()).collect(Collectors.toSet())
-			);
 			creos.addAll(lastCreosPage);
 		}
 

@@ -22,8 +22,10 @@ class CreoService {
 	}
 
 	List<CommentView> allComments(Integer creoId) {
-		return creoRepository.allComments(creoId).stream()
-			.map(CommentView::new)
+		List<Comment> comments = creoRepository.allComments(creoId);
+		int[] i = {0};
+		return comments.stream()
+			.map(comment -> new CommentView(comment, (long) (comments.size() - i[0]++)))
 			.collect(Collectors.toList());
 	}
 

@@ -1,12 +1,10 @@
-{{#isMultiPage}}
-	{{> pages }}
-{{/isMultiPage}}
-
 {{#comments.0}}
+	{{> inc/pages }}
+
 	{{#comments}}
 		<div class="card {{#user.isMajor}}major_{{/user.isMajor}}{{#user.groupName}}group_{{user.groupType}}_{{/user.groupName}}comment"
 			 data-comment-id="{{id}}"
-			 data-inner-id=""
+			 data-inner-id="{{innerId}}"
 		>
 			<div class="card-header">
 				<div class="row">
@@ -24,7 +22,7 @@
 					<div class="col-4 stamp">
 						<a href='#' onclick="reply_to('{{authorName}}', {{id}})">Ответить</a>
 						&nbsp;&nbsp;&nbsp;
-						<i></i>
+						<i>{{innerId}}</i>
 						&nbsp;
 						<span class=post_date>{{created}}</span>
 					</div>
@@ -36,26 +34,23 @@
 						<span class=group>{{user.commentPhrase}}</span><br><br>
 					{{/user.commentPhrase}}
 				{{/isForCreo}}
-				{{{message}}}
+				{{message}}
 			</div>
 		</div>
 	{{/comments}}
 
-	{{#isMultiPage}}
-		<hr>
-		{{> pages }}
-	{{/isMultiPage}}
+	{{> inc/pages }}
 
 {{/comments.0}}
 
 <script>
 	$(document).ready(function() {
-		let i = 1;
-		$("[data-comment-id]").each(function (){
-			$(this).attr("data-inner-id", i);
-			$(this).find("div.stamp i").text(i);
-			i++;
-		})
+		// let i = 1;
+		// $("[data-comment-id]").each(function (){
+		// 	$(this).attr("data-inner-id", i);
+		// 	$(this).find("div.stamp i").text(i);
+		// 	i++;
+		// })
 	})
 	function reply_to(userTo, commentId) {
 		const inner_id = $(`[data-comment-id=${commentId}]`).attr("data-inner-id");
