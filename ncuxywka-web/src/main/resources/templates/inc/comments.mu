@@ -2,10 +2,7 @@
 	{{> inc/pages }}
 
 	{{#comments}}
-		<div class="card {{#user.isMajor}}major_{{/user.isMajor}}{{#user.groupName}}group_{{user.groupType}}_{{/user.groupName}}comment"
-			 data-comment-id="{{id}}"
-			 data-inner-id="{{innerId}}"
-		>
+		<div class="card {{#user.isMajor}}major_{{/user.isMajor}}{{#user.groupName}}group_{{user.groupType}}_{{/user.groupName}}comment">
 			<div class="card-header">
 				<div class="row">
 					<div class="col-8 who">
@@ -20,7 +17,7 @@
 						{{/user}}
 					</div>
 					<div class="col-4 stamp">
-						<a href='#' onclick="reply_to('{{authorName}}', {{id}})">Ответить</a>
+						<a href='#' onclick="reply_to('{{authorName}}', {{innerId}})">Ответить</a>
 						&nbsp;&nbsp;&nbsp;
 						<i>{{innerId}}</i>
 						&nbsp;
@@ -44,17 +41,8 @@
 {{/comments.0}}
 
 <script>
-	$(document).ready(function() {
-		// let i = 1;
-		// $("[data-comment-id]").each(function (){
-		// 	$(this).attr("data-inner-id", i);
-		// 	$(this).find("div.stamp i").text(i);
-		// 	i++;
-		// })
-	})
-	function reply_to(userTo, commentId) {
-		const inner_id = $(`[data-comment-id=${commentId}]`).attr("data-inner-id");
-		const insert_text = `--> ${userTo} ${inner_id} \n`;
+	function reply_to(userTo, innerId) {
+		const insert_text = `--> ${userTo} ${innerId} \n`;
 		if(!document.post_form.post_text.value) {
 			document.post_form.post_text.value = insert_text;
 		}

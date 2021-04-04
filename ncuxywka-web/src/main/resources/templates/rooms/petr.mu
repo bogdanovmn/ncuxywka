@@ -18,23 +18,34 @@
 <h2>Последние страницы истории:</h2>
 
 {{#comments}}
-	<table class=infinity>
-	<tr>
-		<td class=msg>
-			{{ESCAPE}}="NONE" NAME="cm_msg">
-	<tr>
-		<td class=copyright>
-			{{#cm_user_id}}
-				<a class=user href='{{layout.contextPath}}/users/{{cm_user_id}}'><span class=user_name>{{cm_user_name}}</span></a>,
-			<TMPL_ELSE>
-				<span class=anonim>{{cm_alias}},</span>
-			{{/if_close}}
-            {{cm_post_date}}
-			<hr>
-	</table>
-{{/loop_close}}
+	<div class="card">
+		<div class="card-body">
+			<div class="row">
+				{{message}}
+			</div>
+		</div>
+		<div class="card-footer">
+			<div class="row">
+				<div class="col-8 who right">
+					{{#user}}
+						<a class=user href='{{layout.contextPath}}/users/{{id}}'><span class=user_name>{{name}}</span></a>
+					{{/user}}
+					{{^user}}
+						<span class=anonymous>{{authorName}}</span>
+					{{/user}}
+				</div>
+				<div class="col-4 stamp">
+					, <span class=post_date>{{created}}</span>
+				</div>
+			</div>
+		</div>
+	</div>
+{{/comments}}
+
 
 {{> inc/pages }}
 <div class=header>ТЫ <span class=letter>Z</span>НАЕШЬ ПРОДОЛЖЕНИЕ<span class=letter>?</span></div>
 
 {{> inc/comments_post_form }}
+
+{{/layout}}
