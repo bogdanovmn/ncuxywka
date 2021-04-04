@@ -4,7 +4,7 @@
 
 <p class=note>Специальная палата для ругательств и прочей нецензурщинины в адрес других пациэнтов. Здесь вам никто не сделает замечание. Ругайтесь на здоровье.</p>
 <br>
-<img src='/img/{{skin_pic_mainshit}}' width=350 height=200>
+<img src='{{layout.contextPath}}/img/{{skin.img.mainshit}}' width=350 height=200>
 
 <h1>СК<span class=letter>А</span>ЖИ!</h1>
 

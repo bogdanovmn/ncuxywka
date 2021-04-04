@@ -4,7 +4,7 @@
 
 <p class=note>В этой палате происходит свободное и непринужденное общение пациэнтов и врачей.</p>
 <br>
-<img alt='img_palata_6' src='/img/{{skin_pic_gb}}' width=350 height=200>
+<img alt='img_palata_6' src='{{layout.contextPath}}/img/{{skin.img.room6}}' width=350 height=200>
 
 <h1>СКАЖИ<span class=letter>!</span></h1>
 

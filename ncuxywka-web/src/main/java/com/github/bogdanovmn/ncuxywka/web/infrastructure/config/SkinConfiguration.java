@@ -25,7 +25,7 @@ public class SkinConfiguration {
 		private String main;
 		private String logo;
 		private String lozung;
-		private String gb;
+		private String room6;
 		private String nizm;
 		private String mainshit;
 		private String proc;
