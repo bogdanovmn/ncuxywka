@@ -26,9 +26,13 @@ class CommentController extends AbstractVisualController {
 		@RequestParam(name = "from", required = false) Integer fromUserId,
 		@RequestParam(name = "to"  , required = false) Integer toUserId
 	) {
-		ContentPage<CreoComment> comments = commentService.allCreosComments(
+		ContentPage<CreoComment> comments = commentService.creoComments(
+			fromUserId,
+			toUserId,
 			PageMeta.builder()
 				.number(page)
+				.parameter("from", fromUserId)
+				.parameter("to", toUserId)
 				.baseUrl("/comments?")
 			.build()
 		);

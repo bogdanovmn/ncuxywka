@@ -89,7 +89,7 @@
 		{{/user.hasCommentsOut}}
 		<br>
 		{{#user.hasCommentsIn}}
-			<a href="{{layout.contextPath}}/comments?for={{user.data.info.id}}">Полученные пациэнтом ({{user.data.statistic.commentsIn}})</a>
+			<a href="{{layout.contextPath}}/comments?to={{user.data.info.id}}">Полученные пациэнтом ({{user.data.statistic.commentsIn}})</a>
 		{{/user.hasCommentsIn}}
 		<br>
 		<br>

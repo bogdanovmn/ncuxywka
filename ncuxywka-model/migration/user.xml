@@ -34,7 +34,7 @@
 				values (?user_id, ?name, ?reg_date, ?email, ?pass_hash, ?edit_date, ?ip_id);
 
 				insert into user_detail (about, city, hates, illness, loves, updated, user_id)
-				values (?about, ?city, ?hates, ?illness, ?loves, ?reg_date, ?user_id)
+				values (?about, ?city, ?hates, ?illness, ?loves, ?edit_date, ?user_id)
 			</script>
 		</query>
 	</query>

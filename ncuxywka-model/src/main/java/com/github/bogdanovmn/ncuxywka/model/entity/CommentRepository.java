@@ -18,13 +18,11 @@ public interface CommentRepository extends BaseEntityRepository<Comment> {
 			"left join User cmu on cmu.id = cm.user.id " +
 			"order by cm.id desc"
 	)
-	Page<CreoComment> getAllCreosComments(Pageable pageable);
+	Page<CreoComment> creoComments(Pageable pageable);
 
 	interface CreoComment {
 		Creo getCreo();
 		Comment getComment();
-		User getCreoUser();
-		User getCommentUser();
 	}
 
 	@Query(
@@ -37,5 +35,43 @@ public interface CommentRepository extends BaseEntityRepository<Comment> {
 				"where r.id = :room " +
 				"order by cm.id desc"
 	)
-	Page<Comment> getRoomComments(@Param("room") String room, Pageable pageable);
+	Page<Comment> roomComments(@Param("room") String room, Pageable pageable);
+
+	@Query(
+		countQuery = "select count(cm) from Creo cr join Comment cm on cm.topic.id = cr.commentTopic.id where cm.user.id = :fromUserId",
+		value =
+			"select cr as creo, cm as comment, cm.user, cr.user " +
+				"from Creo cr " +
+				"join Comment cm on cm.topic.id = cr.commentTopic.id " +
+				"where cm.user.id = :fromUserId " +
+				"order by cm.id desc"
+	)
+	Page<CreoComment> creoCommentsFrom(@Param("fromUserId") Integer fromUserId, Pageable pageable);
+
+	@Query(
+		countQuery = "select count(cm) from Creo cr join Comment cm on cm.topic.id = cr.commentTopic.id where cr.user.id = :toUserId",
+		value =
+			"select cr as creo, cm as comment, cmu, cr.user " +
+				"from Creo cr " +
+				"join Comment cm on cm.topic.id = cr.commentTopic.id " +
+				"left join fetch User cmu on cm.user.id = cmu.id " +
+				"where cr.user.id = :toUserId " +
+				"order by cm.id desc"
+	)
+	Page<CreoComment> creoCommentsTo(@Param("toUserId") Integer toUserId, Pageable pageable);
+
+	@Query(
+		countQuery = "select count(cm) from Creo cr join Comment cm on cm.topic.id = cr.commentTopic.id " +
+			"where cr.user.id = :toUserId and cm.user.id = :fromUserId",
+		value =
+			"select cr as creo, cm as comment, cm.user, cr.user " +
+				"from Creo cr " +
+				"join Comment cm on cm.topic.id = cr.commentTopic.id " +
+				"where cr.user.id = :toUserId " +
+				"and cm.user.id = :fromUserId " +
+				"order by cm.id desc"
+	)
+	Page<CreoComment> creoCommentsFromTo(@Param("fromUserId") Integer fromUserId,
+										 @Param("toUserId") Integer toUserId,
+										 Pageable pageable);
 }

@@ -21,7 +21,7 @@ class RoomService {
 	private final CommentRepository commentRepository;
 
 	public ContentPage<CommentView> comments(RoomType room, PageMeta page) {
-		Page<Comment> comments = commentRepository.getRoomComments(
+		Page<Comment> comments = commentRepository.roomComments(
 			room.getId(),
 			PageRequest.of(page.getNumber() - 1, commentsPerPage)
 		);

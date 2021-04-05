@@ -12,12 +12,12 @@
 					{{#lc_group_name}}
 						<span class=group>{{.}}</span>
 					{{/lc_group_name}}
-					{{#commentUser.id}}
-						<a class=user href='{{layout.contextPath}}/users/{{.}}'><span class=user_name>{{commentUser.name}}</span></a>
-					{{/commentUser.id}}
-					{{^commentUser.id}}
+					{{#comment.user.id}}
+						<a class=user href='{{layout.contextPath}}/users/{{.}}'><span class=user_name>{{comment.user.name}}</span></a>
+					{{/comment.user.id}}
+					{{^comment.user.id}}
 						<span class=anonim>{{comment.alias}}</span>
-					{{/commentUser.id}}
+					{{/comment.user.id}}
 					<span class=array>&rarr;</span>
 					{{#creo.isQuarantine}}<s>{{/creo.isQuarantine}}
 						<a href="{{layout.contextPath}}/creos/{{creo.id}}">{{creo.user.name}}: {{creo.title}}</a>
@@ -32,7 +32,7 @@
 			{{#comment_phrase}}
 				<span class=group>{{.}}</span><br><br>
 			{{/comment_phrase}}
-			{{{comment.message}}}
+			{{comment.message}}
 			{{#comment.isCuted}}
 				<br><span class=note>--> Ампутировано <--</span>
 			{{/comment.isCuted}}
