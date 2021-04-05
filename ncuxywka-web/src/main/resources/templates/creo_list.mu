@@ -61,7 +61,7 @@
 
 {{#quarantine}}
 	<div class=deleted_creos_link>
-		<a href="{{layout.contextPath}}/deleted/">Мусорный контейнер</a>
+		<a href="{{layout.contextPath}}/creos/deleted">Мусорный контейнер</a>
 	</div>
 {{/quarantine}}
 

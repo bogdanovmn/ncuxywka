@@ -4,12 +4,12 @@
 	<div class=header>ЛЕТ<span class=letter>А</span>ЛЬНЫЙ ИС<span class=letter>X</span>OД:</div>
 {{/creo.isQuarantine}}
 {{^creo.isQuarantine}}
-	{{#creo.deleted}}
+	{{#creo.isDeleted}}
 		<div class=header>МУС<span class=letter>О</span>РНЫЙ К<span class=letter>О</span>НТЕЙНЕР</div>
-	{{/creo.deleted}}
-	{{^creo.deleted}}
+	{{/creo.isDeleted}}
+	{{^creo.isDeleted}}
 		<div class=header>АНАЛИ<span class=letter>Z</span>:</div>
-	{{/creo.deleted}}
+	{{/creo.isDeleted}}
 {{/creo.isQuarantine}}
 
 <p>

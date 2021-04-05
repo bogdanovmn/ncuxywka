@@ -128,7 +128,7 @@ menu:
 
       - id: QUARANTINE
         title: Карантин
-        url: /creos/history?quarantine
+        url: /creos/quarantine
 
       - id: COMMENTS
         title: Диагнозы

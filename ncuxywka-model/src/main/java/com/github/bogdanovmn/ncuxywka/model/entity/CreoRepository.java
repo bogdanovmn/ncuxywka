@@ -8,15 +8,16 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface CreoRepository extends JpaRepository<Creo, Integer> {
+
 	@Query(
 		"select c as creo, u as user, cs as statistic from Creo c " +
 		"join User u on u.id = c.user.id " +
 		"join CreoStatistic cs on cs.creo.id = c.id " +
 		"where u.muted <> 1 " +
-			"and c.status = 0" +
+			"and c.status = :status " +
 		"order by c.created desc"
 	)
-	List<CreoMinView> findLast(Pageable pageable);
+	List<CreoMinView> findLast(@Param("status") CreoStatus status, Pageable pageable);
 
 	interface CreoMinView {
 		Creo getCreo();
@@ -34,11 +35,18 @@ public interface CreoRepository extends JpaRepository<Creo, Integer> {
 	CreoView get(@Param("creoId") Integer creoId);
 
 	interface CreoView {
-
 		Creo getInfo();
 		User getUser();
 		CreoStatistic getStatistic();
 		String getText();
+
+		default boolean isQuarantine() {
+			return getInfo().getStatus() == CreoStatus.QUARANTINE;
+		}
+
+		default boolean isDeleted() {
+			return getInfo().getStatus() == CreoStatus.DELETE;
+		}
 	}
 
 	@Query(

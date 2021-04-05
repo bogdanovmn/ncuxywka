@@ -4,6 +4,7 @@ import com.github.bogdanovmn.common.spring.menu.MenuItem;
 import com.github.bogdanovmn.common.spring.mvc.ViewTemplate;
 import com.github.bogdanovmn.ncuxywka.model.entity.CreoRepository.CreoMinView;
 import com.github.bogdanovmn.ncuxywka.model.entity.CreoRepository.CreoView;
+import com.github.bogdanovmn.ncuxywka.model.entity.CreoStatus;
 import com.github.bogdanovmn.ncuxywka.web.infrastructure.AbstractVisualController;
 import com.github.bogdanovmn.ncuxywka.web.infrastructure.MainMenuItem;
 import lombok.RequiredArgsConstructor;
@@ -23,10 +24,28 @@ class CreoController extends AbstractVisualController {
 
 	@GetMapping("/history")
 	ModelAndView creoList() {
-		List<CreoMinView> creos = creoService.list();
+		List<CreoMinView> creos = creoService.list(CreoStatus.CREO);
 		return new ViewTemplate("creo_list")
 			.with("creos", creos)
 			.with("isRegularCreoList", true)
+			.modelAndView();
+	}
+
+	@GetMapping("/quarantine")
+	ModelAndView quarantineList() {
+		List<CreoMinView> creos = creoService.list(CreoStatus.QUARANTINE);
+		return new ViewTemplate("creo_list")
+			.with("creos", creos)
+			.with("quarantine", true)
+			.modelAndView();
+	}
+
+	@GetMapping("/deleted")
+	ModelAndView deletedList() {
+		List<CreoMinView> creos = creoService.list(CreoStatus.DELETE);
+		return new ViewTemplate("creo_list")
+			.with("creos", creos)
+			.with("deleted", true)
 			.modelAndView();
 	}
 

@@ -1,10 +1,7 @@
 package com.github.bogdanovmn.ncuxywka.web.pages.main;
 
-import com.github.bogdanovmn.ncuxywka.model.entity.CreoRepository;
+import com.github.bogdanovmn.ncuxywka.model.entity.*;
 import com.github.bogdanovmn.ncuxywka.model.entity.CreoRepository.CreoMinView;
-import com.github.bogdanovmn.ncuxywka.model.entity.CreoTextRepository;
-import com.github.bogdanovmn.ncuxywka.model.entity.User;
-import com.github.bogdanovmn.ncuxywka.model.entity.UserRepository;
 import com.github.bogdanovmn.ncuxywka.model.entity.UserRepository.UserWithStatistic;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.PageRequest;
@@ -28,6 +25,7 @@ class MainPageService {
 
 		while (!isEnoughAuthors(creos, lastCreoAuthorsCount)) {
 			List<CreoMinView> lastCreosPage = creoRepository.findLast(
+				CreoStatus.CREO,
 				PageRequest.of(currentPage++, lastCreoAuthorsCount * 2)
 			);
 			if (lastCreosPage.isEmpty()) {

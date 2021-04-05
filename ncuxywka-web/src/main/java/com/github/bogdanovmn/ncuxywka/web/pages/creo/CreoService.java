@@ -4,6 +4,7 @@ import com.github.bogdanovmn.ncuxywka.model.entity.Comment;
 import com.github.bogdanovmn.ncuxywka.model.entity.CreoRepository;
 import com.github.bogdanovmn.ncuxywka.model.entity.CreoRepository.CreoMinView;
 import com.github.bogdanovmn.ncuxywka.model.entity.CreoRepository.CreoView;
+import com.github.bogdanovmn.ncuxywka.model.entity.CreoStatus;
 import com.github.bogdanovmn.ncuxywka.web.pages.comment.CommentView;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
@@ -29,7 +30,10 @@ class CreoService {
 			.collect(Collectors.toList());
 	}
 
-	List<CreoMinView> list() {
-		return creoRepository.findLast(PageRequest.of(0, 100));
+	List<CreoMinView> list(CreoStatus status) {
+		return creoRepository.findLast(
+			status,
+			PageRequest.of(0, 100)
+		);
 	}
 }
