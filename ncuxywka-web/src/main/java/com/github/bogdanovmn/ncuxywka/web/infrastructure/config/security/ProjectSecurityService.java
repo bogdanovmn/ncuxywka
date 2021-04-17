@@ -3,6 +3,8 @@ package com.github.bogdanovmn.ncuxywka.web.infrastructure.config.security;
 
 import com.github.bogdanovmn.ncuxywka.model.entity.User;
 import com.github.bogdanovmn.ncuxywka.model.entity.UserRole;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,17 +16,11 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Service;
 
 @Service
+@Slf4j
+@RequiredArgsConstructor
 public class ProjectSecurityService {
-	private static final Logger LOG = LoggerFactory.getLogger(ProjectSecurityService.class);
-
 	private final AuthenticationManager authenticationManager;
 	private final UserDetailsService userDetailsService;
-
-	@Autowired
-	public ProjectSecurityService(AuthenticationManager authenticationManager, UserDetailsService userDetailsService) {
-		this.authenticationManager = authenticationManager;
-		this.userDetailsService = userDetailsService;
-	}
 
 	public boolean isLogged() {
 		User currentUser = getCurrentUser();
@@ -43,7 +39,7 @@ public class ProjectSecurityService {
 	}
 
 	public void login(String username, String password) {
-		UserDetails userDetails = this.userDetailsService.loadUserByUsername(username);
+		UserDetails userDetails = userDetailsService.loadUserByUsername(username);
 		UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken
 			= new UsernamePasswordAuthenticationToken(
 				userDetails,

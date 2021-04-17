@@ -9,6 +9,7 @@ public enum MainMenuItem implements MenuItem {
 	MAIN,
 	FAQ,
 	REGISTRATION,
+	LOGIN,
 	POST_CREO,
 	ROOM_6,
 

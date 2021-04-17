@@ -31,7 +31,7 @@ public abstract class AbstractVisualController extends AbstractController {
 	@ModelAttribute
 	public void addCommonAttributes(Model model) {
 		model.addAttribute("skin", skinConfiguration.activeTemplate());
-		model.addAttribute("userName", getUser().getName());
+		model.addAttribute("currentUser", getUser());
 		model.addAttribute(
 			"menu",
 			menuBuilder

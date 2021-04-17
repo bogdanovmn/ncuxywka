@@ -70,4 +70,8 @@ public class User extends BaseEntityWithUniqueName implements UserAuthorization 
 	public boolean isMainDoctor() {
 		return id == 4;
 	}
+
+	public boolean isGuest() {
+		return withRole(UserRole.Role.GUEST.name());
+	}
 }

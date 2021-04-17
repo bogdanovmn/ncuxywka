@@ -36,11 +36,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	}
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.anonymous().principal(User.guest())
+		http
+			.anonymous()
+				.principal(User.guest())
 		.and()
 			.authorizeRequests()
 				.antMatchers("/admin/**").hasAuthority(UserRole.Role.ADMIN.name())
-		.anyRequest().anonymous()
+			.anyRequest()
+				.permitAll()
 
 		.and()
 			.formLogin()

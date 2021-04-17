@@ -3,7 +3,7 @@
 <div class="container">
 	<h1>Вход</h1>
 
-	{{>inc/error_msg}}
+	{{> inc/error_msg}}
 
 	<form method=post>
 		<div class="form-group">

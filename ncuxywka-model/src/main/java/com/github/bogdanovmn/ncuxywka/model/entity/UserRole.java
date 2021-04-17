@@ -30,6 +30,7 @@ public class UserRole extends BaseEntityWithUniqueName {
 		GUEST,
 		USER,
 		ADMIN,
-		PLAGIARISER
+		PLAGIARISER,
+		MODERATOR
 	}
 }

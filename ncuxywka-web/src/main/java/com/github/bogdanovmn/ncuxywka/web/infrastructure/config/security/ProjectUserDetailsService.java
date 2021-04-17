@@ -18,9 +18,7 @@ public class ProjectUserDetailsService implements UserDetailsService {
 	}
 
 	@Override
-	public UserDetails loadUserByUsername(String name)
-		throws UsernameNotFoundException
-	{
+	public UserDetails loadUserByUsername(String name) throws UsernameNotFoundException {
 		User user = userRepository.findFirstByName(name);
 
 		if (user == null) {

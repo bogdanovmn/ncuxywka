@@ -1,8 +1,11 @@
 package com.github.bogdanovmn.ncuxywka.web.pages.user.auth;
 
+import com.github.bogdanovmn.common.spring.menu.MenuItem;
 import com.github.bogdanovmn.ncuxywka.model.entity.User;
 import com.github.bogdanovmn.ncuxywka.web.infrastructure.AbstractMinVisualController;
+import com.github.bogdanovmn.ncuxywka.web.infrastructure.AbstractVisualController;
 import com.github.bogdanovmn.ncuxywka.web.infrastructure.FormErrors;
+import com.github.bogdanovmn.ncuxywka.web.infrastructure.MainMenuItem;
 import com.github.bogdanovmn.ncuxywka.web.infrastructure.config.security.ProjectSecurityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,7 +20,7 @@ import javax.validation.Valid;
 
 @Controller
 @RequestMapping("/registration")
-class RegistrationController extends AbstractMinVisualController {
+class RegistrationController extends AbstractVisualController {
 	private final RegistrationService registrationService;
 	private final ProjectSecurityService securityService;
 
@@ -65,5 +68,10 @@ class RegistrationController extends AbstractMinVisualController {
 		);
 
 		return new ModelAndView("redirect:/index");
+	}
+
+	@Override
+	protected MenuItem currentMenuItem() {
+		return MainMenuItem.REGISTRATION;
 	}
 }

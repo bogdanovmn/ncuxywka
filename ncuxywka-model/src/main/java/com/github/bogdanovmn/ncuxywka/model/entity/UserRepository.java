@@ -1,6 +1,7 @@
 package com.github.bogdanovmn.ncuxywka.model.entity;
 
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.repository.EntityGraph;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -8,6 +9,7 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface UserRepository extends JpaRepository<User, Integer> {
+	@EntityGraph(attributePaths = {"roles"})
 	User findFirstByName(String name);
 
 	User findFirstByEmail(String email);
