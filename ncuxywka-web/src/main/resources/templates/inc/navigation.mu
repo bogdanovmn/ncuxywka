@@ -21,7 +21,7 @@
 		$(document).ready(function() {
 			let userDiv = $("#USER ");
 			userDiv.html(
-				"<p>Хайц, <a href={{layout.contextPath}}/users/{{currentUser.id}}>{{currentUser.name}}</a></p>" +
+				'<p>Хайц, <a href={{layout.contextPath}}/users/{{currentUser.id}}>{{currentUser.name}}</a></p>' +
 				userDiv.html()
 			);
 		});
